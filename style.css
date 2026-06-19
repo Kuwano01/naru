@@ -136,14 +136,50 @@ section{
 
 .btn{
   display:inline-block;
-  margin-top:35px;
-  padding:16px 70px;
-  background:white;
-  color:#00796B;
-  border:2px solid #00796B;
-  border-radius:8px;
+  margin-top:45px;
+  padding:24px 70px;
+  background:linear-gradient(
+        135deg,
+        #FF7A18,
+        #FF5722
+    );
+  color:#FF5722;
+  border:none;
+  border-radius:18px;
   text-decoration:none;
-  font-size:20px;
+  font-size:28px;
+    font-weight:700;
+    line-height:1.5;
+    text-align:center;
+
+    box-shadow:
+        0 12px 35px rgba(255,87,34,.45);
+
+    transition:.3s;
+
+    animation:pulseBtn 2s infinite;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 18px 40px rgba(255,87,34,.65);
+}
+
+@keyframes pulseBtn{
+    0%{
+        box-shadow:0 12px 35px rgba(255,87,34,.45);
+    }
+
+    50%{
+        box-shadow:0 12px 45px rgba(255,87,34,.75);
+    }
+
+    100%{
+        box-shadow:0 12px 35px rgba(255,87,34,.45);
+    }
+}
 }
 
 /* Common */
