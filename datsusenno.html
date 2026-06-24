@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Orange Mail Form Styles -->
+    <link rel="stylesheet" type="text/css" href="https://mail.os7.biz/current/css/html_form/common.css" />
+    <link rel="stylesheet" type="text/css" href="https://mail.os7.biz/current/css/html_form/colors/white.css" />
 
     <style>
         :root {
@@ -516,6 +520,82 @@
                 background-attachment: scroll; /* モバイル端末での表示バグ・負荷防止のため固定を解除 */
             }
         }
+
+        /* --- Orange Mail Form Customization --- */
+        .MF-cntr {
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            padding: 0 !important;
+            max-width: 600px !important;
+            margin: 20px auto !important;
+        }
+        .MF-title {
+            display: none !important; /* カード内の見出しと重複するため非表示 */
+        }
+        .MF-itm-name {
+            font-size: 0.9rem !important;
+            font-weight: 700 !important;
+            color: var(--text-sub) !important;
+            text-align: left !important;
+            display: block !important;
+            margin-bottom: 5px !important;
+        }
+        .MF-fld {
+            border: 1px solid #cbd5e1 !important;
+            border-radius: 8px !important;
+            padding: 12px 16px !important;
+            font-size: 1rem !important;
+            font-family: var(--font-gothic) !important;
+            width: 100% !important;
+            background-color: #f8fafc !important;
+        }
+        .MF-fld:focus {
+            outline: none !important;
+            border-color: var(--primary-color) !important;
+            background-color: #ffffff !important;
+        }
+        .MF-btn-div {
+            margin-top: 25px !important;
+        }
+        .MF-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 15px !important;
+            width: 100% !important;
+            max-width: 550px !important;
+            padding: 20px 30px !important;
+            background-color: var(--primary-color) !important;
+            color: #ffffff !important;
+            font-family: var(--font-gothic) !important;
+            font-weight: 900 !important;
+            font-size: 1.5rem !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3) !important;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+            border: none !important;
+            cursor: pointer !important;
+            animation: pulse 2s infinite ease-in-out !important;
+        }
+        .MF-btn:hover {
+            transform: translateY(-3px) !important;
+            background-color: var(--primary-hover) !important;
+            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45) !important;
+            animation-play-state: paused !important;
+        }
+        .MF-pwdby {
+            margin-top: 15px !important;
+            font-size: 0.75rem !important;
+        }
+        .MF-pwdby a {
+            color: var(--text-sub) !important;
+            text-decoration: none !important;
+        }
+        .MF-pwdby a:hover {
+            text-decoration: underline !important;
+        }
     </style>
 </head>
 <body>
@@ -538,10 +618,41 @@
                     <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
                 </div>
                 
-                <a href="#" target="_self" class="btn-cta btn-cta-animate">
-                    <i class="fa-solid fa-circle-right"></i>
-                    <span>今すぐ無料WEBセミナー<br>に登録する</span>
-                </a>
+                <!-- Orange Mail Form First -->
+                <section class="MF-cntr MF-cntr-register pos-c white">
+                  <form method="POST" class="MF-fm" action="https://mail.os7.biz/pub/member_adddel/FZwL">
+                    <p class="MF-title">【無料セミナー】脱洗脳コーチングメソッド 読者登録フォーム</p>
+                    <div class="MF-inr">
+                      <div class="MF-itmr">
+                        <label class="MF-itm MF-itm-sei">
+                          <span class="MF-itm-name">姓</span>
+                          <input class="MF-fld" type="text" name="sei" autocomplete="family-name" required />
+                        </label>
+                        <label class="MF-itm MF-itm-mei">
+                          <span class="MF-itm-name">名</span>
+                          <input class="MF-fld" type="text" name="mei" autocomplete="given-name" required />
+                        </label>
+                      </div>
+                      <div class="MF-itmr">
+                        <label class="MF-itm MF-itm-mail">
+                          <span class="MF-itm-name">メールアドレス</span>
+                          <input class="MF-fld" type="email" name="mail" autocomplete="email" required />
+                        </label>
+                      </div>
+                      <div class="MF-btn-div MF-itmr">
+                        <button name="submit_reg" class="MF-btn" type="submit">登録する</button>
+                      </div>
+                    </div>
+                    <div class="MF-hiddenFld">
+                        <input type="hidden" name="oid" value="1044167" />
+                        <input type="hidden" name="hash" value="FZwL" />
+                        <input type="hidden" name="plan_id" value="201781" />
+                        <input type="hidden" name="form_id" value="HTMLフォーム" />
+                        <input type="hidden" name="encoding_test" value="あいうえお眉幅ABC" />
+                    </div>
+                  </form>
+                  <div class="MF-pwdby" ><a href="https://mail.orange-cloud7.net/" target="_blank">Powered by メール配信『オレンジメール』</a></div>
+                </section>
 
                 <div class="cta-attention">
                     【確認事項】<br>
@@ -613,10 +724,41 @@
                     <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
                 </div>
                 
-                <a href="#" target="_self" class="btn-cta btn-cta-animate">
-                    <i class="fa-solid fa-circle-right"></i>
-                    <span>今すぐ無料WEBセミナー<br>に登録する</span>
-                </a>
+                <!-- Orange Mail Form Second -->
+                <section class="MF-cntr MF-cntr-register pos-c white">
+                  <form method="POST" class="MF-fm" action="https://mail.os7.biz/pub/member_adddel/FZwL">
+                    <p class="MF-title">【無料セミナー】脱洗脳コーチングメソッド 読者登録フォーム</p>
+                    <div class="MF-inr">
+                      <div class="MF-itmr">
+                        <label class="MF-itm MF-itm-sei">
+                          <span class="MF-itm-name">姓</span>
+                          <input class="MF-fld" type="text" name="sei" autocomplete="family-name" required />
+                        </label>
+                        <label class="MF-itm MF-itm-mei">
+                          <span class="MF-itm-name">名</span>
+                          <input class="MF-fld" type="text" name="mei" autocomplete="given-name" required />
+                        </label>
+                      </div>
+                      <div class="MF-itmr">
+                        <label class="MF-itm MF-itm-mail">
+                          <span class="MF-itm-name">メールアドレス</span>
+                          <input class="MF-fld" type="email" name="mail" autocomplete="email" required />
+                        </label>
+                      </div>
+                      <div class="MF-btn-div MF-itmr">
+                        <button name="submit_reg" class="MF-btn" type="submit">登録する</button>
+                      </div>
+                    </div>
+                    <div class="MF-hiddenFld">
+                        <input type="hidden" name="oid" value="1044167" />
+                        <input type="hidden" name="hash" value="FZwL" />
+                        <input type="hidden" name="plan_id" value="201781" />
+                        <input type="hidden" name="form_id" value="HTMLフォーム" />
+                        <input type="hidden" name="encoding_test" value="あいうえお眉幅ABC" />
+                    </div>
+                  </form>
+                  <div class="MF-pwdby" ><a href="https://mail.orange-cloud7.net/" target="_blank">Powered by メール配信『オレンジメール』</a></div>
+                </section>
 
                 <div class="cta-attention">
                     【確認事項】<br>
