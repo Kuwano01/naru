@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>脱洗脳コーチング特別無料WEBセミナー</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #4f46e5; /* ボタン等のメインカラー（知性とロジックのディープインディゴ） */
+            --primary-hover: #4338ca;  /* ホバー時のブルーバイオレット */
+            --accent-color: #eabb20;  /* 強調黄色 */
+            --danger-color: #b91c1c;  /* 赤強調（警告用ディープレッド） */
+            --bg-dark-blue: #1e1b4b;  /* お悩みヘッダー等の深みのあるダークインディゴ */
+            --text-main: #0f172a;
+            --text-sub: #475569;
+            --bg-light: #f8fafc;
+            --font-gothic: 'Noto Sans JP', sans-serif;
+            --font-round: 'Outfit', sans-serif;
+            --container-width: 860px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-gothic);
+            color: var(--text-main);
+            background-color: #ffffff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden; /* 左右の突き出しによる横スクロールの発生を防ぐ */
+        }
+
+        /* --- 共通コンテナ --- */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ファーストビュー (ヘッドビュー) --- */
+        .firstview {
+            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+            line-height: 0;
+        }
+
+        .firstview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- メインコンテンツセクション --- */
+        .section-padding {
+            padding: 50px 0;
+        }
+
+        .section-bg-light {
+            background-color: var(--bg-light);
+        }
+
+        /* --- お悩みセクションヘッダー --- */
+        .subhead-blue {
+            background-color: var(--bg-dark-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 24px 20px;
+            font-family: var(--font-gothic);
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            
+            /* 左右両端に突き抜けさせる設定 */
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+        }
+
+        .subhead-blue mark {
+            background: transparent;
+            color: var(--accent-color);
+        }
+
+        /* --- お悩みチェックリスト --- */
+        .checklist-wrapper {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03), 0 0 0 1px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        .checklist-list {
+            list-style: none;
+        }
+
+        .checklist-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 18px;
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 1.5;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+            padding-bottom: 14px;
+        }
+
+        .checklist-list li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .checklist-list li::before {
+            content: '\f00c'; /* FontAwesomeのチェックアイコン */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* --- 学べることセクション --- */
+        .learn-section {
+            background-color: #f5f3ff;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* 背景画像をスクロール時に固定（パララックス効果） */
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .learn-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin: 20px 0;
+        }
+
+        .learn-title {
+            text-align: center;
+            font-family: var(--font-gothic);
+            font-weight: 900;
+            font-size: 1.7rem;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .learn-title mark {
+            background: transparent;
+            color: var(--primary-color);
+        }
+
+        .learn-list {
+            list-style: none;
+        }
+
+        .learn-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .learn-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .learn-list li::before {
+            content: '\f0a4'; /* FontAwesomeの手アイコン */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* --- CTAエリア（登録フォーム・ボタン） --- */
+        .cta-card {
+            background-color: #ffffff;
+            border: 3px solid var(--primary-color);
+            border-radius: 38px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        .cta-subhead {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .cta-title {
+            font-family: var(--font-gothic);
+            font-weight: 900;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-title mark {
+            background: transparent;
+            color: var(--danger-color);
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 550px;
+            padding: 22px 30px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-family: var(--font-gothic);
+            font-weight: 900;
+            font-size: 1.6rem;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3); /* ブルーの影 */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: none;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+
+        /* ボタンのぷるぷるアニメーション */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-cta-animate {
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            background-color: var(--primary-hover);
+            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45); /* ホバー時のブルーの影 */
+            animation-play-state: paused; /* ホバー時はアニメーションを止める */
+        }
+
+        .btn-cta i {
+            font-size: 1.8rem;
+        }
+
+        .cta-attention {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            text-align: left;
+            line-height: 1.7;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding-top: 20px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* --- プロフィールセクション --- */
+        .profile-section {
+            background-color: var(--bg-light);
+            padding: 60px 0;
+        }
+
+        .profile-header {
+            font-family: var(--font-gothic);
+            font-weight: 900;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-header mark {
+            background: transparent;
+            color: var(--primary-color);
+        }
+
+        .profile-card {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.02), 0 0 0 1px rgba(0,0,0,0.04);
+        }
+
+        .profile-imgbox {
+            width: 35%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .profile-imgbox i {
+            font-size: 6rem;
+            color: #94a3b8;
+            padding: 50px 0;
+        }
+
+        .profile-textbox {
+            width: 65%;
+        }
+
+        .profile-title-en {
+            font-family: var(--font-round);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-sub);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            font-family: var(--font-gothic);
+        }
+
+        .profile-sub {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .profile-text-content p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #334155;
+            text-align: justify;
+        }
+
+        .profile-text-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- フッター --- */
+        footer {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* リスト内強調用のスタイル */
+        .checklist-list mark, .learn-list mark {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            color: inherit;
+            font-weight: 700;
+            padding: 0 2px;
+        }
+
+        .text-danger {
+            color: #a83232; /* 落ち着きと重みのある赤茶色 */
+            font-weight: 700;
+        }
+
+        /* --- レスポンシブ対応 --- */
+        @media (max-width: 768px) {
+            :root {
+                --container-width: 100%;
+            }
+
+            .subhead-blue {
+                font-size: 1.4rem;
+                padding: 18px 15px;
+            }
+
+            .checklist-wrapper {
+                padding: 20px;
+            }
+
+            .checklist-list li {
+                font-size: 1rem;
+                padding-left: 28px;
+                margin-bottom: 14px;
+            }
+
+            .checklist-list li::before {
+                font-size: 1rem;
+            }
+
+            .learn-card {
+                padding: 25px 20px;
+            }
+
+            .learn-title {
+                font-size: 1.35rem;
+                margin-bottom: 20px;
+            }
+
+            .learn-list li {
+                font-size: 0.95rem;
+                padding-left: 28px;
+                margin-bottom: 15px;
+            }
+
+            .learn-list li::before {
+                font-size: 1rem;
+            }
+
+            .cta-card {
+                border-radius: 20px;
+                padding: 30px 15px;
+                margin: 20px 10px;
+            }
+
+            .cta-title {
+                font-size: 1.35rem;
+                margin-bottom: 20px;
+            }
+
+            .btn-cta {
+                font-size: 1.15rem;
+                padding: 16px 20px;
+                border-radius: 30px;
+            }
+
+            .btn-cta i {
+                font-size: 1.3rem;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                padding: 25px 20px;
+                gap: 25px;
+            }
+
+            .profile-imgbox {
+                width: 60%;
+                margin: 0 auto;
+            }
+
+            .profile-textbox {
+                width: 100%;
+            }
+
+            .profile-name {
+                font-size: 1.5rem;
+            }
+
+            .profile-sub {
+                font-size: 0.95rem;
+                margin-bottom: 15px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .learn-section {
+                background-attachment: scroll; /* モバイル端末での表示バグ・負荷防止のため固定を解除 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         ファーストビュー (メイン画像)
+         ========================================== -->
+    <div class="firstview">
+        <img src="https://itsuki-coaching.com/lpkuwano1.png" alt="メインビジュアル">
+    </div>
+
+    <!-- ==========================================
+         ファーストCTAセクション
+         ========================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-subhead">ご登録はこちら</div>
+                <div class="cta-title">
+                    <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
+                </div>
+                
+                <a href="#" target="_self" class="btn-cta btn-cta-animate">
+                    <i class="fa-solid fa-circle-right"></i>
+                    <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                </a>
+
+                <div class="cta-attention">
+                    【確認事項】<br>
+                    ※携帯のキャリアメール（@docomo.ne.jp、@ezweb.ne.jp、@softbank.ne.jp など）では受信できませんので、Yahoo、Gmail などのフリーメールアドレスでご登録下さい。迷惑フォルダに案内メールが届く場合もありますので、受信BOX にメールが無い場合は迷惑フォルダも、ご確認ください。<br>
+                    ※プライバシーポリシーについて：お客様の個人情報を第三者に開示することはございません。<br>
+                    ※ご登録いただいたメールアドレスにはくわのから定期的に情報を配信させていただきます。<br>
+                    ※ご不要な場合には１クリックで配信解除できます。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         お悩みセクション (こんなお悩みありませんか？)
+         ========================================== -->
+    <section class="section-padding section-bg-light">
+        <div class="container">
+            <div class="subhead-blue">
+                こんな<mark>お悩み</mark>ありませんか？
+            </div>
+
+            <div class="checklist-wrapper">
+                <ul class="checklist-list">
+                    <li>真面目に勉強や内観をどれだけ重ねても、<mark>現実が何ひとつ変わらない</mark></li>
+                    <li>自己啓発やコーチングに多額 of 自己投資をしてきたが、<span class="text-danger">資金もエネルギーも空回り</span>している</li>
+                    <li><span class="text-danger">他人の目や周囲の評価</span>が気になり、自分の本音ややりたいことを抑え込んでしまう</li>
+                    <li>社会の常識や「こうあるべき」というルール（<mark>社会的洗脳</mark>）に縛られて生きづらさを感じる</li>
+                    <li>意志の力を振り絞って無理に行動しようとするが、すぐにすり減って<span class="text-danger">ガス欠</span>を起こしてしまう</li>
+                    <li>「自分軸」で生きたいと願っているのに、気づくと<mark>他人の基準</mark>で意思決定をしている</li>
+                    <li>現状を本質的に変えたいという強い焦りはあるが、<span class="text-danger">具体的にどう動けばいいのかわからない</span></li>
+                    <li>自分の本当のゴール（やりたいこと）が見えず、手探りで<span class="text-danger">良い兆しが全く見えていない</span></li>
+                    <li>頑張っているのに報われない感覚があり、毎日が曇り空の中にいるような<mark>停滞感</mark>のある日々を送っている</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         学べることセクション
+         ========================================== -->
+    <section class="section-padding learn-section" style="background-image: linear-gradient(135deg, rgba(245, 243, 255, 0.96) 0%, rgba(237, 233, 254, 0.96) 100%);">
+        <div class="container">
+            <div class="learn-card">
+                <div class="learn-title">
+                    あなたが今回の<mark>無料WEBセミナー</mark><br>で学べること
+                </div>
+
+                <ul class="learn-list">
+                    <li>なぜ真面目に内観を繰り返すほど、「過去の基準」に縛られて現実が変わらなくなるのか（<mark>内観の罠</mark>）</li>
+                    <li>脳のホメオスタシスが引き起こす、自己投資が空回りする「<span class="text-danger">負のスパイラル</span>」の科学的真真実</li>
+                    <li>他人の目や他者基準をスルーし、我慢ゼロで自分のゴールを追求するための「<mark>脳のOS書き換え法</mark>」</li>
+                    <li>意識の力（have to）を1ミリもすり減らさず、無意識がゴールへ勝手に向かう<span class="text-danger">オートパイロット技術</span></li>
+                    <li><mark>社会的洗脳</mark>の正体をロジカルに解明し、自分の潜在的な可能性を解放する認知科学のアプローチ</li>
+                    <li>脳のフィルター（RAS）を再設定し、今まで見落としていたチャンスや盲点（<span class="text-danger">スコトーマ</span>）を外す仕組み</li>
+                    <li>他人の基準を完全に手放し、<mark>自分軸で軽やかに、かつ圧倒的に成果を出していく</mark>ための思考ステップ</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         セカンドCTAセクション
+         ========================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-subhead">ご登録はこちら</div>
+                <div class="cta-title">
+                    <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
+                </div>
+                
+                <a href="#" target="_self" class="btn-cta btn-cta-animate">
+                    <i class="fa-solid fa-circle-right"></i>
+                    <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                </a>
+
+                <div class="cta-attention">
+                    【確認事項】<br>
+                    ※携帯のキャリアメール（@docomo.ne.jp、@ezweb.ne.jp、@softbank.ne.jp など）では受信できませんので、Yahoo、Gmail などのフリーメールアドレスでご登録下さい。迷惑フォルダに案内メールが届く場合もありますので、受信BOX にメールが無い場合は迷惑フォルダも、ご確認ください。<br>
+                    ※プライバシーポリシーについて：お客様の個人情報を第三者に開示することはございません。<br>
+                    ※ご登録いただいたメールアドレスにはくわのから定期的に情報を配信させていただきます。<br>
+                    ※ご不要な場合には１クリックで配信解除できます。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         講師プロフィールセクション
+         ========================================== -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                無料WEBセミナー<br><mark>講師プロフィール</mark>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-imgbox">
+                    <!-- 講師プロフィール画像プレースホルダー（実際の画像に差し替える場合は <img src="画像URL" alt="くわの"> に差し替えてください） -->
+                    <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+
+                <div class="profile-textbox">
+                    <div class="profile-title-en">Kuwano</div>
+                    <div class="profile-name">くわの</div>
+                    <div class="profile-sub">脱洗脳コーチング専門家 / 認知科学コーチ</div>
+                    
+                    <div class="profile-text-content">
+                        <p>留学生に向けて日本語を教える、日本語教師としてのキャリア。それが、私の活動の原点だった。多様な価値観を持つ人々と向き合い、言葉を通じたコミュニケーションの奥深さを学びながら、人の成長や教育のプロセスについての造詣を深めていく。</p>
+                        <p>しかし、外部の学びを支援する一方で、私は自分自身の「見えない壁」に突き当たっていた。真面目に勉強や内観をどれだけ重ねても、目の前の現実が何ひとつ変わらないという焦り。自己投資を繰り返しても、前へ進んでいる実感のないまま資金とエネルギーだけが空回りしていく感覚。「本当に自分がやりたいことは何なのか」がわからず、自分自身の明確なゴールを持てないまま、路頭に迷う日々を送っていた。</p>
+                        <p>そんな状態が続く中、運命の転機が訪れる。最先端の脳科学・認知科学をベースにしたコーチングとの出会いだった。科学的アプローチによって、それまで「他人の基準」に支配されていた脳のOSを完全に書き換えることに成功する。他人の目を自然とスルーし、我慢ゼロのまま自分軸で軽やかに成果を出していくためのロジカルな思考法を手に入れ、人生が一気に自動好転する強烈なパラダイムシフトを体験した。</p>
+                        <p>この確信を胸に活動する中で、私はある別の冷酷な現実に直面することになる。世の中には、かつての私と同じように、社会的な洗脳によって自分の望む人生を歩めず、自由に自分のゴールを持てずに生きづらさを抱えている人があまりにも多いということ。どれだけ真面目に内観をしても変われないと悩む人々を、本当の自由へと引き上げるため、私は「脱洗脳コーチング」の専門家として活動を開始することを決意する。</p>
+                        <p>現在は、認知科学ベースのロジカルな思考法と、自らが路頭に迷い自己投資を空回りさせてきた経験をフルに統合。社会的洗脳によって自分の望む人生を歩めていない人、自由にゴールを持って生きられていない人に向け、認知の縛りを解除して現実を好転させていくサポートに集中する日々を送っている。</p>
+                        <p>私のミッションは、この脱洗脳コーチングを広め、一人でも多くの人が他人の基準や過去の呪縛から解放されること。誰もが自由に、そして圧倒的な充実感を持って自らの現状の外側のゴールを追求できる社会の実現を目指し、これからも変革者を増やし続けている。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         フッター
+         ========================================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-copyright">©Kuwano. All Rights Reserved.</div>
+            <ul class="footer-links">
+                <li><a href="#" target="_blank">プライバシーポリシー</a></li>
+                <li><a href="#" target="_blank">特定商取引法に基づく表記</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
