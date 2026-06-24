@@ -521,17 +521,91 @@
             }
         }
 
+        /* --- Modal Popup Styling --- */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 480px;
+            border-radius: 24px;
+            padding: 40px 30px 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            line-height: 1;
+            cursor: pointer;
+            color: var(--text-sub);
+            transition: color 0.2s ease;
+        }
+        .modal-close-btn:hover {
+            color: var(--text-main);
+        }
+        .modal-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .modal-tag {
+            display: inline-block;
+            background: rgba(79, 70, 229, 0.08);
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 12px;
+        }
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            font-family: var(--font-gothic);
+            margin-bottom: 8px;
+        }
+        .modal-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            line-height: 1.4;
+        }
+
         /* --- Orange Mail Form Customization --- */
         .MF-cntr {
             border: none !important;
             box-shadow: none !important;
             background: transparent !important;
             padding: 0 !important;
-            max-width: 600px !important;
-            margin: 20px auto !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
         }
         .MF-title {
-            display: none !important; /* カード内の見出しと重複するため非表示 */
+            display: none !important;
         }
         .MF-itm-name {
             font-size: 0.9rem !important;
@@ -562,28 +636,24 @@
             display: inline-flex !important;
             align-items: center !important;
             justify-content: center !important;
-            gap: 15px !important;
             width: 100% !important;
-            max-width: 550px !important;
-            padding: 20px 30px !important;
+            padding: 18px 24px !important;
             background-color: var(--primary-color) !important;
             color: #ffffff !important;
             font-family: var(--font-gothic) !important;
             font-weight: 900 !important;
-            font-size: 1.5rem !important;
+            font-size: 1.35rem !important;
             text-decoration: none !important;
             border-radius: 50px !important;
             box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3) !important;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
             border: none !important;
             cursor: pointer !important;
-            animation: pulse 2s infinite ease-in-out !important;
         }
         .MF-btn:hover {
-            transform: translateY(-3px) !important;
+            transform: translateY(-2px) !important;
             background-color: var(--primary-hover) !important;
             box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45) !important;
-            animation-play-state: paused !important;
         }
         .MF-pwdby {
             margin-top: 15px !important;
@@ -618,41 +688,10 @@
                     <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
                 </div>
                 
-                <!-- Orange Mail Form First -->
-                <section class="MF-cntr MF-cntr-register pos-c white">
-                  <form method="POST" class="MF-fm" action="https://mail.os7.biz/pub/member_adddel/FZwL">
-                    <p class="MF-title">【無料セミナー】脱洗脳コーチングメソッド 読者登録フォーム</p>
-                    <div class="MF-inr">
-                      <div class="MF-itmr">
-                        <label class="MF-itm MF-itm-sei">
-                          <span class="MF-itm-name">姓</span>
-                          <input class="MF-fld" type="text" name="sei" autocomplete="family-name" required />
-                        </label>
-                        <label class="MF-itm MF-itm-mei">
-                          <span class="MF-itm-name">名</span>
-                          <input class="MF-fld" type="text" name="mei" autocomplete="given-name" required />
-                        </label>
-                      </div>
-                      <div class="MF-itmr">
-                        <label class="MF-itm MF-itm-mail">
-                          <span class="MF-itm-name">メールアドレス</span>
-                          <input class="MF-fld" type="email" name="mail" autocomplete="email" required />
-                        </label>
-                      </div>
-                      <div class="MF-btn-div MF-itmr">
-                        <button name="submit_reg" class="MF-btn" type="submit">登録する</button>
-                      </div>
-                    </div>
-                    <div class="MF-hiddenFld">
-                        <input type="hidden" name="oid" value="1044167" />
-                        <input type="hidden" name="hash" value="FZwL" />
-                        <input type="hidden" name="plan_id" value="201781" />
-                        <input type="hidden" name="form_id" value="HTMLフォーム" />
-                        <input type="hidden" name="encoding_test" value="あいうえお眉幅ABC" />
-                    </div>
-                  </form>
-                  <div class="MF-pwdby" ><a href="https://mail.orange-cloud7.net/" target="_blank">Powered by メール配信『オレンジメール』</a></div>
-                </section>
+                <a href="javascript:void(0)" class="btn-cta btn-cta-animate open-form-btn">
+                    <i class="fa-solid fa-circle-right"></i>
+                    <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                </a>
 
                 <div class="cta-attention">
                     【確認事項】<br>
@@ -724,41 +763,10 @@
                     <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
                 </div>
                 
-                <!-- Orange Mail Form Second -->
-                <section class="MF-cntr MF-cntr-register pos-c white">
-                  <form method="POST" class="MF-fm" action="https://mail.os7.biz/pub/member_adddel/FZwL">
-                    <p class="MF-title">【無料セミナー】脱洗脳コーチングメソッド 読者登録フォーム</p>
-                    <div class="MF-inr">
-                      <div class="MF-itmr">
-                        <label class="MF-itm MF-itm-sei">
-                          <span class="MF-itm-name">姓</span>
-                          <input class="MF-fld" type="text" name="sei" autocomplete="family-name" required />
-                        </label>
-                        <label class="MF-itm MF-itm-mei">
-                          <span class="MF-itm-name">名</span>
-                          <input class="MF-fld" type="text" name="mei" autocomplete="given-name" required />
-                        </label>
-                      </div>
-                      <div class="MF-itmr">
-                        <label class="MF-itm MF-itm-mail">
-                          <span class="MF-itm-name">メールアドレス</span>
-                          <input class="MF-fld" type="email" name="mail" autocomplete="email" required />
-                        </label>
-                      </div>
-                      <div class="MF-btn-div MF-itmr">
-                        <button name="submit_reg" class="MF-btn" type="submit">登録する</button>
-                      </div>
-                    </div>
-                    <div class="MF-hiddenFld">
-                        <input type="hidden" name="oid" value="1044167" />
-                        <input type="hidden" name="hash" value="FZwL" />
-                        <input type="hidden" name="plan_id" value="201781" />
-                        <input type="hidden" name="form_id" value="HTMLフォーム" />
-                        <input type="hidden" name="encoding_test" value="あいうえお眉幅ABC" />
-                    </div>
-                  </form>
-                  <div class="MF-pwdby" ><a href="https://mail.orange-cloud7.net/" target="_blank">Powered by メール配信『オレンジメール』</a></div>
-                </section>
+                <a href="javascript:void(0)" class="btn-cta btn-cta-animate open-form-btn">
+                    <i class="fa-solid fa-circle-right"></i>
+                    <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                </a>
 
                 <div class="cta-attention">
                     【確認事項】<br>
@@ -816,6 +824,85 @@
             </ul>
         </div>
     </footer>
+
+    <!-- ==========================================
+         読者登録用モーダルポップアップ
+         ========================================== -->
+    <div id="registerModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn" aria-label="閉じる">&times;</button>
+            <div class="modal-header">
+                <div class="modal-tag">無料登録フォーム</div>
+                <h3 class="modal-title">脱洗脳コーチングメソッド</h3>
+                <p class="modal-subtitle">お名前とメールアドレスを入力し、無料セミナー動画を受け取ってください。</p>
+            </div>
+            
+            <section class="MF-cntr MF-cntr-register pos-c white">
+              <form method="POST" class="MF-fm" action="https://mail.os7.biz/pub/member_adddel/FZwL">
+                <p class="MF-title">【無料セミナー】脱洗脳コーチングメソッド 読者登録フォーム</p>
+                <div class="MF-inr">
+                  <div class="MF-itmr">
+                    <label class="MF-itm">
+                      <span class="MF-itm-name">名前</span>
+                      <input class="MF-fld" type="text" name="seimei" autocomplete="name" placeholder="例：山田 太郎" required />
+                    </label>
+                  </div>
+                  <div class="MF-itmr">
+                    <label class="MF-itm MF-itm-mail">
+                      <span class="MF-itm-name">メールアドレス</span>
+                      <input class="MF-fld" type="email" name="mail" autocomplete="email" placeholder="例：example@mail.com" required />
+                    </label>
+                  </div>
+                  <div class="MF-btn-div MF-itmr">
+                    <button name="submit_reg" class="MF-btn" type="submit">登録する</button>
+                  </div>
+                </div>
+                <div class="MF-hiddenFld">
+                    <input type="hidden" name="oid" value="1044167" />
+                    <input type="hidden" name="hash" value="FZwL" />
+                    <input type="hidden" name="plan_id" value="201781" />
+                    <input type="hidden" name="form_id" value="HTMLフォーム" />
+                    <input type="hidden" name="encoding_test" value="あいうえお眉幅ABC" />
+                </div>
+              </form>
+              <div class="MF-pwdby" ><a href="https://mail.orange-cloud7.net/" target="_blank">Powered by メール配信『オレンジメール』</a></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         モーダル制御スクリプト
+         ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('registerModal');
+            const openButtons = document.querySelectorAll('.open-form-btn');
+            const closeButton = document.querySelector('.modal-close-btn');
+
+            // モーダルを開く
+            openButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // 背後のスクロールを防ぐ
+                });
+            });
+
+            // モーダルを閉じる (×ボタン)
+            closeButton.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // モーダルを閉じる (背景クリック)
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
