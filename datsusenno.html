@@ -521,62 +521,67 @@
             }
         }
 
-        /* --- モーダル (Popup Overlay) --- */
+        /* --- ポップアップ（モーダル）登録フォーム --- */
         .modal-overlay {
             position: fixed;
-            inset: 0;
-            background-color: rgba(15, 23, 42, 0.6); /* 暗い背景 */
-            backdrop-filter: blur(8px); /* ガラスエフェクト */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.6); /* 深みのある紺黒の半透明 */
+            backdrop-filter: blur(4px); /* 背景をぼかしてプレミアム感を演出 */
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 10000;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
-            z-index: 9999;
-            padding: 20px;
         }
 
-        .modal-overlay.active {
+        .modal-overlay.is-active {
             opacity: 1;
             pointer-events: auto;
         }
 
-        .modal-card {
+        .modal-content {
             background-color: #ffffff;
             border-radius: 24px;
-            width: 100%;
+            padding: 40px 30px;
             max-width: 500px;
-            padding: 40px 30px 30px;
+            width: 90%;
             position: relative;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transform: scale(0.9);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            text-align: left;
         }
 
-        .modal-overlay.active .modal-card {
-            transform: scale(1);
+        .modal-overlay.is-active .modal-content {
+            transform: translateY(0);
         }
 
-        .modal-close-btn {
+        /* 閉じるボタン */
+        .modal-close {
             position: absolute;
             top: 15px;
             right: 20px;
             background: none;
             border: none;
             font-size: 2.2rem;
-            color: var(--text-sub);
             cursor: pointer;
+            color: #94a3b8;
             line-height: 1;
             transition: color 0.2s ease;
+            z-index: 10001;
         }
 
-        .modal-close-btn:hover {
+        .modal-close:hover {
             color: var(--text-main);
         }
 
         /* オレンジメールフォームのカスタム上書き（プレミアムデザイン化） */
-        .modal-card .MF-cntr-register {
+        .modal-content .MF-cntr-register {
             width: 100% !important;
             box-shadow: none !important;
             border: none !important;
@@ -584,7 +589,7 @@
             background: none !important;
         }
 
-        .modal-card .MF-title {
+        .modal-content .MF-title {
             font-family: var(--font-gothic);
             font-size: 1.25rem !important;
             font-weight: 900 !important;
@@ -592,13 +597,14 @@
             margin-bottom: 24px !important;
             line-height: 1.4 !important;
             text-align: center !important;
+            padding-right: 20px; /* 閉じるボタンと重ならないように調整 */
         }
 
-        .modal-card .MF-itmr {
+        .modal-content .MF-itmr {
             margin-bottom: 18px !important;
         }
 
-        .modal-card .MF-itm-name {
+        .modal-content .MF-itm-name {
             display: block !important;
             font-size: 0.9rem !important;
             font-weight: 700 !important;
@@ -607,7 +613,7 @@
             text-align: left !important;
         }
 
-        .modal-card .MF-fld {
+        .modal-content .MF-fld {
             width: 100% !important;
             padding: 12px 16px !important;
             border: 1.5px solid #cbd5e1 !important;
@@ -619,12 +625,12 @@
             transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
         }
 
-        .modal-card .MF-fld:focus {
+        .modal-content .MF-fld:focus {
             border-color: var(--primary-color) !important;
             box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15) !important;
         }
 
-        .modal-card .MF-btn {
+        .modal-content .MF-btn {
             width: 100% !important;
             padding: 16px 20px !important;
             background-color: var(--primary-color) !important;
@@ -639,24 +645,40 @@
             transition: background-color 0.2s ease, transform 0.2s ease !important;
         }
 
-        .modal-card .MF-btn:hover {
+        .modal-content .MF-btn:hover {
             background-color: var(--primary-hover) !important;
             transform: translateY(-1px) !important;
         }
 
-        .modal-card .MF-pwdby {
+        .modal-content .MF-pwdby {
             margin-top: 20px !important;
             font-size: 0.75rem !important;
             text-align: center !important;
         }
 
-        .modal-card .MF-pwdby a {
+        .modal-content .MF-pwdby a {
             color: #94a3b8 !important;
             text-decoration: none !important;
         }
 
-        .modal-card .MF-pwdby a:hover {
+        .modal-content .MF-pwdby a:hover {
             text-decoration: underline !important;
+        }
+
+        /* モバイル対応調整 */
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 30px 20px;
+                width: 95%;
+            }
+            .modal-content .MF-title {
+                font-size: 1.15rem !important;
+            }
+            .modal-close {
+                top: 10px;
+                right: 15px;
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -684,6 +706,7 @@
                     <i class="fa-solid fa-circle-right"></i>
                     <span>今すぐ無料WEBセミナー<br>に登録する</span>
                 </a>
+
 
                 <div class="cta-attention">
                     【確認事項】<br>
@@ -760,6 +783,7 @@
                     <span>今すぐ無料WEBセミナー<br>に登録する</span>
                 </a>
 
+
                 <div class="cta-attention">
                     【確認事項】<br>
                     ※携帯のキャリアメール（@docomo.ne.jp、@ezweb.ne.jp、@softbank.ne.jp など）では受信できませんので、Yahoo、Gmail などのフリーメールアドレスでご登録下さい。迷惑フォルダに案内メールが届く場合もありますので、受信BOX にメールが無い場合は迷惑フォルダも、ご確認ください。<br>
@@ -818,14 +842,14 @@
     </footer>
 
     <!-- ==========================================
-         メルマガ登録モーダル (Popup Modal)
+         登録フォーム用モーダル（ポップアップ）
          ========================================== -->
-    <div id="registerModal" class="modal-overlay">
-        <div class="modal-card">
-            <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+    <div id="register-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" aria-label="閉じる">&times;</button>
             <section class="MF-cntr MF-cntr-register pos-c white">
                 <form method="POST" class="MF-fm" action="https://mail.os7.biz/pub/member_adddel/FZwL">
-                    <p class="MF-title">【無料セミナー】脱洗脳コーチングメソッド 読者登録フォーム</p>
+                    <p id="modal-title" class="MF-title">【無料セミナー】脱洗脳コーチングメソッド 読者登録フォーム</p>
                     <div class="MF-inr">
                         <div class="MF-itmr">
                             <label class="MF-itm">
@@ -857,31 +881,50 @@
     </div>
 
     <!-- ==========================================
-         モーダル制御スクリプト
+         モーダルポップアップ表示制御スクリプト
          ========================================== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('registerModal');
+            const modal = document.getElementById('register-modal');
+            const closeBtn = modal.querySelector('.modal-close');
             const ctaButtons = document.querySelectorAll('.btn-cta');
-            const closeModalBtn = document.getElementById('closeModalBtn');
 
-            // CTAボタンをクリックした時にモーダルを表示
+            // モーダルを開く関数
+            const openModal = () => {
+                modal.classList.add('is-active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden'; // 背後のスクロールを防止
+            };
+
+            // モーダルを閉じる関数
+            const closeModal = () => {
+                modal.classList.remove('is-active');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = ''; // スクロール制限を解除
+            };
+
+            // 各ボタンにクリックイベントを設定
             ctaButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    e.preventDefault(); // デフォルトの画面遷移（旧リンクへの遷移）を無効化
-                    modal.classList.add('active');
+                    e.preventDefault(); // 画面遷移を防止
+                    openModal();
                 });
             });
 
-            // 閉じるボタンをクリックした時にモーダルを非表示
-            closeModalBtn.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
+            // 閉じるボタンのクリックで閉じる
+            closeBtn.addEventListener('click', closeModal);
 
-            // モーダルの背景（枠外）をクリックした時にモーダルを非表示
+            // モーダルの背景（オーバーレイ）クリックで閉じる
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
-                    modal.classList.remove('active');
+                    closeModal();
+                }
+            });
+
+            // Escキー押下で閉じる
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+                    closeModal();
                 }
             });
         });
