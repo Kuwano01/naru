@@ -521,178 +521,7 @@
             }
         }
 
-        /* --- ポップアップ（モーダル）登録フォーム --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(15, 23, 42, 0.6); /* 深みのある紺黒の半透明 */
-            backdrop-filter: blur(4px); /* 背景をぼかしてプレミアム感を演出 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
 
-        .modal-overlay.is-active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            border-radius: 24px;
-            padding: 40px 15px 20px 15px; /* 閉じるボタンの余白を考慮 */
-            max-width: 640px; /* Googleフォームに最適な横幅 */
-            width: 95%;
-            height: 90vh; /* 縦幅を画面の90%に設定 */
-            max-height: 800px;
-            position: relative;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transform: translateY(-20px);
-            transition: transform 0.3s ease;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .modal-content iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            flex-grow: 1;
-            border-radius: 12px;
-        }
-
-        .modal-overlay.is-active .modal-content {
-            transform: translateY(0);
-        }
-
-        /* 閉じるボタン */
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 2.2rem;
-            cursor: pointer;
-            color: #94a3b8;
-            line-height: 1;
-            transition: color 0.2s ease;
-            z-index: 10001;
-        }
-
-        .modal-close:hover {
-            color: var(--text-main);
-        }
-
-        /* オレンジメールフォームのカスタム上書き（プレミアムデザイン化） */
-        .modal-content .MF-cntr-register {
-            width: 100% !important;
-            box-shadow: none !important;
-            border: none !important;
-            padding: 0 !important;
-            background: none !important;
-        }
-
-        .modal-content .MF-title {
-            font-family: var(--font-gothic);
-            font-size: 1.25rem !important;
-            font-weight: 900 !important;
-            color: var(--text-main) !important;
-            margin-bottom: 24px !important;
-            line-height: 1.4 !important;
-            text-align: center !important;
-            padding-right: 20px; /* 閉じるボタンと重ならないように調整 */
-        }
-
-        .modal-content .MF-itmr {
-            margin-bottom: 18px !important;
-        }
-
-        .modal-content .MF-itm-name {
-            display: block !important;
-            font-size: 0.9rem !important;
-            font-weight: 700 !important;
-            color: var(--text-sub) !important;
-            margin-bottom: 6px !important;
-            text-align: left !important;
-        }
-
-        .modal-content .MF-fld {
-            width: 100% !important;
-            padding: 12px 16px !important;
-            border: 1.5px solid #cbd5e1 !important;
-            border-radius: 10px !important;
-            font-size: 1rem !important;
-            font-family: var(--font-gothic) !important;
-            color: var(--text-main) !important;
-            outline: none !important;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
-        }
-
-        .modal-content .MF-fld:focus {
-            border-color: var(--primary-color) !important;
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15) !important;
-        }
-
-        .modal-content .MF-btn {
-            width: 100% !important;
-            padding: 16px 20px !important;
-            background-color: var(--primary-color) !important;
-            color: #ffffff !important;
-            font-family: var(--font-gothic) !important;
-            font-weight: 700 !important;
-            font-size: 1.15rem !important;
-            border: none !important;
-            border-radius: 12px !important;
-            cursor: pointer !important;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2) !important;
-            transition: background-color 0.2s ease, transform 0.2s ease !important;
-        }
-
-        .modal-content .MF-btn:hover {
-            background-color: var(--primary-hover) !important;
-            transform: translateY(-1px) !important;
-        }
-
-        .modal-content .MF-pwdby {
-            margin-top: 20px !important;
-            font-size: 0.75rem !important;
-            text-align: center !important;
-        }
-
-        .modal-content .MF-pwdby a {
-            color: #94a3b8 !important;
-            text-decoration: none !important;
-        }
-
-        .modal-content .MF-pwdby a:hover {
-            text-decoration: underline !important;
-        }
-
-        /* モバイル対応調整 */
-        @media (max-width: 480px) {
-            .modal-content {
-                padding: 30px 20px;
-                width: 95%;
-            }
-            .modal-content .MF-title {
-                font-size: 1.15rem !important;
-            }
-            .modal-close {
-                top: 10px;
-                right: 15px;
-                font-size: 1.8rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -715,7 +544,7 @@
                     <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
                 </div>
                 
-                <a href="https://mail.os7.biz/add/g4fA" target="_self" class="btn-cta btn-cta-animate">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdYCfCLkBJJuvashuas9pg33Hg3ER6ccdUggbyHH0LEzN3FQQ/viewform" target="_self" class="btn-cta btn-cta-animate">
                     <i class="fa-solid fa-circle-right"></i>
                     <span>今すぐ無料WEBセミナー<br>に登録する</span>
                 </a>
@@ -791,7 +620,7 @@
                     <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
                 </div>
                 
-                <a href="https://mail.os7.biz/add/g4fA" target="_self" class="btn-cta btn-cta-animate">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdYCfCLkBJJuvashuas9pg33Hg3ER6ccdUggbyHH0LEzN3FQQ/viewform" target="_self" class="btn-cta btn-cta-animate">
                     <i class="fa-solid fa-circle-right"></i>
                     <span>今すぐ無料WEBセミナー<br>に登録する</span>
                 </a>
@@ -854,68 +683,7 @@
         </div>
     </footer>
 
-    <!-- ==========================================
-         登録フォーム用モーダル（ポップアップ）
-         ========================================== -->
-    <div id="register-modal" class="modal-overlay" aria-hidden="true">
-        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <button class="modal-close" aria-label="閉じる">&times;</button>
-            <!-- ==========================================
-                 Googleフォーム埋め込み
-                 ========================================== -->
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYCfCLkBJJuvashuas9pg33Hg3ER6ccdUggbyHH0LEzN3FQQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-        </div>
-    </div>
 
-    <!-- ==========================================
-         モーダルポップアップ表示制御スクリプト
-         ========================================== -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('register-modal');
-            const closeBtn = modal.querySelector('.modal-close');
-            const ctaButtons = document.querySelectorAll('.btn-cta');
-
-            // モーダルを開く関数
-            const openModal = () => {
-                modal.classList.add('is-active');
-                modal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden'; // 背後のスクロールを防止
-            };
-
-            // モーダルを閉じる関数
-            const closeModal = () => {
-                modal.classList.remove('is-active');
-                modal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = ''; // スクロール制限を解除
-            };
-
-            // 各ボタンにクリックイベントを設定
-            ctaButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault(); // 画面遷移を防止
-                    openModal();
-                });
-            });
-
-            // 閉じるボタンのクリックで閉じる
-            closeBtn.addEventListener('click', closeModal);
-
-            // モーダルの背景（オーバーレイ）クリックで閉じる
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-
-            // Escキー押下で閉じる
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && modal.classList.contains('is-active')) {
-                    closeModal();
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>
