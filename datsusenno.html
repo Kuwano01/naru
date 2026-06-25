@@ -15,6 +15,20 @@
     <link rel="stylesheet" type="text/css" href="https://mail.os7.biz/current/css/html_form/common.css" />
     <link rel="stylesheet" type="text/css" href="https://mail.os7.biz/current/css/html_form/colors/white.css" />
 
+    <script>
+    function MLFormSubmitOnlyIn(formId, strButton){
+        var form = document.getElementById(formId);
+        if (!form) return;
+        var obj = window.open('http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php','tml_form','width=400,height=300,menubar=no,toolbar=no');
+        form.target = 'tml_form';
+        form.sb_reg.value = strButton;
+        var org = document.charset;
+        document.charset = 'UTF-8';
+        form.submit();
+        document.charset = org;
+    }
+    </script>
+
     <style>
         :root {
             --primary-color: #4f46e5; /* ボタン等のメインカラー（知性とロジックのディープインディゴ） */
@@ -288,6 +302,33 @@
             margin: 0 auto;
         }
 
+        .cta-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto 25px auto;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 1.15rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-family: var(--font-gothic);
+        }
+
+        .form-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+        }
+
         /* --- プロフィールセクション --- */
         .profile-section {
             background-color: var(--bg-light);
@@ -544,10 +585,15 @@
                     <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
                 </div>
                 
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdYCfCLkBJJuvashuas9pg33Hg3ER6ccdUggbyHH0LEzN3FQQ/viewform" target="_self" class="btn-cta btn-cta-animate">
-                    <i class="fa-solid fa-circle-right"></i>
-                    <span>今すぐ無料WEBセミナー<br>に登録する</span>
-                </a>
+                <form name="ml_form_only_in_1" id="ml_form_only_in_1" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
+                    <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
+                    <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_1', '登録する');">
+                        <i class="fa-solid fa-circle-right"></i>
+                        <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                    </button>
+                    <input type="hidden" name="sb_reg" value="" />
+                    <input type="hidden" name="identity" value="ua&8X*Qy" />
+                </form>
 
 
                 <div class="cta-attention">
@@ -620,10 +666,15 @@
                     <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
                 </div>
                 
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdYCfCLkBJJuvashuas9pg33Hg3ER6ccdUggbyHH0LEzN3FQQ/viewform" target="_self" class="btn-cta btn-cta-animate">
-                    <i class="fa-solid fa-circle-right"></i>
-                    <span>今すぐ無料WEBセミナー<br>に登録する</span>
-                </a>
+                <form name="ml_form_only_in_2" id="ml_form_only_in_2" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
+                    <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
+                    <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_2', '登録する');">
+                        <i class="fa-solid fa-circle-right"></i>
+                        <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                    </button>
+                    <input type="hidden" name="sb_reg" value="" />
+                    <input type="hidden" name="identity" value="ua&8X*Qy" />
+                </form>
 
 
                 <div class="cta-attention">
