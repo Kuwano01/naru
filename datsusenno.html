@@ -547,14 +547,27 @@
         .modal-content {
             background-color: #ffffff;
             border-radius: 24px;
-            padding: 40px 30px;
-            max-width: 500px;
-            width: 90%;
+            padding: 40px 15px 20px 15px; /* 閉じるボタンの余白を考慮 */
+            max-width: 640px; /* Googleフォームに最適な横幅 */
+            width: 95%;
+            height: 90vh; /* 縦幅を画面の90%に設定 */
+            max-height: 800px;
             position: relative;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             transform: translateY(-20px);
             transition: transform 0.3s ease;
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            flex-grow: 1;
+            border-radius: 12px;
         }
 
         .modal-overlay.is-active .modal-content {
@@ -847,36 +860,10 @@
     <div id="register-modal" class="modal-overlay" aria-hidden="true">
         <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
             <button class="modal-close" aria-label="閉じる">&times;</button>
-            <section class="MF-cntr MF-cntr-register pos-c white">
-                <form method="POST" class="MF-fm" action="https://mail.os7.biz/pub/member_adddel/g4fA">
-                    <p id="modal-title" class="MF-title">【無料セミナー】脱洗脳コーチングメソッド 読者登録フォーム</p>
-                    <div class="MF-inr">
-                        <div class="MF-itmr">
-                            <label class="MF-itm">
-                                <span class="MF-itm-name">名前（姓・名）</span>
-                                <input class="MF-fld" type="text" name="seimei" placeholder="例：山田 太郎" autocomplete="name" required />
-                            </label>
-                        </div>
-                        <div class="MF-itmr">
-                            <label class="MF-itm MF-itm-mail">
-                                <span class="MF-itm-name">メールアドレス</span>
-                                <input class="MF-fld" type="email" name="mail" placeholder="例：your@email.com" autocomplete="email" required />
-                            </label>
-                        </div>
-                        <div class="MF-btn-div MF-itmr">
-                            <button name="submit_reg" class="MF-btn" type="submit">登録して無料セミナーを視聴する</button>
-                        </div>
-                    </div>
-                    <div class="MF-hiddenFld">
-                        <input type="hidden" name="oid" value="1044167" />
-                        <input type="hidden" name="hash" value="g4fA" />
-                        <input type="hidden" name="plan_id" value="201785" />
-                        <input type="hidden" name="form_id" value="HTMLフォーム" />
-                        <input type="hidden" name="encoding_test" value="あいうえお眉幅ABC" />
-                    </div>
-                </form>
-                <div class="MF-pwdby"><a href="https://mail.orange-cloud7.net/" target="_blank">Powered by メール配信『オレンジメール』</a></div>
-            </section>
+            <!-- ==========================================
+                 Googleフォーム埋め込み
+                 ========================================== -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYCfCLkBJJuvashuas9pg33Hg3ER6ccdUggbyHH0LEzN3FQQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
         </div>
     </div>
 
