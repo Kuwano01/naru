@@ -570,12 +570,327 @@
             .learn-section {
                 background-attachment: scroll; /* モバイル端末での表示バグ・負荷防止のため固定を解除 */
             }
+
+            /* 特典セクションのレスポンシブ化 */
+            .bonus-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .bonus-grid-card {
+                padding: 25px 20px;
+            }
+            .tokusho-table th, .tokusho-table td {
+                display: block;
+                width: 100%;
+            }
+            .tokusho-table th {
+                border-bottom: none;
+            }
         }
 
+        /* --- 新規追加：メインキャッチコピーヘッダー --- */
+        .header-catch {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .catch-badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--bg-dark-blue);
+            font-weight: 900;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(234, 187, 32, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .catch-main {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .catch-sub {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #f3f4f6;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+        }
+
+        .catch-lead {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #cbd5e1;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* --- 新規追加：3大特典セクション --- */
+        .bonus-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .bonus-header h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.4;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .bonus-header h2 .highlight {
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .bonus-header h2 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .bonus-header p {
+            font-size: 1.15rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        .bonus-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .bonus-grid-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03), 0 0 0 1px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bonus-grid-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(79, 70, 229, 0.08), 0 0 0 1px rgba(79, 70, 229, 0.15);
+        }
+
+        .bonus-badge {
+            position: absolute;
+            top: -15px;
+            left: 25px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 0.95rem;
+            padding: 5px 18px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+        }
+
+        .bonus-type {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            margin-top: 5px;
+        }
+
+        .bonus-card-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .bonus-card-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 15px;
+        }
+
+        .bonus-card-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bonus-card-bullets li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .bonus-card-bullets li:last-child {
+            margin-bottom: 0;
+        }
+
+        .bonus-card-bullets li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 0.85rem;
+        }
+
+        /* --- 新規追加：フォーム案内文 --- */
+        .form-guide-text {
+            font-size: 0.9rem;
+            color: #475569;
+            font-weight: 700;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            background-color: #f8fafc;
+            border-left: 4px solid var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+            width: 100%;
+            max-width: 550px;
+            box-sizing: border-box;
+        }
+
+        /* --- 新規追加：アコーディオン規約 --- */
+        .terms-section {
+            background-color: #f8fafc;
+            padding: 40px 0;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .accordion-item {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .accordion-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 25px;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-gothic);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            transition: background-color 0.2s ease;
+        }
+
+        .accordion-trigger:hover {
+            background-color: #f8fafc;
+        }
+
+        .accordion-trigger i {
+            font-size: 1rem;
+            color: var(--text-sub);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-content {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #334155;
+            border-top: 0 solid #f1f5f9;
+        }
+
+        .accordion-content p {
+            margin-bottom: 12px;
+        }
+
+        .accordion-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tokusho-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        .tokusho-table th, .tokusho-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px 18px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .tokusho-table th {
+            background-color: #f8fafc;
+            color: var(--text-main);
+            font-weight: 700;
+            width: 25%;
+            text-align: left;
+        }
+
+        .tokusho-table td {
+            color: #334155;
+        }
 
     </style>
 </head>
 <body>
+
+    <!-- ==========================================
+         ヘッダーキャッチコピー（HTMLテキスト）
+         ========================================== -->
+    <div class="header-catch">
+        <div class="container">
+            <div class="catch-badge">【完全無料・今すぐ視聴可能】</div>
+            <h1 class="catch-main">「毎日一生懸命がんばっているのに、なぜ現実は1mmも変わらないのか？」</h1>
+            <h2 class="catch-sub">脳を縛る「他人の正しさ」を引き算するだけで、努力・根性一切不要で人生が自動的に好転し始める！</h2>
+            <p class="catch-lead">他人の目や世間の常識（社会的洗脳）を手放し、我慢ゼロで自分のゴールを追求する認知科学の技術。登録後、すぐに自動返信メールでWEBセミナー動画をお届けします。</p>
+        </div>
+    </div>
 
     <!-- ==========================================
          ファーストビュー (メイン画像)
@@ -595,11 +910,13 @@
                     我慢や無理な努力を手放し、脳のメモリを全解放する<br><mark>『マインドOS・リブート無料セミナー』</mark>
                 </div>
                 
+                <div class="form-guide-text">※メールアドレスを入力してボタンを押すと、すぐにXserverメーリングリストシステムより自動返信メールで、3大特典およびWEBセミナー動画の専用視聴URLをお届けします。</div>
+
                 <form name="ml_form_only_in_1" id="ml_form_only_in_1" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
                     <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
                     <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_1', '登録する');">
                         <i class="fa-solid fa-circle-right"></i>
-                        <span>👉 社会的洗脳を引き算し、<br>自動操縦マインドを今すぐ無料で手に入れる</span>
+                        <span>👉 無料で3大特典を今すぐ受け取る（1分で完了）</span>
                     </button>
                     <input type="hidden" name="sb_reg" value="" />
                     <input type="hidden" name="identity" value="ua&8X*Qy" />
@@ -618,16 +935,79 @@
     </section>
 
     <!-- ==========================================
-         お悩みセクション (こんなお悩みありませんか？)
+         豪華3大特典セクション
          ========================================== -->
-    <section class="section-padding section-bg-light">
+    <section class="section-padding section-bg-light" id="bonuses">
         <div class="container">
-            <div class="subhead-blue">
-                なぜ勉強や内観を重ねても、あなたの現実は<mark>1ミリも変わらない</mark>のか？
+            <div class="bonus-header">
+                <h2>🎁 公式メルマガに登録するだけで今すぐ手に入る<br><span class="highlight">豪華3大プレミアム特典</span></h2>
+                <p>認知の檻から脱獄し、人生の主導権を100%取り戻すための特別パッケージ</p>
             </div>
-            <div class="subhead-intro">
-                実は、あなたが悪いのではありません。<br>
-                脳の広域アクティベーションシステム（RAS）が、社会的洗脳によって<strong>「他人の基準」</strong>で自動活性化し、<br>
+            
+            <div class="bonus-cards-grid">
+                <!-- 特典1 -->
+                <div class="bonus-grid-card">
+                    <div class="bonus-badge">特典 1</div>
+                    <div class="bonus-type">【3ステップ動画講義・計約60分】</div>
+                    <h3 class="bonus-card-title">「人生大逆転」書き換え入り口セット</h3>
+                    <p class="bonus-card-desc">〜人生の決定権を取り戻し好転させる動画講義〜</p>
+                    <ul class="bonus-card-bullets">
+                        <li><strong>【意志の力の限界】</strong> なぜ意志の力だけで自分を変えようとすると100%挫折するのか？スマホのバッテリーと同じ性質を持つ「前頭前野の常識」と生存戦略の真実。</li>
+                        <li><strong>【ホメオスタシスの壁】</strong> 変化しようとした瞬間に「急激な眠気」や「先延ばし」を引き起こす、脳の強力な防衛プログラムを味方につける極意。</li>
+                        <li><strong>【社会的洗脳のバグ】</strong> 自分の本当の願望やチャンスを無意識がゴミ箱に捨ててしまう脳の情報フィルター「RAS」のバグを解消する方法。</li>
+                    </ul>
+                </div>
+
+                <!-- 特典2 -->
+                <div class="bonus-grid-card">
+                    <div class="bonus-badge">特典 2</div>
+                    <div class="bonus-type">【毎日届く音声講義・7日間】</div>
+                    <h3 class="bonus-card-title">「執着手放し」7日間音声講義メソッド</h3>
+              <!-- ==========================================
+         学べることセクション
+         ========================================== -->
+    <section class="section-padding learn-section" style="background-image: linear-gradient(135deg, rgba(245, 243, 255, 0.96) 0%, rgba(237, 233, 254, 0.96) 100%);">
+        <div class="container">
+            <div class="learn-card">
+                <div class="learn-title">
+                    あなたが今回の特別セミナーで脳にインストールする<br><mark>「行動と変容のサイエンス」</mark>
+                </div>
+
+                <ul class="learn-list">
+                    <li><strong>【真実／罠】</strong> 真面目に勉強や内観を繰り返す人ほど「過去の檻」に閉じ込められる驚愕の真実と、自己分析が逆効果になる決定的な罠とは？</li>
+                    <li><strong>【絶対にやってはいけない／秘密】</strong> アファメーションを唱えるほど現実が現状維持される？脳科学が証明する、99%の人が陥る「マントラ回避の法則」と絶対にやってはいけない3つの間違い。</li>
+                    <li><strong>【ステップ／簡単】</strong> 他人の目や世間の常識を1秒でスルー！我慢ゼロで自分のゴールだけを追い求めるための「次世代マインドOS書き換え3ステップ」。</li>
+                    <li><strong>【唯一の要素／オートパイロット】</strong> have to（我慢）を1ミリも使わずに、無意識があなたの目標へ勝手に走り出すオートパイロット状態を作るための「唯一の脳ハック技術」。</li>
+                    <li><strong>【本質／違い】</strong> どれだけ努力しても空回りする人と、引き算するだけで自動的に人生好転する人の決定的な違い。社会的洗脳の全貌とその解読ロードマップ。</li>
+                    <li><strong>【盲点／裏技】</strong> 優秀な人ほど見落としている！脳のフィルター（RAS）をハックして、目の前にある「スコトーマ（心理的盲点）」を一瞬でこじ開ける禁断の裏技。</li>
+                    <li><strong>【ステップ／極意】</strong> 他人の基準をキレイさっぱり洗い流し、自分軸で軽やかに圧倒的成果を叩き出すための最短ルート設計図。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         セカンドCTAセクション
+         ========================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-subhead">社会的洗脳の引き算から始める</div>
+                <div class="cta-title">
+                    我慢や無理な努力を手放し、脳のメモリを全解放する<br><mark>『マインドOS・リブート無料セミナー』</mark>
+                </div>
+                
+                <div class="form-guide-text">※メールアドレスを入力してボタンを押すと、すぐにXserverメーリングリストシステムより自動返信メールで、3大特典およびWEBセミナー動画の専用視聴URLをお届けします。</div>
+
+                <form name="ml_form_only_in_2" id="ml_form_only_in_2" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
+                    <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
+                    <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_2', '登録する');">
+                        <i class="fa-solid fa-circle-right"></i>
+                        <span>👉 無料で3大特典を今すぐ受け取る（1分で完了）</span>
+                    </button>
+                    <input type="hidden" name="sb_reg" value="" />
+                    <input type="hidden" name="identity" value="ua&8X*Qy" />
+                </form>��（RAS）が、社会的洗脳によって<strong>「他人の基準」</strong>で自動活性化し、<br>
                 本来の want to やチャンスを完全にシャットダウン（盲点化）しているからです。<br>
                 この脳のバグを引き算しない限り、どれだけ努力しても現状維持のブレーキ（ホメオスタシス）が作動し続けます。
             </div>
