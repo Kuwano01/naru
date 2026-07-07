@@ -571,14 +571,28 @@
                 background-attachment: scroll; /* モバイル端末での表示バグ・負荷防止のため固定を解除 */
             }
 
-            /* 特典セクションのレスポンシブ化 */
+            /* 特典セクションのレスポンシブ化（横スクロールスライダー化で縦長化を防止） */
             .bonus-cards-grid {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 25px;
+                display: flex !important;
+                flex-wrap: nowrap !important; /* 横並びを強制 */
+                overflow-x: auto !important; /* 横スクロールを有効化 */
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                gap: 20px;
+                padding: 20px 10px;
+                margin-top: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .bonus-cards-grid::-webkit-scrollbar {
+                display: none; /* スクロールバーを非表示にして美観を保つ */
             }
             .bonus-grid-card {
+                flex: 0 0 85% !important; /* 縮むのを防止 */
+                width: 85% !important;
+                min-width: 85% !important; /* スマホサイズで確実に85%の幅を確保 */
+                scroll-snap-align: center;
                 padding: 25px 20px;
+                box-sizing: border-box;
             }
             .tokusho-table th, .tokusho-table td {
                 display: block;
@@ -587,56 +601,15 @@
             .tokusho-table th {
                 border-bottom: none;
             }
-        }
-
-        /* --- 新規追加：メインキャッチコピーヘッダー --- */
-        .header-catch {
-            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-            color: #ffffff;
-            text-align: center;
-            padding: 50px 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            border-bottom: 4px solid var(--primary-color);
-        }
-
-        .catch-badge {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--bg-dark-blue);
-            font-weight: 900;
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 1.05rem;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(234, 187, 32, 0.3);
-            letter-spacing: 1px;
-        }
-
-        .catch-main {
-            font-size: 2.2rem;
-            font-weight: 900;
-            line-height: 1.4;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .catch-sub {
-            font-size: 1.35rem;
-            font-weight: 700;
-            line-height: 1.5;
-            color: #f3f4f6;
-            max-width: 800px;
-            margin: 0 auto 25px auto;
-        }
-
-        .catch-lead {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #cbd5e1;
-            max-width: 750px;
-            margin: 0 auto;
+            /* スマホで横スワイプできることを示すインジケーター */
+            .bonus-swipe-hint {
+                display: block !important;
+                text-align: center;
+                font-size: 0.8rem;
+                color: var(--text-sub);
+                margin-top: 10px;
+                font-weight: 700;
+            }
         }
 
         /* --- 新規追加：3大特典セクション --- */
@@ -717,6 +690,7 @@
             color: var(--primary-color);
             margin-bottom: 8px;
             margin-top: 5px;
+            letter-spacing: 0.5px;
         }
 
         .bonus-card-title {
@@ -763,6 +737,10 @@
             color: var(--primary-color);
             font-weight: 900;
             font-size: 0.85rem;
+        }
+
+        .bonus-swipe-hint {
+            display: none;
         }
 
         /* --- 新規追加：フォーム案内文 --- */
@@ -852,46 +830,9 @@
             margin-bottom: 0;
         }
 
-        .tokusho-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-        }
-
-        .tokusho-table th, .tokusho-table td {
-            border: 1px solid #e2e8f0;
-            padding: 12px 18px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .tokusho-table th {
-            background-color: #f8fafc;
-            color: var(--text-main);
-            font-weight: 700;
-            width: 25%;
-            text-align: left;
-        }
-
-        .tokusho-table td {
-            color: #334155;
-        }
-
     </style>
 </head>
 <body>
-
-    <!-- ==========================================
-         ヘッダーキャッチコピー（HTMLテキスト）
-         ========================================== -->
-    <div class="header-catch">
-        <div class="container">
-            <div class="catch-badge">【完全無料・今すぐ視聴可能】</div>
-            <h1 class="catch-main">「毎日一生懸命がんばっているのに、なぜ現実は1mmも変わらないのか？」</h1>
-            <h2 class="catch-sub">脳を縛る「他人の正しさ」を引き算するだけで、努力・根性一切不要で人生が自動的に好転し始める！</h2>
-            <p class="catch-lead">他人の目や世間の常識（社会的洗脳）を手放し、我慢ゼロで自分のゴールを追求する認知科学の技術。登録後、すぐに自動返信メールでWEBセミナー動画をお届けします。</p>
-        </div>
-    </div>
 
     <!-- ==========================================
          ファーストビュー (メイン画像)
@@ -911,7 +852,7 @@
                     我慢や無理な努力を手放し、脳のメモリを全解放する<br><mark>『マインドOS・リブート無料セミナー』</mark>
                 </div>
                 
-                <div class="form-guide-text">※メールアドレスを入力してボタンを押すと、すぐに自動返信メールで、3大特典およびWEBセミナー動画の専用視聴URLをお届けします。</div>
+                <div class="form-guide-text">※登録完了後、すぐに自動返信メールで3大特典およびWEBセミナー動画の専用視聴URLをお届けします。</div>
 
                 <form name="ml_form_only_in_1" id="ml_form_only_in_1" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
                     <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
@@ -943,43 +884,44 @@
             <div class="bonus-header">
                 <h2>🎁 公式メルマガに登録するだけで今すぐ手に入る<br><span class="highlight">豪華3大プレミアム特典</span></h2>
                 <p>認知の檻から脱獄し、人生の主導権を100%取り戻すための特別パッケージ</p>
+                <div class="bonus-swipe-hint">👈 横にスクロールしてご覧いただけます 👉</div>
             </div>
             
             <div class="bonus-cards-grid">
                 <!-- 特典1 -->
                 <div class="bonus-grid-card">
                     <div class="bonus-badge">特典 1</div>
-                    <div class="bonus-type">【3ステップ動画講義・計約60分】</div>
+                    <div class="bonus-type">動画講義</div>
                     <h3 class="bonus-card-title">「人生大逆転」書き換え入り口セット</h3>
                     <p class="bonus-card-desc">〜人生の決定権を取り戻し好転させる動画講義〜</p>
                     <ul class="bonus-card-bullets">
-                        <li><strong>【意志の力の限界】</strong> なぜ意志の力だけで自分を変えようとすると100%挫折するのか？スマホのバッテリーと同じ性質を持つ「前頭前野の常識」と生存戦略の真実。</li>
-                        <li><strong>【ホメオスタシスの壁】</strong> 変化しようとした瞬間に「急激な眠気」や「先延ばし」を引き起こす、脳の強力な防衛プログラムを味方につける極意。</li>
-                        <li><strong>【社会的洗脳のバグ】</strong> 自分の本当の願望やチャンスを無意識がゴミ箱に捨ててしまう脳の情報フィルター「RAS」のバグを解消する方法。</li>
+                        <li>意志の力で自分を変えようとすると100%挫折する「前頭前野の許容量」の真実</li>
+                        <li>変わろうとした瞬間に「強烈な眠気」を引き起こす脳の防衛システム（ホメオスタシス）</li>
+                        <li>自分の本当の望みやチャンスをゴミ箱に捨てる脳のフィルター（RAS）のバグ解消法</li>
                     </ul>
                 </div>
 
                 <!-- 特典2 -->
                 <div class="bonus-grid-card">
                     <div class="bonus-badge">特典 2</div>
-                    <div class="bonus-type">【毎日届く音声講義・7日間】</div>
-                    <h3 class="bonus-card-title">「執着手放し」7日間音声講義メソッド</h3>
+                    <div class="bonus-type">音声講義</div>
+                    <h3 class="bonus-card-title">「執着手放し」音声講義メソッド</h3>
                     <p class="bonus-card-desc">〜人生が勝手に好転し始めた人が実践したワーク〜</p>
                     <ul class="bonus-card-bullets">
-                        <li><strong>【Day 1：診断】</strong> あなたの脳内システムがどれだけ「正しさ信仰」にハッキングされ、他人の基準に支配されているかを暴く5つの自己診断テスト。</li>
-                        <li><strong>【Day 2：人間関係】</strong> 「他人に嫌われてはならない」という執着を脳から切り離し、他人の顔色を一切伺わずに自分の want to を貫く【他者フィルター切断ワーク】。</li>
-                        <li><strong>【Day 3〜6：お金・仕事・成功】</strong> お金へのブロック、我慢して働くhave to、自己成長の呪縛を引き算し、脳のメモリを解放するアプローチ。</li>
+                        <li>あなたの脳内システムがどれだけ「正しさ」に支配されているかを暴く5つの診断テスト</li>
+                        <li>「嫌われたくない」という執着を脳から切り離し、want toを貫く「他者フィルター切断ワーク」</li>
+                        <li>お金へのブロック、我慢して働くhave to、自己成長の呪縛を引き算し脳のメモリを解放する手順</li>
                     </ul>
                 </div>
 
                 <!-- 特典3 -->
                 <div class="bonus-grid-card">
                     <div class="bonus-badge">特典 3</div>
-                    <div class="bonus-type">【特別極秘テキスト・約20ページ】</div>
+                    <div class="bonus-type">特別極秘レポート</div>
                     <h3 class="bonus-card-title">脱「正しさ」信仰の核心 特別レポート</h3>
                     <p class="bonus-card-desc">〜自己理解ブームの盲点をロジカルに解き明かす〜</p>
                     <ul class="bonus-card-bullets">
-                        <li><strong>【自己理解の罠】</strong> 世間の「自己理解・内観ブーム」がなぜあなたの人生を狭い檻に閉じ込め、最大の機会損失（他力とチャンスの拒絶）を生み出してしまうのか、その認知科学的なカラクリ。</li>
+                        <li>世間の「自己理解・内観ブーム」がなぜあなたの人生を狭い檻に閉じ込め、最大の機会損失（他力とチャンスの拒絶）を生み出してしまうのか</li>
                     </ul>
                 </div>
             </div>
@@ -1028,13 +970,13 @@
                 </div>
 
                 <ul class="learn-list">
-                    <li><strong>【真実／罠】</strong> 真面目に勉強や内観を繰り返す人ほど「過去の檻」に閉じ込められる驚愕の真実と、自己分析が逆効果になる決定的な罠とは？</li>
-                    <li><strong>【絶対にやってはいけない／秘密】</strong> アファメーションを唱えるほど現実が現状維持される？脳科学が証明する、99%の人が陥る「マントラ回避の法則」と絶対にやってはいけない3つの間違い。</li>
-                    <li><strong>【ステップ／簡単】</strong> 他人の目や世間の常識を1秒でスルー！我慢ゼロで自分のゴールだけを追い求めるための「次世代マインドOS書き換え3ステップ」。</li>
-                    <li><strong>【唯一の要素／オートパイロット】</strong> have to（我慢）を1ミリも使わずに、無意識があなたの目標へ勝手に走り出すオートパイロット状態を作るための「唯一の脳ハック技術」。</li>
-                    <li><strong>【本質／違い】</strong> どれだけ努力しても空回りする人と、引き算するだけで自動的に人生好転する人の決定的な違い。社会的洗脳の全貌とその解読ロードマップ。</li>
-                    <li><strong>【盲点／裏技】</strong> 優秀な人ほど見落としている！脳のフィルター（RAS）をハックして、目の前にある「スコトーマ（心理的盲点）」を一瞬でこじ開ける禁断の裏技。</li>
-                    <li><strong>【ステップ／極意】</strong> 他人の基準をキレイさっぱり洗い流し、自分軸で軽やかに圧倒的成果を叩き出すための最短ルート設計図。</li>
+                    <li>なぜ真面目に内観を繰り返すほど、「過去の基準」に縛られて現実が変わらなくなるのか（<mark>内観の罠</mark>）</li>
+                    <li>アファメーションを唱えるほど逆効果になる脳の現状維持システムと「マントラ回避の法則」</li>
+                    <li>他人の目や他者基準をスルーし、我慢ゼロで自分のゴールを追求するための「<mark>脳のOS書き換え法</mark>」</li>
+                    <li>意識の力（have to）を1ミリもすり減らさず、無意識がゴールへ勝手に向かう<span class="text-danger">オートパイロット技術</span></li>
+                    <li><mark>社会的洗脳</mark>の正体をロジカルに解明し、自分の潜在的な可能性を解放する認知科学のアプローチ</li>
+                    <li>脳のフィルター（RAS）を再設定し、今まで見落としていたチャンスや盲点（<span class="text-danger">スコトーマ</span>）を外す仕組み</li>
+                    <li>他人の基準を完全に引き算し、<mark>自分軸で軽やかに、かつ圧倒的に成果を出していく</mark>ための思考ステップ</li>
                 </ul>
             </div>
         </div>
@@ -1051,7 +993,7 @@
                     我慢や無理な努力を手放し、脳のメモリを全解放する<br><mark>『マインドOS・リブート無料セミナー』</mark>
                 </div>
                 
-                <div class="form-guide-text">※メールアドレスを入力してボタンを押すと、すぐに自動返信メールで、3大特典およびWEBセミナー動画の専用視聴URLをお届けします。</div>
+                <div class="form-guide-text">※登録完了後、すぐに自動返信メールで3大特典およびWEBセミナー動画の専用視聴URLをお届けします。</div>
 
                 <form name="ml_form_only_in_2" id="ml_form_only_in_2" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
                     <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
@@ -1105,7 +1047,7 @@
     </section>
 
     <!-- ==========================================
-         規約アコーディオンセクション
+         規約アコーディオンセクション（特商法は除外し、プライバシーポリシーのみ実装）
          ========================================== -->
     <section class="terms-section" id="terms-section">
         <div class="container">
@@ -1119,45 +1061,6 @@
                     <p>法令に基づく場合を除き、第三者に開示・提供することはなく、個人情報保護法に基づき厳重に管理・保護いたします。配信解除はメール最下部からいつでも1クリックで可能です。</p>
                 </div>
             </div>
-
-            <div class="accordion-item">
-                <button class="accordion-trigger" onclick="toggleAccordion('tokushoho')">
-                    <span>⚖️ 特定商取引法に基づく表記</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="accordion-content" id="tokushoho">
-                    <table class="tokusho-table">
-                        <tr>
-                            <th>事業者名</th>
-                            <td>他力覚醒コーチ NARU</td>
-                        </tr>
-                        <tr>
-                            <th>提供サービス</th>
-                            <td>インターネットを通じた動画セミナーの配信、およびマインドコーチングサービスの提供</td>
-                        </tr>
-                        <tr>
-                            <th>販売価格</th>
-                            <td>本ページでご案内しているWEBセミナーおよび特典はすべて「完全無料」です。有料サービス（個別体験コーチングや継続プログラムなど）のご案内をする場合がありますが、お申込みは任意であり、強制的にお支払いを要求することや自動移行することは一切ございません。有料サービスをお申込みいただく場合の料金は、個別のお見積り提示、または契約書面に明記します。</td>
-                        </tr>
-                        <tr>
-                            <th>代金の支払方法・時期</th>
-                            <td>無料サービスのため不要（有料プログラム利用時は銀行振込またはクレジットカード決済にて、お申込み後または指定期日までにお支払いいただきます）</td>
-                        </tr>
-                        <tr>
-                            <th>引渡時期</th>
-                            <td>メール登録後、自動返信にて即時にセミナー視聴用URLおよび特典動画を送信いたします。</td>
-                        </tr>
-                        <tr>
-                            <th>返品・キャンセルについて</th>
-                            <td>デジタルコンテンツおよびサービスの性質上、メール配信解除はいつでも可能です。有料契約に関しては、契約書面等に定める規約に準じます。</td>
-                        </tr>
-                        <tr>
-                            <th>お問い合わせ</th>
-                            <td>公式LINEアカウント内、またはご案内メールの返信にて随時受け付けております。</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1169,7 +1072,6 @@
             <div class="footer-copyright">©NARU. All Rights Reserved.</div>
             <ul class="footer-links">
                 <li><a href="#privacy-policy">プライバシーポリシー</a></li>
-                <li><a href="#tokushoho">特定商取引法に基づく表記</a></li>
             </ul>
         </div>
     </footer>
@@ -1186,7 +1088,8 @@
             content.style.paddingBottom = "0";
             icon.style.transform = "rotate(0deg)";
         } else {
-            content.style.maxHeight = content.scrollHeight + "px";
+            // paddingの合計(30px) + 余裕を持たせた高さで計算し、スクロールカットオフを完全に防ぐ
+            content.style.maxHeight = (content.scrollHeight + 40) + "px";
             content.style.paddingTop = "15px";
             content.style.paddingBottom = "15px";
             icon.style.transform = "rotate(180deg)";
