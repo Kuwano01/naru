@@ -570,265 +570,8 @@
             .learn-section {
                 background-attachment: scroll; /* モバイル端末での表示バグ・負荷防止のため固定を解除 */
             }
-
-            /* 特典セクションのレスポンシブ化（横スクロールスライダー化で縦長化を防止） */
-            .bonus-cards-grid {
-                display: flex !important;
-                flex-wrap: nowrap !important; /* 横並びを強制 */
-                overflow-x: auto !important; /* 横スクロールを有効化 */
-                scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
-                gap: 20px;
-                padding: 20px 10px;
-                margin-top: 10px;
-                -webkit-overflow-scrolling: touch;
-            }
-            .bonus-cards-grid::-webkit-scrollbar {
-                display: none; /* スクロールバーを非表示にして美観を保つ */
-            }
-            .bonus-grid-card {
-                flex: 0 0 85% !important; /* 縮むのを防止 */
-                width: 85% !important;
-                min-width: 85% !important; /* スマホサイズで確実に85%の幅を確保 */
-                scroll-snap-align: center;
-                padding: 25px 20px;
-                box-sizing: border-box;
-            }
-            .tokusho-table th, .tokusho-table td {
-                display: block;
-                width: 100%;
-            }
-            .tokusho-table th {
-                border-bottom: none;
-            }
-            /* スマホで横スワイプできることを示すインジケーター */
-            .bonus-swipe-hint {
-                display: block !important;
-                text-align: center;
-                font-size: 0.8rem;
-                color: var(--text-sub);
-                margin-top: 10px;
-                font-weight: 700;
-            }
         }
 
-        /* --- 新規追加：3大特典セクション --- */
-        .bonus-header {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .bonus-header h2 {
-            font-size: 2rem;
-            font-weight: 900;
-            line-height: 1.4;
-            color: var(--text-main);
-            margin-bottom: 15px;
-        }
-
-        .bonus-header h2 .highlight {
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-        }
-
-        .bonus-header h2 .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-
-        .bonus-header p {
-            font-size: 1.15rem;
-            color: var(--text-sub);
-            font-weight: 500;
-        }
-
-        .bonus-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .bonus-grid-card {
-            background-color: #ffffff;
-            border-radius: 20px;
-            padding: 35px 25px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03), 0 0 0 1px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .bonus-grid-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(79, 70, 229, 0.08), 0 0 0 1px rgba(79, 70, 229, 0.15);
-        }
-
-        .bonus-badge {
-            position: absolute;
-            top: -15px;
-            left: 25px;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: #ffffff;
-            font-weight: 900;
-            font-size: 0.95rem;
-            padding: 5px 18px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
-        }
-
-        .bonus-type {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            margin-top: 5px;
-            letter-spacing: 0.5px;
-        }
-
-        .bonus-card-title {
-            font-size: 1.35rem;
-            font-weight: 900;
-            color: var(--text-main);
-            line-height: 1.3;
-            margin-bottom: 5px;
-        }
-
-        .bonus-card-desc {
-            font-size: 0.9rem;
-            color: var(--text-sub);
-            font-weight: 600;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 15px;
-        }
-
-        .bonus-card-bullets {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .bonus-card-bullets li {
-            position: relative;
-            padding-left: 20px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #334155;
-            margin-bottom: 12px;
-        }
-
-        .bonus-card-bullets li:last-child {
-            margin-bottom: 0;
-        }
-
-        .bonus-card-bullets li::before {
-            content: '✔';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--primary-color);
-            font-weight: 900;
-            font-size: 0.85rem;
-        }
-
-        .bonus-swipe-hint {
-            display: none;
-        }
-
-        /* --- 新規追加：フォーム案内文 --- */
-        .form-guide-text {
-            font-size: 0.9rem;
-            color: #475569;
-            font-weight: 700;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            background-color: #f8fafc;
-            border-left: 4px solid var(--primary-color);
-            padding: 8px 15px;
-            border-radius: 0 8px 8px 0;
-            text-align: left;
-            width: 100%;
-            max-width: 550px;
-            box-sizing: border-box;
-        }
-
-        /* --- 新規追加：アコーディオン規約 --- */
-        .terms-section {
-            background-color: #f8fafc;
-            padding: 40px 0;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .accordion-item {
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .accordion-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .accordion-trigger {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 25px;
-            background: none;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            text-align: left;
-            font-family: var(--font-gothic);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-main);
-            transition: background-color 0.2s ease;
-        }
-
-        .accordion-trigger:hover {
-            background-color: #f8fafc;
-        }
-
-        .accordion-trigger i {
-            font-size: 1rem;
-            color: var(--text-sub);
-            transition: transform 0.3s ease;
-        }
-
-        .accordion-content {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease-in-out;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: #334155;
-            border-top: 0 solid #f1f5f9;
-        }
-
-        .accordion-content p {
-            margin-bottom: 12px;
-        }
-
-        .accordion-content p:last-child {
-            margin-bottom: 0;
-        }
 
     </style>
 </head>
@@ -849,16 +592,14 @@
             <div class="cta-card">
                 <div class="cta-subhead">社会的洗脳の引き算から始める</div>
                 <div class="cta-title">
-                    我慢や無理な努力を手放し、脳のメモリを全解放する<br><mark>『マインドOS・リブート無料セミナー』</mark>
+                    努力と根性の精神論をすべて引き算し、脳のOSを書き換える<br><mark>『マインドOS・リブート無料セミナー』</mark>
                 </div>
                 
-                <div class="form-guide-text">※登録完了後、すぐに自動返信メールで3大特典およびWEBセミナー動画の専用視聴URLをお届けします。</div>
-
                 <form name="ml_form_only_in_1" id="ml_form_only_in_1" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
                     <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
                     <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_1', '登録する');">
                         <i class="fa-solid fa-circle-right"></i>
-                        <span>👉 無料で3大特典を今すぐ受け取る（1分で完了）</span>
+                        <span>👉 努力ゼロのまま無意識が勝手に動き出す！<br>「オートパイロット自動操縦マインド」を今すぐ無料で手に入れる</span>
                     </button>
                     <input type="hidden" name="sb_reg" value="" />
                     <input type="hidden" name="identity" value="ua&8X*Qy" />
@@ -877,83 +618,29 @@
     </section>
 
     <!-- ==========================================
-         豪華3大特典セクション
-         ========================================== -->
-    <section class="section-padding section-bg-light" id="bonuses">
-        <div class="container">
-            <div class="bonus-header">
-                <h2>🎁 公式メルマガに登録するだけで今すぐ手に入る<br><span class="highlight">豪華3大プレミアム特典</span></h2>
-                <p>認知の檻から脱獄し、人生の主導権を100%取り戻すための特別パッケージ</p>
-                <div class="bonus-swipe-hint">👈 横にスクロールしてご覧いただけます 👉</div>
-            </div>
-            
-            <div class="bonus-cards-grid">
-                <!-- 特典1 -->
-                <div class="bonus-grid-card">
-                    <div class="bonus-badge">特典 1</div>
-                    <div class="bonus-type">動画講義</div>
-                    <h3 class="bonus-card-title">「人生大逆転」書き換え入り口セット</h3>
-                    <p class="bonus-card-desc">〜人生の決定権を取り戻し好転させる動画講義〜</p>
-                    <ul class="bonus-card-bullets">
-                        <li>意志の力で自分を変えようとすると100%挫折する「前頭前野の許容量」の真実</li>
-                        <li>変わろうとした瞬間に「強烈な眠気」を引き起こす脳の防衛システム（ホメオスタシス）</li>
-                        <li>自分の本当の望みやチャンスをゴミ箱に捨てる脳のフィルター（RAS）のバグ解消法</li>
-                    </ul>
-                </div>
-
-                <!-- 特典2 -->
-                <div class="bonus-grid-card">
-                    <div class="bonus-badge">特典 2</div>
-                    <div class="bonus-type">音声講義</div>
-                    <h3 class="bonus-card-title">「執着手放し」音声講義メソッド</h3>
-                    <p class="bonus-card-desc">〜人生が勝手に好転し始めた人が実践したワーク〜</p>
-                    <ul class="bonus-card-bullets">
-                        <li>あなたの脳内システムがどれだけ「正しさ」に支配されているかを暴く5つの診断テスト</li>
-                        <li>「嫌われたくない」という執着を脳から切り離し、want toを貫く「他者フィルター切断ワーク」</li>
-                        <li>お金へのブロック、我慢して働くhave to、自己成長の呪縛を引き算し脳のメモリを解放する手順</li>
-                    </ul>
-                </div>
-
-                <!-- 特典3 -->
-                <div class="bonus-grid-card">
-                    <div class="bonus-badge">特典 3</div>
-                    <div class="bonus-type">特別極秘レポート</div>
-                    <h3 class="bonus-card-title">脱「正しさ」信仰の核心 特別レポート</h3>
-                    <p class="bonus-card-desc">〜自己理解ブームの盲点をロジカルに解き明かす〜</p>
-                    <ul class="bonus-card-bullets">
-                        <li>世間の「自己理解・内観ブーム」がなぜあなたの人生を狭い檻に閉じ込め、最大の機会損失（他力とチャンスの拒絶）を生み出してしまうのか</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
          お悩みセクション (こんなお悩みありませんか？)
          ========================================== -->
     <section class="section-padding section-bg-light">
         <div class="container">
             <div class="subhead-blue">
-                なぜ勉強や内観を重ねても、あなたの現実は<mark>1ミリも変わらない</mark>のか？
+                「どれだけ勉強や内観を重ねても、現実は<mark>1ミリも変わらない</mark>」そう嘆くのは、今日で終わりにしませんか？
             </div>
             <div class="subhead-intro">
-                実は、あなたが悪いのではありません。<br>
-                脳の広域アクティベーションシステム（RAS）が、社会的洗脳によって<strong>「他人の基準」</strong>で自動活性化し、<br>
-                本来の want to やチャンスを完全にシャットダウン（盲点化）しているからです。<br>
+                実は、あなたの意志が弱いのでも、努力が足りないのでもありません。<br>
+                脳のフィルター（RAS）が、社会的洗脳によって<strong>「他人の基準」</strong>でバグを起こし、<br>
+                本来の want to やチャンスを完全に遮断（スコトーマ化）しているからです。<br>
                 この脳のバグを引き算しない限り、どれだけ努力しても現状維持のブレーキ（ホメオスタシス）が作動し続けます。
             </div>
 
             <div class="checklist-wrapper">
                 <ul class="checklist-list">
-                    <li>真面目に勉強や内観をどれだけ重ねても、<mark>現実が何ひとつ変わらない</mark></li>
-                    <li>自己啓発やコーチングに多額の自己投資をしてきたが、<span class="text-danger">資金もエネルギーも空回り</span>している</li>
-                    <li><span class="text-danger">他人の目や周囲の評価</span>が気になり、自分の本音ややりたいことを抑え込んでしまう</li>
-                    <li>社会の常識や「こうあるべき」というルール（<mark>社会的洗脳</mark>）に縛られて生きづらさを感じる</li>
-                    <li>意志の力を振り絞って無理に行動しようとするが、すぐにすり減って<span class="text-danger">ガス欠</span>を起こしてしまう</li>
-                    <li>「自分軸」で生きたいと願っているのに、気づくと<mark>他人の基準</mark>で意思決定をしている</li>
-                    <li>現状を本質的に変えたいという強い焦りはあるが、<span class="text-danger">具体的にどう動けばいいのかわからない</span></li>
-                    <li>自分の本当のゴール（やりたいこと）が見えず、手探りで<span class="text-danger">良い兆しが全く見えていない</span></li>
-                    <li>頑張っているのに報われない感覚があり、毎日が曇り空の中にいるような<mark>停滞感</mark>のある日々を送っている</li>
+                    <li>どれだけ一生懸命に勉強・自己投資を重ねても、なぜか簡単に現実を変えてしまう人と、1ミリも現状が変わらない人の決定的な<mark>「3つの違い」</mark>とは？</li>
+                    <li>真面目にノートを書き、自分と向き合う（内観する）人ほど、知らず知らずのうちに陥ってしまう「学習のパラドックス」と、脳のブレーキを自ら踏み込んでしまう<span class="text-danger">意外な盲点</span></li>
+                    <li>自己啓発やコーチングに100万円以上投資した結果、知識ばかりが詰め込まれて脳がフリーズしてしまう、セミナージプシーの<span class="text-danger">「絶対にやってはいけない3つの間違い」</span></li>
+                    <li>なぜ「自分軸で生きたい」と強く願っている人ほど、決断の瞬間に親の顔色や「社会の正解」という<mark>他人の基準</mark>を選んでしまうのか？ その隠された理由</li>
+                    <li>やる気や意志の力で行動しようとするのを即座にやめてください。脳をすり減らさず、無駄なエネルギー漏電を完全にストップさせる<span class="text-danger">「セルフトーク排除」の秘密</span></li>
+                    <li>現状を変えたい強い焦りはあるのに、身近なドリームキラーや過去の思考パターンに引き戻されてしまう人に共通する<mark>「ホメオスタシス（現状維持）」の盲点</mark></li>
+                    <li>毎日が曇り空のような停滞感に包まれているあなたが、他力とチャンスを自然と引き寄せるために、まず「あるタイミング」で捨てるべき<span class="text-danger">”たった1つの不要な価値観”</span>とは？</li>
                 </ul>
             </div>
         </div>
@@ -966,17 +653,17 @@
         <div class="container">
             <div class="learn-card">
                 <div class="learn-title">
-                    あなたが今回の特別セミナーで脳にインストールする<br><mark>「行動と変容のサイエンス」</mark>
+                    本気で人生のOSを書き換えたいあなたへ。<br>この特別セミナーで脳にインストールする<br><mark>「行動と変容のサイエンス」</mark>
                 </div>
 
                 <ul class="learn-list">
-                    <li>なぜ真面目に内観を繰り返すほど、「過去の基準」に縛られて現実が変わらなくなるのか（<mark>内観の罠</mark>）</li>
-                    <li>アファメーションを唱えるほど逆効果になる脳の現状維持システムと「マントラ回避の法則」</li>
-                    <li>他人の目や他者基準をスルーし、我慢ゼロで自分のゴールを追求するための「<mark>脳のOS書き換え法</mark>」</li>
-                    <li>意識の力（have to）を1ミリもすり減らさず、無意識がゴールへ勝手に向かう<span class="text-danger">オートパイロット技術</span></li>
-                    <li><mark>社会的洗脳</mark>の正体をロジカルに解明し、自分の潜在的な可能性を解放する認知科学のアプローチ</li>
-                    <li>脳のフィルター（RAS）を再設定し、今まで見落としていたチャンスや盲点（<span class="text-danger">スコトーマ</span>）を外す仕組み</li>
-                    <li>他人の基準を完全に引き算し、<mark>自分軸で軽やかに、かつ圧倒的に成果を出していく</mark>ための思考ステップ</li>
+                    <li><strong>【内観の罠 × 真相】</strong>真面目に自分と向き合う人ほど抜け出せなくなる「内観のブーメラン効果」と、脳のブレーキを二重に踏み込む認知科学的な罠の正体</li>
+                    <li><strong>【盲点 × 法則】</strong>唱えるほど逆効果！ポジティブなアファメーションが、脳の現状維持システムを強制起動させてしまう「マントラ回避の法則」</li>
+                    <li><strong>【設計図 × 解決】</strong>他人の目や世間の評価を完全ノイズキャンセリングし、我慢ゼロで自分のwant toだけに熱狂する「脳のOS書き換え設計図」</li>
+                    <li><strong>【自動操縦 × 秘密】</strong>義務感や焦り（have to）を1ミリもすり減らさず、呼吸をするように無意識がゴールへ勝手に向かう「オートパイロット自動操縦技術」の秘密</li>
+                    <li><strong>【全貌 × 本質】</strong>親・教育・メディアが植え付けた「都合の良い良い人洗脳」をデコード（解読）し、本来の爆発的なポテンシャルを強制覚醒させる全貌</li>
+                    <li><strong>【極意 × 盲点】</strong>脳のフィルター（RAS）を再設定し、今まであなたの目の前に隠されていた「人脈・資金・チャンス」を鮮やかに可視化するスコトーマ強制解除ハック</li>
+                    <li><strong>【ステップ × 未来】</strong>他人の基準を完全に引き算し、自分軸のwant toだけで軽やかに圧倒的な成果を出し続けるための超・実践思考ステップ</li>
                 </ul>
             </div>
         </div>
@@ -990,16 +677,14 @@
             <div class="cta-card">
                 <div class="cta-subhead">社会的洗脳の引き算から始める</div>
                 <div class="cta-title">
-                    我慢や無理な努力を手放し、脳のメモリを全解放する<br><mark>『マインドOS・リブート無料セミナー』</mark>
+                    努力と根性の精神論をすべて引き算し、脳のOSを書き換える<br><mark>『マインドOS・リブート無料セミナー』</mark>
                 </div>
                 
-                <div class="form-guide-text">※登録完了後、すぐに自動返信メールで3大特典およびWEBセミナー動画の専用視聴URLをお届けします。</div>
-
                 <form name="ml_form_only_in_2" id="ml_form_only_in_2" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
                     <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
                     <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_2', '登録する');">
                         <i class="fa-solid fa-circle-right"></i>
-                        <span>👉 無料で3大特典を今すぐ受け取る（1分で完了）</span>
+                        <span>👉 努力ゼロのまま無意識が勝手に動き出す！<br>「オートパイロット自動操縦マインド」を今すぐ無料で手に入れる</span>
                     </button>
                     <input type="hidden" name="sb_reg" value="" />
                     <input type="hidden" name="identity" value="ua&8X*Qy" />
@@ -1028,7 +713,7 @@
 
             <div class="profile-card">
                 <div class="profile-imgbox">
-                    <img src="naru_profile.png" alt="次世代他力覚醒コーチNARU" style="width: 100%; height: auto; border-radius: 12px; display: block;">
+                    <img src="datsusenno_profile.jpg" alt="次世代他力覚醒コーチNARU" style="width: 100%; height: auto; border-radius: 12px; display: block;">
                 </div>
 
                 <div class="profile-textbox">
@@ -1047,72 +732,17 @@
     </section>
 
     <!-- ==========================================
-         規約アコーディオンセクション（特商法は除外し、プライバシーポリシーのみ実装）
-         ========================================== -->
-    <section class="terms-section" id="terms-section">
-        <div class="container">
-            <div class="accordion-item">
-                <button class="accordion-trigger" onclick="toggleAccordion('privacy-policy')">
-                    <span>🔒 プライバシーポリシー</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="accordion-content" id="privacy-policy">
-                    <p>当方は、お預かりした個人情報（LINEアカウント情報、メールアドレス等）を、無料WEBセミナーの配信および個別セッションの日程調整・サービス提供の目的以外に利用することはございません。</p>
-                    <p>法令に基づく場合を除き、第三者に開示・提供することはなく、個人情報保護法に基づき厳重に管理・保護いたします。配信解除はメール最下部からいつでも1クリックで可能です。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
          フッター
          ========================================= -->
     <footer>
         <div class="container">
             <div class="footer-copyright">©NARU. All Rights Reserved.</div>
             <ul class="footer-links">
-                <li><a href="#privacy-policy">プライバシーポリシー</a></li>
+                <li><a href="#" target="_blank">プライバシーポリシー</a></li>
+                <li><a href="#" target="_blank">特定商取引法に基づく表記</a></li>
             </ul>
         </div>
     </footer>
-
-    <script>
-    function toggleAccordion(id) {
-        var content = document.getElementById(id);
-        var trigger = content.previousElementSibling;
-        var icon = trigger.querySelector('i');
-        
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-            content.style.paddingTop = "0";
-            content.style.paddingBottom = "0";
-            icon.style.transform = "rotate(0deg)";
-        } else {
-            // paddingの合計(30px) + 余裕を持たせた高さで計算し、スクロールカットオフを完全に防ぐ
-            content.style.maxHeight = (content.scrollHeight + 40) + "px";
-            content.style.paddingTop = "15px";
-            content.style.paddingBottom = "15px";
-            icon.style.transform = "rotate(180deg)";
-        }
-    }
-
-    document.querySelectorAll('.footer-links a').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            var href = this.getAttribute('href');
-            if (href === '#' || href === '') return;
-            
-            e.preventDefault();
-            var targetId = href.substring(1);
-            var accordionContent = document.getElementById(targetId);
-            if (accordionContent) {
-                if (!accordionContent.style.maxHeight) {
-                    toggleAccordion(targetId);
-                }
-                document.getElementById('terms-section').scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-    </script>
 
 </body>
 </html>
