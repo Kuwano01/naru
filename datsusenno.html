@@ -473,6 +473,148 @@
             font-weight: 700;
         }
 
+        /* --- 豪華3大特典セクションのスタイル --- */
+        .bonus-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .bonus-header h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.4;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .bonus-header h2 .highlight {
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .bonus-header h2 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .bonus-header p {
+            font-size: 1.15rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        .bonus-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .bonus-grid-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03), 0 0 0 1px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bonus-grid-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(79, 70, 229, 0.08), 0 0 0 1px rgba(79, 70, 229, 0.15);
+        }
+
+        .bonus-badge {
+            position: absolute;
+            top: -15px;
+            left: 25px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 0.95rem;
+            padding: 5px 18px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+        }
+
+        .bonus-type {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            margin-top: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .bonus-card-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .bonus-card-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 15px;
+        }
+
+        .bonus-card-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bonus-card-bullets li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .bonus-card-bullets li:last-child {
+            margin-bottom: 0;
+        }
+
+        .bonus-card-bullets li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 0.85rem;
+        }
+
+        .bonus-swipe-hint {
+            display: none;
+        }
+
+        .bonus-image-placeholder {
+            background: #f8fafc;
+            height: 160px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border: 1px dashed #e2e8f0;
+        }
+
         /* --- レスポンシブ対応 --- */
         @media (max-width: 768px) {
             :root {
@@ -570,6 +712,39 @@
             .learn-section {
                 background-attachment: scroll; /* モバイル端末での表示バグ・負荷防止のため固定を解除 */
             }
+
+            /* 特典セクションのレスポンシブ化（横スクロールスライダー化で縦長化を防止） */
+            .bonus-cards-grid {
+                display: flex !important;
+                flex-wrap: nowrap !important; /* 横並びを強制 */
+                overflow-x: auto !important; /* 横スクロールを有効化 */
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                gap: 20px;
+                padding: 20px 10px;
+                margin-top: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .bonus-cards-grid::-webkit-scrollbar {
+                display: none; /* スクロールバーを非表示にして美観を保つ */
+            }
+            .bonus-grid-card {
+                flex: 0 0 85% !important; /* 縮むのを防止 */
+                width: 85% !important;
+                min-width: 85% !important; /* スマホサイズで確実に85%の幅を確保 */
+                scroll-snap-align: center;
+                padding: 25px 20px;
+                box-sizing: border-box;
+            }
+            /* スマホで横スワイプできることを示すインジケーター */
+            .bonus-swipe-hint {
+                display: block !important;
+                text-align: center;
+                font-size: 0.8rem;
+                color: var(--text-sub);
+                margin-top: 10px;
+                font-weight: 700;
+            }
         }
 
 
@@ -618,6 +793,21 @@
     </section>
 
     <!-- ==========================================
+         ② 登録するだけでもらえる豪華3大プレゼントセクション
+         ========================================== -->
+    <section class="section-padding section-bg-light" style="background-color: var(--bg-light); text-align: center; border-bottom: 1px solid #e2e8f0;">
+        <div class="container">
+            <div class="bonus-header">
+                <h2>🎁 公式メルマガに登録するだけで今すぐ手に入る<br><span class="highlight">豪華3大プレミアム特典</span></h2>
+                <p>認知の檻から脱獄し、人生の主導権を100%取り戻すための特別パッケージ</p>
+            </div>
+            <div class="bonus-intro-visual" style="margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <img src="assets/lp_presents_mockup.png" alt="豪華3大プレミアム特典" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          お悩みセクション (こんなお悩みありませんか？)
          ========================================== -->
     <section class="section-padding section-bg-light">
@@ -625,22 +815,18 @@
             <div class="subhead-blue">
                 こんな<mark>お悩み</mark>ありませんか？
             </div>
-            <div class="subhead-intro">
-                実は、あなたの意志が弱いのでも、努力が足りないのでもありません。<br>
-                脳のフィルター（RAS）が、社会的洗脳によって<strong>「他人の基準」</strong>でバグを起こし、<br>
-                本来の want to やチャンスを完全に遮断（スコトーマ化）しているからです。<br>
-                この脳のバグを引き算しない限り、どれだけ努力しても現状維持のブレーキ（ホメオスタシス）が作動し続けます。
-            </div>
 
             <div class="checklist-wrapper">
                 <ul class="checklist-list">
-                    <li>どれだけ一生懸命に勉強・自己投資を重ねても、なぜか簡単に現実を変えてしまう人と、1ミリも現状が変わらない人の決定的な<mark>「3つの違い」</mark>とは？</li>
-                    <li>真面目にノートを書き、自分と向き合う（内観する）人ほど、知らず知らずのうちに陥ってしまう「学習のパラドックス」と、脳のブレーキを自ら踏み込んでしまう<span class="text-danger">意外な盲点</span></li>
-                    <li>自己啓発やコーチングに100万円以上投資した結果、知識ばかりが詰め込まれて脳がフリーズしてしまう、セミナージプシーの<span class="text-danger">「絶対にやってはいけない3つの間違い」</span></li>
-                    <li>なぜ「自分軸で生きたい」と強く願っている人ほど、決断の瞬間に親の顔色や「社会の正解」という<mark>他人の基準</mark>を選んでしまうのか？ その隠された理由</li>
-                    <li>やる気や意志の力で行動しようとするのを即座にやめてください。脳をすり減らさず、無駄なエネルギー漏電を完全にストップさせる<span class="text-danger">「セルフトーク排除」の秘密</span></li>
-                    <li>現状を変えたい強い焦りはあるのに、身近なドリームキラーや過去の思考パターンに引き戻されてしまう人に共通する<mark>「ホメオスタシス（現状維持）」の盲点</mark></li>
-                    <li>毎日が曇り空のような停滞感に包まれているあなたが、他力とチャンスを自然と引き寄せるために、まず「あるタイミング」で捨てるべき<span class="text-danger">”たった1つの不要な価値観”</span>とは？</li>
+                    <li>「自分探し」や「内観ノート」にどれだけ真面目に取り組んでも、<mark>目の前の現実が何ひとつ変わっていない</mark></li>
+                    <li>自己啓発やコーチングに何十万、何百万と投資してきたのに、成果が出ず<span class="text-danger">お金とエネルギーだけがすり減っていく</span></li>
+                    <li>常に他人の顔色や世間の目が気になり、<span class="text-danger">「自分の本音」や「本当にやりたいこと」を無意識に抑圧</span>してしまう</li>
+                    <li>「こうあるべき」「こうしなきゃいけない」という社会のルール（<mark>社会的洗脳</mark>）に縛られ、息苦しさを抱えている</li>
+                    <li>やる気や強い意志の力で無理に行動しようとしては挫折し、すぐに心身が消耗して<span class="text-danger">ひどいガス欠状態</span>に陥る</li>
+                    <li>「自分軸で生きる」と決めたはずなのに、いざ決断する段階になると<mark>他人の基準（親や世間の正解）</mark>で選んでしまう</li>
+                    <li>「このままではいけない」という強烈な焦りはあるものの、現状打破のために<span class="text-danger">具体的にどう行動すべきか分からない</span></li>
+                    <li>自分が生涯かけて追求したい「本当のゴール」がいつまでも見えず、<span class="text-danger">手探りで暗闇を歩いている</span>ような感覚がある</li>
+                    <li>人一倍努力しているはずなのに一向に報われず、<mark>毎日が曇り空のなかにいるような深い停滞感</mark>を感じている</li>
                 </ul>
             </div>
         </div>
@@ -653,17 +839,17 @@
         <div class="container">
             <div class="learn-card">
                 <div class="learn-title">
-                    本気で人生のOSを書き換えたいあなたへ。<br>この特別セミナーで脳にインストールする<br><mark>「行動と変容のサイエンス」</mark>
+                    あなたが今回の<mark>無料WEBセミナー</mark><br>で学べること
                 </div>
 
                 <ul class="learn-list">
-                    <li>真面目に自分と向き合うほど過去の基準に囚われる<mark>「内観のブーメラン効果」</mark>と、脳のブレーキを二重に踏み込む認知科学的な罠の真相</li>
-                    <li>唱えるほど逆効果！ポジティブなアファメーションが、脳の現状維持システムを強制起動させてしまう<span class="text-danger">「マントラ回避の法則」</span>の盲点</li>
-                    <li>他人の目や世間の評価を完全ノイズキャンセリングし、我慢ゼロで自分のwant toだけに熱狂する<mark>「脳のOS書き換え設計図」</mark></li>
-                    <li>義務感や焦り（have to）を1ミリもすり減らさず、呼吸をするように無意識がゴールへ勝手に向かう<span class="text-danger">「オートパイロット自動操縦技術」</span>の秘密</li>
-                    <li>親・教育・メディアが植え付けた「都合の良い良い人洗脳」をデコード（解読）し、本来の爆発的なポテンシャルを強制覚醒させるアプローチの全貌</li>
-                    <li>脳のフィルター（RAS）を再設定し、今まで目の前に隠されていた「人脈・資金・チャンス」を鮮やかに可視化する<span class="text-danger">スコトーマ強制解除ハック</span>の極意</li>
-                    <li>他人の基準を完全に引き算し、自分軸のwant toだけで軽やかに圧倒的な成果を出し続けるための<mark>超・実践思考ステップ</mark></li>
+                    <li>どれだけ一生懸命に勉強・自己投資を重ねても、なぜか簡単に現実を変えてしまう人と、1ミリも現状が変わらない人の決定的な<mark>「3つの違い」</mark>とは？</li>
+                    <li>真面目にノートを書き、自分と向き合う（内観する）人ほど、知らず知らずのうちに陥ってしまう「学習のパラドックス」と、脳のブレーキを自ら踏み込んでしまう<span class="text-danger">意外な盲点</span></li>
+                    <li>自己啓発やコーチングに100万円以上投資した結果、知識ばかりが詰め込まれて脳がフリーズしてしまう、セミナージプシーの<span class="text-danger">「絶対にやってはいけない3つの間違い」</span></li>
+                    <li>なぜ「自分軸で生きたい」と強く願っている人ほど、決断の瞬間に親の顔色や「社会の正解」という<mark>他人の基準</mark>を選んでしまうのか？ その隠された理由</li>
+                    <li>やる気や意志の力で行動しようとするのを即座にやめてください。脳をすり減らさず、無駄なエネルギー漏電を完全にストップさせる<span class="text-danger">「セルフトーク排除」の秘密</span></li>
+                    <li>現状を変えたい強い焦りはあるのに、身近なドリームキラーや過去の思考パターンに引き戻されてしまう人に共通する<mark>「ホメオスタシス（現状維持）」の盲点</mark></li>
+                    <li>毎日が曇り空のような停滞感に包まれているあなたが、他力とチャンスを自然と引き寄せるために、まず「あるタイミング」で捨てるべき<span class="text-danger">”たった1つの不要な価値観”</span>とは？</li>
                 </ul>
             </div>
         </div>
@@ -703,6 +889,140 @@
     </section>
 
     <!-- ==========================================
+         ⑤ WEBセミナーの中身を少し紹介すると...
+         ========================================== -->
+    <section class="section-padding" style="background-color: #ffffff;">
+        <div class="container" style="max-width: var(--container-width); margin: 0 auto;">
+            <div class="bonus-header" style="text-align: center; margin-bottom: 45px;">
+                <h2>🎥 WEBセミナーの中身を少し紹介すると...</h2>
+                <p style="font-size: 1.15rem; color: var(--text-sub); font-weight: 500;">最先端の認知科学に基づく「脳のOS書き換えアプローチ」を詳しく解説します</p>
+            </div>
+            
+            <div class="intro-steps" style="display: flex; flex-direction: column; gap: 30px; max-width: 800px; margin: 0 auto;">
+                <!-- ステップ1 -->
+                <div class="step-card" style="display: flex; gap: 25px; background: #f8fafc; padding: 30px; border-radius: 16px; border-left: 5px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: left;">
+                    <div class="step-num" style="font-size: 2.2rem; font-weight: 900; color: var(--primary-color); font-family: var(--font-round); line-height: 1;">01</div>
+                    <div class="step-content">
+                        <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 10px 0; color: var(--text-main);">努力と根性の罠 — なぜ自己投資するほどフリーズするのか？</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0;">真面目な人ほど陥る「学習のパラドックス」の正体を明かします。変わろうとする意志が強い人ほど、脳の防衛システムが作動して強烈な現状維持ブレーキを踏んでしまうメカニズムを解説。</p>
+                    </div>
+                </div>
+                
+                <!-- ステップ2 -->
+                <div class="step-card" style="display: flex; gap: 25px; background: #f8fafc; padding: 30px; border-radius: 16px; border-left: 5px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: left;">
+                    <div class="step-num" style="font-size: 2.2rem; font-weight: 900; color: var(--primary-color); font-family: var(--font-round); line-height: 1;">02</div>
+                    <div class="step-content">
+                        <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 10px 0; color: var(--text-main);">社会的洗脳と脳のバグ — 他人の基準が作り出す見えない檻の正体</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0;">親、世間、常識が植え付けた「他人の正解」を脳のOSレベルでデコードします。他人の基準のせいで脳のフィルター（RAS）にバグが生じ、自分の本当の欲求（want to）が見えなくなっている理由を暴露。</p>
+                    </div>
+                </div>
+                
+                <!-- ステップ3 -->
+                <div class="step-card" style="display: flex; gap: 25px; background: #f8fafc; padding: 30px; border-radius: 16px; border-left: 5px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: left;">
+                    <div class="step-num" style="font-size: 2.2rem; font-weight: 900; color: var(--primary-color); font-family: var(--font-round); line-height: 1;">03</div>
+                    <div class="step-content">
+                        <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 10px 0; color: var(--text-main);">want toとRASの書き換え — 意志の力を使わず自動操縦でゴールへ進む極意</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0;">がんばるのを辞めた人からうまくいく。努力ゼロで無意識が勝手に動き出す「オートパイロット自動操縦マインド」の科学的な構築法 and 見落とされていたチャンスを可視化するRAS再設定のアプローチを紹介。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ⑥ 豪華3大プレゼント詳細セクション
+         ========================================== -->
+    <section class="section-padding section-bg-light" style="background-color: var(--bg-light); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+        <div class="container">
+            <div class="bonus-header">
+                <h2>🎁 今だけ！豪華3大プレゼントを用意しました！</h2>
+                <p>メールアドレス登録後、すぐに自動返信メールにてすべてお届けいたします</p>
+                <div class="bonus-swipe-hint">👈 横にスクロールしてご覧いただけます 👉</div>
+            </div>
+            
+            <div class="bonus-cards-grid">
+                <!-- プレゼント1 -->
+                <div class="bonus-grid-card">
+                    <div class="bonus-badge">プレゼント 1</div>
+                    <div class="bonus-type">限定動画講義</div>
+                    <h3 class="bonus-card-title">「人生大逆転」書き換え入り口セット</h3>
+                    <p class="bonus-card-desc">〜人生の決定権を取り戻し好転させる動画講義〜</p>
+                    <div class="bonus-image-placeholder">
+                        <i class="fa-solid fa-video" style="font-size: 3.5rem; color: #cbd5e1;"></i>
+                    </div>
+                    <ul class="bonus-card-bullets">
+                        <li>意志の力で自分を変えようとすると100%挫折する「前頭前野の許容量」の科学的根拠</li>
+                        <li>現状を変えようとした瞬間に「強烈な睡魔」を引き起こす脳の防衛システム（ホメオスタシス）</li>
+                        <li>自分の本当の望みやチャンスを自動排除する脳のフィルター（RAS）のバグ解消アプローチ</li>
+                    </ul>
+                </div>
+
+                <!-- プレゼント2 -->
+                <div class="bonus-grid-card">
+                    <div class="bonus-badge">プレゼント 2</div>
+                    <div class="bonus-type">音声講義メソッド</div>
+                    <h3 class="bonus-card-title">「執着手放し」音声講義メソッド</h3>
+                    <p class="bonus-card-desc">〜人生が勝手に好転し始めた人が実践した音声ワーク〜</p>
+                    <div class="bonus-image-placeholder">
+                        <i class="fa-solid fa-headphones" style="font-size: 3.5rem; color: #cbd5e1;"></i>
+                    </div>
+                    <ul class="bonus-card-bullets">
+                        <li>あなたの脳内システムがどれだけ他人の「正しさ基準」に支配されているかを暴く自己診断テスト</li>
+                        <li>「嫌われたくない」という他人の目を脳から完全に切り離し、自分の want to を貫くための実用ワーク</li>
+                        <li>お金のブロック、我慢して働くhave to、自己成長の呪縛を引き算し脳のメモリを解放するステップ</li>
+                    </ul>
+                </div>
+
+                <!-- プレゼント3 -->
+                <div class="bonus-grid-card">
+                    <div class="bonus-badge">プレゼント 3</div>
+                    <div class="bonus-type">特別極秘PDFレポート</div>
+                    <h3 class="bonus-card-title">脱「正しさ」信仰の核心 特別レポート</h3>
+                    <p class="bonus-card-desc">〜自己理解ブームの盲点をロジカルに解き明かす〜</p>
+                    <div class="bonus-image-placeholder">
+                        <i class="fa-solid fa-file-pdf" style="font-size: 3.5rem; color: #cbd5e1;"></i>
+                    </div>
+                    <ul class="bonus-card-bullets">
+                        <li>世間の「自己理解・内観ブーム」がなぜあなたの人生を狭い檻に閉じ込め、最大の機会損失（他力とチャンスの拒絶）を生み出してしまうのかを認知科学でロジカルに解説</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         サードCTAセクション
+         ========================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-subhead">ご登録はこちら</div>
+                <div class="cta-title">
+                    <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
+                </div>
+                
+                <form name="ml_form_only_in_3" id="ml_form_only_in_3" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
+                    <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
+                    <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_3', '登録する');">
+                        <i class="fa-solid fa-circle-right"></i>
+                        <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                    </button>
+                    <input type="hidden" name="sb_reg" value="" />
+                    <input type="hidden" name="identity" value="ua&8X*Qy" />
+                </form>
+
+                <div class="cta-attention">
+                    【確認事項】<br>
+                    ※携帯のキャリアメール（@docomo.ne.jp、@ezweb.ne.jp、@softbank.ne.jp など）では受信できませんので、Yahoo、Gmail などのフリーメールアドレスでご登録下さい。迷惑フォルダに案内メールが届く場合もありますので、受信BOX にメールが無い場合は迷惑フォルダも、ご確認ください。<br>
+                    ※プライバシーポリシーについて：お客様の個人情報を第三者に開示することはございません。<br>
+                    ※ご登録いただいたメールアドレスにはNARUから定期的に情報を配信させていただきます。<br>
+                    ※ご不要な場合には１クリックで配信解除できます。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          講師プロフィールセクション
          ========================================== -->
     <section class="profile-section">
@@ -729,6 +1049,9 @@
                         <p>現在は、認知科学ベースのロジカルな思考法と、私自身が自己投資を空回りさせてきた経験を活かし、同じように「社会的洗脳」によって自分の望む人生が歩めずに悩んでいる方々へのコーチングを行っています。他人の評価や過去のルールを手放し、我慢ゼロで自分のゴールを追求して現実を好転させていくサポートに、全力で取り組んでいます。</p>
                         <p>私のミッションは、この脱洗脳コーチングを広め、一人でも多くの人が他人の基準や過去の呪縛から解放されることです。誰もが自分の意志で自由に、そして圧倒的な充実感を持って「現状の外側のゴール」を追求できる社会の実現を目指し、これからも変革者となる受講生のサポートを続けていきます。</p>
                     </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ==========================================
