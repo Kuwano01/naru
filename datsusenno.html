@@ -98,116 +98,113 @@
             padding: 24px 20px;
             font-family: var(--font-gothic);
             font-weight: 700;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            
-            /* 左右両端に突き抜けさせる設定 */
-            width: 100vw;
-            margin-left: calc(50% - 50vw);
-            margin-right: calc(50% - 50vw);
+            font-size: 1.6rem;
+            line-height: 1.45;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
         }
 
         .subhead-blue mark {
-            background: transparent;
+            background-color: transparent;
             color: var(--accent-color);
+            font-weight: 900;
         }
 
         .subhead-intro {
-            font-size: 1.1rem;
-            color: var(--text-sub);
-            margin-top: 25px;
-            text-align: center;
+            font-size: 1.05rem;
             line-height: 1.8;
+            color: var(--text-sub);
+            text-align: center;
+            margin-bottom: 35px;
             font-weight: 500;
         }
 
-        /* --- お悩みチェックリスト --- */
+        .subhead-intro strong {
+            color: var(--danger-color);
+            font-weight: 700;
+        }
+
+        /* --- チェックリスト (お悩み) --- */
         .checklist-wrapper {
             background-color: #ffffff;
-            border-radius: 12px;
-            padding: 30px 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03), 0 0 0 1px rgba(0,0,0,0.05);
-            margin-top: 20px;
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border: 1px solid #f1f5f9;
         }
 
         .checklist-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .checklist-list li {
             position: relative;
-            padding-left: 35px;
-            margin-bottom: 18px;
-            font-size: 1.15rem;
+            padding-left: 36px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #334155;
+            line-height: 1.7;
             font-weight: 500;
-            line-height: 1.5;
-            border-bottom: 1px dashed rgba(0,0,0,0.1);
-            padding-bottom: 14px;
         }
 
         .checklist-list li:last-child {
             margin-bottom: 0;
-            border-bottom: none;
-            padding-bottom: 0;
         }
 
         .checklist-list li::before {
-            content: '\f00c'; /* FontAwesomeのチェックアイコン */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
+            content: '▲';
             position: absolute;
-            left: 5px;
+            left: 0;
             top: 2px;
-            color: var(--primary-color);
-            font-size: 1.2rem;
+            color: var(--danger-color);
+            font-size: 1.15rem;
+            font-weight: 900;
         }
 
-        /* --- 学べることセクション --- */
-        .learn-section {
-            background-color: #f5f3ff;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* 背景画像をスクロール時に固定（パララックス効果） */
-            border-top: 1px solid rgba(0,0,0,0.05);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
+        /* --- 学べることカード --- */
         .learn-card {
             background-color: #ffffff;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin: 20px 0;
+            border-radius: 20px;
+            padding: 45px 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .learn-title {
-            text-align: center;
-            font-family: var(--font-gothic);
+            font-size: 1.6rem;
             font-weight: 900;
-            font-size: 1.7rem;
+            line-height: 1.45;
+            text-align: center;
+            margin-bottom: 35px;
             color: var(--text-main);
-            margin-bottom: 30px;
-            line-height: 1.4;
+            letter-spacing: 0.5px;
         }
 
         .learn-title mark {
-            background: transparent;
-            color: var(--primary-color);
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            color: inherit;
+            font-weight: 900;
+            padding: 0 2px;
         }
 
         .learn-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .learn-list li {
             position: relative;
-            padding-left: 35px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            line-height: 1.6;
+            padding-left: 36px;
+            margin-bottom: 22px;
+            font-size: 1.05rem;
+            color: #334155;
+            line-height: 1.7;
+            font-weight: 600;
         }
 
         .learn-list li:last-child {
@@ -215,187 +212,210 @@
         }
 
         .learn-list li::before {
-            content: '\f0a4'; /* FontAwesomeの手アイコン */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
+            content: '➔';
             position: absolute;
-            left: 5px;
-            top: 2px;
+            left: 0;
+            top: 1px;
             color: var(--primary-color);
             font-size: 1.2rem;
+            font-weight: 900;
         }
 
-        /* --- CTAエリア（登録フォーム・ボタン） --- */
+        /* --- CTAセクション --- */
         .cta-card {
-            background-color: #ffffff;
-            border: 3px solid var(--primary-color);
-            border-radius: 38px;
-            padding: 40px 30px;
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f0b3c 100%);
+            border-radius: 24px;
+            padding: 45px 40px;
             text-align: center;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
-            margin: 40px auto;
-            max-width: 800px;
+            color: #ffffff;
+            box-shadow: 0 20px 40px rgba(30, 27, 75, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .cta-subhead {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 10px;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .cta-title {
-            font-family: var(--font-gothic);
+            font-size: 1.65rem;
             font-weight: 900;
-            font-size: 1.8rem;
+            line-height: 1.45;
             margin-bottom: 30px;
+            letter-spacing: 0.5px;
         }
 
         .cta-title mark {
-            background: transparent;
-            color: var(--danger-color);
-        }
-
-        .btn-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            width: 100%;
-            max-width: 550px;
-            padding: 22px 30px;
-            background-color: var(--primary-color);
+            background-color: transparent;
             color: #ffffff;
-            font-family: var(--font-gothic);
-            font-weight: 900;
-            font-size: 1.4rem;
-            text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3); /* ブルーの影 */
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: none;
-            cursor: pointer;
-            margin-bottom: 25px;
-            line-height: 1.4;
-        }
-
-        /* ボタンのぷるぷるアニメーション */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        .btn-cta-animate {
-            animation: pulse 2s infinite ease-in-out;
-        }
-
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            background-color: var(--primary-hover);
-            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45); /* ホバー時のブルーの影 */
-            animation-play-state: paused; /* ホバー時はアニメーションを止める */
-        }
-
-        .btn-cta i {
-            font-size: 1.8rem;
-        }
-
-        .cta-attention {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            text-align: left;
-            line-height: 1.7;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            padding-top: 20px;
-            max-width: 650px;
-            margin: 0 auto;
+            background: linear-gradient(transparent 70%, var(--accent-color) 70%);
+            padding: 0 2px;
         }
 
         .cta-form {
+            max-width: 580px;
+            margin: 0 auto 25px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 15px;
-            width: 100%;
-            max-width: 550px;
-            margin: 0 auto 25px auto;
         }
 
         .form-input {
             width: 100%;
-            padding: 18px 25px;
-            font-size: 1.15rem;
-            border: 2px solid #cbd5e1;
-            border-radius: 50px;
-            outline: none;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-family: var(--font-gothic);
             transition: all 0.3s ease;
             text-align: center;
-            font-family: var(--font-gothic);
+        }
+
+        .form-input::placeholder {
+            color: #94a3b8;
         }
 
         .form-input:focus {
+            outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+            background-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.25);
         }
 
-        /* --- プロフィールセクション --- */
+        .btn-cta {
+            width: 100%;
+            padding: 18px 24px;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 900;
+            font-family: var(--font-gothic);
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            line-height: 1.4;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(217, 119, 6, 0.5);
+            background: linear-gradient(135deg, #fbbf24 0%, #ea580c 100%);
+        }
+
+        .btn-cta:active {
+            transform: translateY(0);
+        }
+
+        .btn-cta i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-cta:hover i {
+            transform: translateX(4px);
+        }
+
+        /* マイクロアニメーション：鼓動エフェクト */
+        .btn-cta-animate {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35);
+            }
+            70% {
+                box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35), 0 0 0 10px rgba(217, 119, 6, 0);
+            }
+            100% {
+                box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35);
+            }
+        }
+
+        .cta-attention {
+            font-size: 0.75rem;
+            line-height: 1.7;
+            color: #94a3b8;
+            text-align: left;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        /* --- 講師プロフィール --- */
         .profile-section {
-            background-color: var(--bg-light);
+            background-color: #ffffff;
             padding: 60px 0;
+            border-top: 1px solid #f1f5f9;
         }
 
         .profile-header {
-            font-family: var(--font-gothic);
+            font-size: 1.7rem;
             font-weight: 900;
-            font-size: 2rem;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
+            color: var(--text-main);
+            line-height: 1.4;
         }
 
         .profile-header mark {
-            background: transparent;
-            color: var(--primary-color);
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            color: inherit;
+            font-weight: 900;
+            padding: 0 2px;
         }
 
         .profile-card {
             display: flex;
             gap: 40px;
             align-items: flex-start;
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.02), 0 0 0 1px rgba(0,0,0,0.04);
-        }
-
-        .profile-imgbox {
-            width: 35%;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f1f5f9;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            background-color: var(--bg-light);
+            border-radius: 24px;
+            padding: 45px;
             border: 1px solid #e2e8f0;
         }
 
-        .profile-imgbox i {
-            font-size: 6rem;
-            color: #94a3b8;
-            padding: 50px 0;
+        .profile-imgbox {
+            width: 32%;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         .profile-textbox {
-            width: 65%;
+            width: 68%;
         }
 
         .profile-title-en {
-            font-family: var(--font-round);
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-sub);
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            letter-spacing: 2px;
             margin-bottom: 5px;
             text-transform: uppercase;
         }
@@ -403,24 +423,28 @@
         .profile-name {
             font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 12px;
-            font-family: var(--font-gothic);
+            color: var(--text-main);
+            margin-bottom: 5px;
         }
 
         .profile-sub {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--text-sub);
             margin-bottom: 25px;
-            line-height: 1.4;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .profile-text-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #334155;
         }
 
         .profile-text-content p {
-            font-size: 0.95rem;
-            line-height: 1.8;
             margin-bottom: 15px;
-            color: #334155;
-            text-align: justify;
         }
 
         .profile-text-content p:last-child {
@@ -430,34 +454,38 @@
         /* --- フッター --- */
         footer {
             background-color: #0f172a;
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
+            color: #94a3b8;
+            padding: 35px 0;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .footer-copyright {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 15px;
+            font-weight: 500;
         }
 
         .footer-links {
             list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 25px;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
         }
 
         .footer-links a {
-            color: #cbd5e1;
-            font-size: 0.85rem;
+            color: #94a3b8;
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
             color: #ffffff;
-            text-decoration: underline;
         }
 
         /* リスト内強調用のスタイル */
@@ -536,13 +564,13 @@
             position: absolute;
             top: -15px;
             left: 25px;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            background: linear-gradient(135deg, #b85270 0%, #a4435e 100%); /* ローズ・ピンク */
             color: #ffffff;
             font-weight: 900;
             font-size: 0.95rem;
             padding: 5px 18px;
             border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+            box-shadow: 0 4px 10px rgba(184, 82, 112, 0.25);
         }
 
         .bonus-type {
@@ -560,6 +588,9 @@
             color: var(--text-main);
             line-height: 1.3;
             margin-bottom: 5px;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
         }
 
         .bonus-card-desc {
@@ -571,6 +602,22 @@
             padding-bottom: 15px;
         }
 
+        .bonus-card-visual {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            background: #f1f5f9;
+        }
+
+        .bonus-card-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .bonus-card-bullets {
             list-style: none;
             padding: 0;
@@ -580,7 +627,7 @@
         .bonus-card-bullets li {
             position: relative;
             padding-left: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1.6;
             color: #334155;
             margin-bottom: 12px;
@@ -602,17 +649,6 @@
 
         .bonus-swipe-hint {
             display: none;
-        }
-
-        .bonus-image-placeholder {
-            background: #f8fafc;
-            height: 160px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            border: 1px dashed #e2e8f0;
         }
 
         /* --- レスポンシブ対応 --- */
@@ -746,261 +782,6 @@
                 font-weight: 700;
             }
         }
-
-        /* --- プレゼント見出しバナー (Modelling Image 1) --- */
-        .present-header-banner {
-            background-color: #0f4c81; /* 深い青 */
-            padding: 30px 20px;
-            border-radius: 12px;
-            color: #ffffff;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(15, 76, 129, 0.25);
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .present-header-banner .badge-text {
-            font-size: 1.3rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-            display: inline-block;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .present-header-banner .main-title-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .present-header-banner .title-left {
-            font-size: 1.5rem;
-            font-weight: 900;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            line-height: 1.1;
-        }
-
-        .present-header-banner .title-left .sub {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-
-        .present-header-banner .title-left .main {
-            background-color: #a38d38; /* 金色の背景 */
-            padding: 2px 10px;
-            font-size: 1.5rem;
-            color: #ffffff;
-            border-radius: 4px;
-        }
-
-        .present-header-banner .number-glowing {
-            font-size: 5rem;
-            font-weight: 900;
-            line-height: 0.8;
-            color: #ffffff;
-            font-family: 'Outfit', sans-serif;
-            text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.5);
-            position: relative;
-        }
-
-        .present-header-banner .number-glowing::before {
-            content: '✦';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            font-size: 1.8rem;
-            color: #ffffff;
-            text-shadow: 0 0 10px #ffffff;
-            animation: sparkle 2s infinite alternate;
-        }
-
-        .present-header-banner .number-glowing::after {
-            content: '✦';
-            position: absolute;
-            bottom: -10px;
-            right: -15px;
-            font-size: 1.3rem;
-            color: #ffffff;
-            text-shadow: 0 0 10px #ffffff;
-            animation: sparkle 2s infinite alternate-reverse;
-        }
-
-        .present-header-banner .title-right {
-            font-size: 2.8rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            background: linear-gradient(to bottom, #ffffff 60%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-        }
-
-        /* --- プレゼント表示用カード (Modelling Image 2) --- */
-        .modeling-present-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-            margin-top: 10px;
-        }
-
-        .modeling-present-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-        }
-
-        .modeling-present-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .modeling-present-card .card-header-bar {
-            background: linear-gradient(90deg, #b85270 0%, #a4435e 100%); /* ローズ・ピンク */
-            color: #ffffff;
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-weight: 700;
-            font-size: 0.85rem;
-        }
-
-        .modeling-present-card .card-header-bar-left {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .modeling-present-card .card-header-bar i {
-            font-size: 1rem;
-        }
-
-        .modeling-present-card .card-header-bar span.badge-num {
-            background-color: #ffffff;
-            color: #a4435e;
-            border-radius: 50px;
-            padding: 1px 8px;
-            font-size: 0.75rem;
-            font-weight: 900;
-        }
-
-        .modeling-present-card .card-header-label {
-            font-size: 0.75rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .modeling-present-card .card-body {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            text-align: center;
-        }
-
-        .modeling-present-card .card-title {
-            font-size: 1rem;
-            font-weight: 900;
-            color: var(--text-main);
-            margin-bottom: 15px;
-            line-height: 1.4;
-            min-height: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modeling-present-card .card-visual {
-            width: 100%;
-            height: 140px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            background: #f1f5f9;
-        }
-
-        .modeling-present-card .card-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .modeling-present-card .card-desc {
-            font-size: 0.8rem;
-            color: var(--text-sub);
-            line-height: 1.5;
-            text-align: left;
-            margin: 0;
-        }
-
-        @keyframes sparkle {
-            0% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
-            100% { opacity: 1; transform: scale(1.2) rotate(15deg); }
-        }
-
-        /* --- レスポンシブ対応 (新規追加分) --- */
-        @media (max-width: 768px) {
-            .present-header-banner {
-                padding: 20px 10px;
-            }
-            .present-header-banner .badge-text {
-                font-size: 1rem;
-            }
-            .present-header-banner .title-left .sub {
-                font-size: 0.8rem;
-            }
-            .present-header-banner .title-left .main {
-                font-size: 1.1rem;
-                padding: 1px 6px;
-            }
-            .present-header-banner .number-glowing {
-                font-size: 3.8rem;
-            }
-            .present-header-banner .title-right {
-                font-size: 2rem;
-            }
-            .modeling-present-grid {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
-                scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
-                gap: 20px;
-                padding: 20px 10px;
-                -webkit-overflow-scrolling: touch;
-                margin-top: 5px;
-            }
-            .modeling-present-grid::-webkit-scrollbar {
-                display: none;
-            }
-            .modeling-present-card {
-                flex: 0 0 85% !important;
-                width: 85% !important;
-                min-width: 85% !important;
-                scroll-snap-align: center;
-            }
-            .modeling-present-card .card-title {
-                min-height: auto;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1018,21 +799,20 @@
     <section class="section-padding">
         <div class="container">
             <div class="cta-card">
-                <div class="cta-subhead">ご登録はこちら</div>
+                <div class="cta-subhead">社会的洗脳の引き算から始める</div>
                 <div class="cta-title">
-                    <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
+                    努力と根性の精神論をすべて引き算し、脳のOSを書き換える<br><mark>『マインドOS・リブート無料セミナー』</mark>
                 </div>
                 
                 <form name="ml_form_only_in_1" id="ml_form_only_in_1" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
                     <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
                     <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_1', '登録する');">
                         <i class="fa-solid fa-circle-right"></i>
-                        <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                        <span>👉 努力ゼロのまま無意識が勝手に動き出す！<br>「オートパイロット自動操縦マインド」を今すぐ無料で手に入れる</span>
                     </button>
                     <input type="hidden" name="sb_reg" value="" />
                     <input type="hidden" name="identity" value="ua&8X*Qy" />
                 </form>
-
 
                 <div class="cta-attention">
                     【確認事項】<br>
@@ -1052,11 +832,11 @@
         <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 15px;">
             <!-- 特典プレビュー画像 (Modelling Image 2) -->
             <div class="bonus-preview-img-wrapper" style="margin-bottom: 30px;">
-                <img src="bonus_preview.png" alt="豪華3大プレミアム特典プレビュー" style="width: 100%; max-width: 800px; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <img src="assets/bonus_preview.png" alt="豪華3大プレミアム特典プレビュー" style="width: 100%; max-width: 800px; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>
             <!-- タイトル画像 (Modelling Image 1) -->
             <div class="bonus-title-img-wrapper">
-                <img src="bonus_banner.png" alt="最強の豪華3大プレゼント 登録するだけでもらえる！" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                <img src="assets/bonus_banner.png" alt="最強の豪華3大プレゼント 登録するだけでもらえる！" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
             </div>
         </div>
     </section>
@@ -1115,21 +895,20 @@
     <section class="section-padding">
         <div class="container">
             <div class="cta-card">
-                <div class="cta-subhead">ご登録はこちら</div>
+                <div class="cta-subhead">社会的洗脳の引き算から始める</div>
                 <div class="cta-title">
-                    <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
+                    努力と根性の精神論をすべて引き算し、脳のOSを書き換える<br><mark>『マインドOS・リブート無料セミナー』</mark>
                 </div>
                 
                 <form name="ml_form_only_in_2" id="ml_form_only_in_2" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
                     <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
                     <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_2', '登録する');">
                         <i class="fa-solid fa-circle-right"></i>
-                        <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                        <span>👉 努力ゼロのまま無意識が勝手に動き出す！<br>「オートパイロット自動操縦マインド」を今すぐ無料で手に入れる</span>
                     </button>
                     <input type="hidden" name="sb_reg" value="" />
                     <input type="hidden" name="identity" value="ua&8X*Qy" />
                 </form>
-
 
                 <div class="cta-attention">
                     【確認事項】<br>
@@ -1176,7 +955,7 @@
                     <div class="step-num" style="font-size: 2.2rem; font-weight: 900; color: var(--primary-color); font-family: var(--font-round); line-height: 1;">03</div>
                     <div class="step-content">
                         <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 10px 0; color: var(--text-main);">want toとRASの書き換え — 意志の力を使わず自動操縦でゴールへ進む極意</h3>
-                        <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0;">がんばるのを辞めた人からうまくいく。努力ゼロで無意識が勝手に動き出す「オートパイロット自動操縦マインド」の科学的な構築法 and 見落とされていたチャンスを可視化するRAS再設定のアプローチを紹介。</p>
+                        <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0;">がんばるのを辞めた人からうまくいく。努力ゼロで無意識が勝手に動き出す「オートパイロット自動操縦マインド」の科学的な構築法と、見落とされていたチャンスを可視化するRAS再設定のアプローチを紹介。</p>
                     </div>
                 </div>
             </div>
@@ -1201,11 +980,11 @@
                     <div class="bonus-type">限定動画講義</div>
                     <h3 class="bonus-card-title">「人生大逆転」書き換え入り口セット</h3>
                     <p class="bonus-card-desc">〜人生の舵取りを取り戻し好転させる3ステップ動画講義〜</p>
-                    <div class="bonus-image-placeholder">
-                        <i class="fa-solid fa-video" style="font-size: 3.5rem; color: #cbd5e1;"></i>
+                    <div class="bonus-card-visual">
+                        <img src="bonus_video.png" alt="「人生大逆転」書き換え入り口セット">
                     </div>
                     <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
-                        人生が思い通りにならない本当の原因を、心理学・脳科学・潜在意識の視点からわかりやすく解説。努力しても変われない理由と、自分の人生の主導権を取り戻すための本質的な仕組みを学べます。思うように行動できない原因が明確になり、無意識に人生を制限している思考パターンに気づくことで、自分の意思でコントロールするための土台が身につきます。
+                        なぜ自分で人生を自由自在にコントロールできないのか（特別動画講義）。人生が思い通りにならない本当の原因を、心理学・脳科学・潜在意識の視点からわかりやすく解説。努力しても変われない理由と、自分の人生の主導権を取り戻すための本質的な仕組みを学べます。思うように行動できない原因が明確になり、無意識に人生を制限している思考パターンに気づくことで、自分の意思でコントロールするための土台が身につきます。
                     </p>
                     <ul class="bonus-card-bullets">
                         <li><strong>動画1：</strong>なぜ自分で人生を自由自在にコントロールできないのか（20分）</li>
@@ -1220,8 +999,8 @@
                     <div class="bonus-type">7日間音声プログラム</div>
                     <h3 class="bonus-card-title">「執着手放し」7日間音声講義メソッド</h3>
                     <p class="bonus-card-desc">〜人生が勝手に好転し始めた人が実践したワーク〜</p>
-                    <div class="bonus-image-placeholder">
-                        <i class="fa-solid fa-headphones" style="font-size: 3.5rem; color: #cbd5e1;"></i>
+                    <div class="bonus-card-visual">
+                        <img src="bonus_audio.png" alt="「執着手放し」7日間音声講義メソッド">
                     </div>
                     <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
                         「人にどう思われるか」「こうでなければならない」といった他人の基準（社会的洗脳）や、お金・人間関係・自己成長・仕事・成功への執着を、認知科学の手法で綺麗に洗い流す音声ワーク。毎日届くステップに沿ってワークを実践することで、無意識のブレーキが外れ、我慢ゼロで本当に望むゴールへ向かって心が軽やかに動き出します。
@@ -1239,8 +1018,8 @@
                     <div class="bonus-type">特別電子レポート</div>
                     <h3 class="bonus-card-title">脱「正しさ」信仰の核心</h3>
                     <p class="bonus-card-desc">〜私が人生を再起動できたときに手放した9つの思い込み〜</p>
-                    <div class="bonus-image-placeholder">
-                        <i class="fa-solid fa-file-pdf" style="font-size: 3.5rem; color: #cbd5e1;"></i>
+                    <div class="bonus-card-visual">
+                        <img src="bonus_pdf.png" alt="脱「正しさ」信仰の核心 レポート">
                     </div>
                     <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
                         「頑張らないと価値がない」「他人に認められないとダメ」「正しい道を選ばなければ失敗する」など、自分自身をがんじがらめに縛っている9つの不要な思い込みを手放すための特別レポート（全18ページ）。実体験に基づくリアルなエピソードとシンプルな視点転換を通して、読んだ瞬間から人生を自発的にリブート（再起動）できます。
@@ -1260,16 +1039,16 @@
     <section class="section-padding">
         <div class="container">
             <div class="cta-card">
-                <div class="cta-subhead">ご登録はこちら</div>
+                <div class="cta-subhead">社会的洗脳の引き算から始める</div>
                 <div class="cta-title">
-                    <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
+                    努力と根性の精神論をすべて引き算し、脳のOSを書き換える<br><mark>『マインドOS・リブート無料セミナー』</mark>
                 </div>
                 
                 <form name="ml_form_only_in_3" id="ml_form_only_in_3" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
                     <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
                     <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_3', '登録する');">
                         <i class="fa-solid fa-circle-right"></i>
-                        <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                        <span>👉 努力ゼロのまま無意識が勝手に動き出す！<br>「オートパイロット自動操縦マインド」を今すぐ無料で手に入れる</span>
                     </button>
                     <input type="hidden" name="sb_reg" value="" />
                     <input type="hidden" name="identity" value="ua&8X*Qy" />
