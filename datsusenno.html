@@ -747,7 +747,260 @@
             }
         }
 
+        /* --- プレゼント見出しバナー (Modelling Image 1) --- */
+        .present-header-banner {
+            background-color: #0f4c81; /* 深い青 */
+            padding: 30px 20px;
+            border-radius: 12px;
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(15, 76, 129, 0.25);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
+        .present-header-banner .badge-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            display: inline-block;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .present-header-banner .main-title-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .present-header-banner .title-left {
+            font-size: 1.5rem;
+            font-weight: 900;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            line-height: 1.1;
+        }
+
+        .present-header-banner .title-left .sub {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .present-header-banner .title-left .main {
+            background-color: #a38d38; /* 金色の背景 */
+            padding: 2px 10px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            border-radius: 4px;
+        }
+
+        .present-header-banner .number-glowing {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 0.8;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.5);
+            position: relative;
+        }
+
+        .present-header-banner .number-glowing::before {
+            content: '✦';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 1.8rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff;
+            animation: sparkle 2s infinite alternate;
+        }
+
+        .present-header-banner .number-glowing::after {
+            content: '✦';
+            position: absolute;
+            bottom: -10px;
+            right: -15px;
+            font-size: 1.3rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff;
+            animation: sparkle 2s infinite alternate-reverse;
+        }
+
+        .present-header-banner .title-right {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, #ffffff 60%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+
+        /* --- プレゼント表示用カード (Modelling Image 2) --- */
+        .modeling-present-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        .modeling-present-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .modeling-present-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .modeling-present-card .card-header-bar {
+            background: linear-gradient(90deg, #b85270 0%, #a4435e 100%); /* ローズ・ピンク */
+            color: #ffffff;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .modeling-present-card .card-header-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .modeling-present-card .card-header-bar i {
+            font-size: 1rem;
+        }
+
+        .modeling-present-card .card-header-bar span.badge-num {
+            background-color: #ffffff;
+            color: #a4435e;
+            border-radius: 50px;
+            padding: 1px 8px;
+            font-size: 0.75rem;
+            font-weight: 900;
+        }
+
+        .modeling-present-card .card-header-label {
+            font-size: 0.75rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .modeling-present-card .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .modeling-present-card .card-title {
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            line-height: 1.4;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modeling-present-card .card-visual {
+            width: 100%;
+            height: 140px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            background: #f1f5f9;
+        }
+
+        .modeling-present-card .card-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modeling-present-card .card-desc {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            line-height: 1.5;
+            text-align: left;
+            margin: 0;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+            100% { opacity: 1; transform: scale(1.2) rotate(15deg); }
+        }
+
+        /* --- レスポンシブ対応 (新規追加分) --- */
+        @media (max-width: 768px) {
+            .present-header-banner {
+                padding: 20px 10px;
+            }
+            .present-header-banner .badge-text {
+                font-size: 1rem;
+            }
+            .present-header-banner .title-left .sub {
+                font-size: 0.8rem;
+            }
+            .present-header-banner .title-left .main {
+                font-size: 1.1rem;
+                padding: 1px 6px;
+            }
+            .present-header-banner .number-glowing {
+                font-size: 3.8rem;
+            }
+            .present-header-banner .title-right {
+                font-size: 2rem;
+            }
+            .modeling-present-grid {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                gap: 20px;
+                padding: 20px 10px;
+                -webkit-overflow-scrolling: touch;
+                margin-top: 5px;
+            }
+            .modeling-present-grid::-webkit-scrollbar {
+                display: none;
+            }
+            .modeling-present-card {
+                flex: 0 0 85% !important;
+                width: 85% !important;
+                min-width: 85% !important;
+                scroll-snap-align: center;
+            }
+            .modeling-present-card .card-title {
+                min-height: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -795,14 +1048,79 @@
     <!-- ==========================================
          ② 登録するだけでもらえる豪華3大プレゼントセクション
          ========================================== -->
-    <section class="section-padding section-bg-light" style="background-color: var(--bg-light); text-align: center; border-bottom: 1px solid #e2e8f0;">
+    <section class="section-padding section-bg-light" style="background-color: var(--bg-light); border-bottom: 1px solid #e2e8f0;">
         <div class="container">
-            <div class="bonus-header">
-                <h2>🎁 公式メルマガに登録するだけで今すぐ手に入る<br><span class="highlight">豪華3大プレミアム特典</span></h2>
-                <p>認知の檻から脱獄し、人生の主導権を100%取り戻すための特別パッケージ</p>
+            <!-- 見出しバナー (Modelling Image 1) -->
+            <div class="present-header-banner">
+                <span class="badge-text">登録するだけでもらえる！</span>
+                <div class="main-title-row">
+                    <div class="title-left">
+                        <span class="sub">最強の</span>
+                        <span class="main">豪華</span>
+                    </div>
+                    <div class="number-glowing">3</div>
+                    <div class="title-right">大プレゼント</div>
+                </div>
             </div>
-            <div class="bonus-intro-visual" style="margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <img src="assets/lp_presents_mockup.png" alt="豪華3大プレミアム特典" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+
+            <!-- プレゼントカードグリッド (Modelling Image 2) -->
+            <div class="modeling-present-grid">
+                <!-- プレゼント1 -->
+                <div class="modeling-present-card">
+                    <div class="card-header-bar">
+                        <div class="card-header-bar-left">
+                            <i class="fa-solid fa-gift"></i>
+                            <span>プレゼント</span>
+                        </div>
+                        <span class="badge-num">1</span>
+                        <span class="card-header-label">限定動画</span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">「人生大逆転」書き換え入り口セット</h4>
+                        <div class="card-visual">
+                            <img src="assets/bonus_video.png" alt="「人生大逆転」書き換え入り口セット">
+                        </div>
+                        <p class="card-desc">なぜ自分で人生を自由自在にコントロールできないのかを解説する3ステップ動画講義。</p>
+                    </div>
+                </div>
+
+                <!-- プレゼント2 -->
+                <div class="modeling-present-card">
+                    <div class="card-header-bar">
+                        <div class="card-header-bar-left">
+                            <i class="fa-solid fa-gift"></i>
+                            <span>プレゼント</span>
+                        </div>
+                        <span class="badge-num">2</span>
+                        <span class="card-header-label">音声教材</span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">「執着手放し」7日間音声メソッド</h4>
+                        <div class="card-visual">
+                            <img src="assets/bonus_audio.png" alt="「執着手放し」7日間音声メソッド">
+                        </div>
+                        <p class="card-desc">人間関係やお金の執着を綺麗に洗い流し、ブレーキを外して心が勝手に好転し始める音声プログラム。</p>
+                    </div>
+                </div>
+
+                <!-- プレゼント3 -->
+                <div class="modeling-present-card">
+                    <div class="card-header-bar">
+                        <div class="card-header-bar-left">
+                            <i class="fa-solid fa-gift"></i>
+                            <span>プレゼント</span>
+                        </div>
+                        <span class="badge-num">3</span>
+                        <span class="card-header-label">PDF教材</span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">脱「正しさ」信仰の核心 レポート</h4>
+                        <div class="card-visual">
+                            <img src="assets/bonus_pdf.png" alt="脱「正しさ」信仰の核心 レポート">
+                        </div>
+                        <p class="card-desc">「頑張らないと価値がない」などの自分を縛る9つの思い込みを手放し、人生を再起動する特別レポート。</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
