@@ -156,55 +156,55 @@
         }
 
         .checklist-list li::before {
-            color: var(--primary-color);
-            font-size: 1.2rem;
+            content: '▲';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--danger-color);
+            font-size: 1.15rem;
+            font-weight: 900;
         }
 
-        /* --- 学べることセクション --- */
-        .learn-section {
-            background-color: #f5f3ff;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* 背景画像をスクロール時に固定（パララックス効果） */
-            border-top: 1px solid rgba(0,0,0,0.05);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
+        /* --- 学べることカード --- */
         .learn-card {
             background-color: #ffffff;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin: 20px 0;
+            border-radius: 20px;
+            padding: 45px 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .learn-title {
-            text-align: center;
-            font-family: var(--font-gothic);
+            font-size: 1.6rem;
             font-weight: 900;
-            font-size: 1.7rem;
+            line-height: 1.45;
+            text-align: center;
+            margin-bottom: 35px;
             color: var(--text-main);
-            margin-bottom: 30px;
-            line-height: 1.4;
+            letter-spacing: 0.5px;
         }
 
         .learn-title mark {
-            background: transparent;
-            color: var(--primary-color);
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            color: inherit;
+            font-weight: 900;
+            padding: 0 2px;
         }
 
         .learn-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .learn-list li {
             position: relative;
-            padding-left: 35px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            line-height: 1.6;
+            padding-left: 36px;
+            margin-bottom: 22px;
+            font-size: 1.05rem;
+            color: #334155;
+            line-height: 1.7;
+            font-weight: 600;
         }
 
         .learn-list li:last-child {
@@ -212,187 +212,210 @@
         }
 
         .learn-list li::before {
-            content: '\f0a4'; /* FontAwesomeの手アイコン */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
+            content: '➔';
             position: absolute;
-            left: 5px;
-            top: 2px;
+            left: 0;
+            top: 1px;
             color: var(--primary-color);
             font-size: 1.2rem;
+            font-weight: 900;
         }
 
-        /* --- CTAエリア（登録フォーム・ボタン） --- */
+        /* --- CTAセクション --- */
         .cta-card {
-            background-color: #ffffff;
-            border: 3px solid var(--primary-color);
-            border-radius: 38px;
-            padding: 40px 30px;
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f0b3c 100%);
+            border-radius: 24px;
+            padding: 45px 40px;
             text-align: center;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
-            margin: 40px auto;
-            max-width: 800px;
+            color: #ffffff;
+            box-shadow: 0 20px 40px rgba(30, 27, 75, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .cta-subhead {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 10px;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .cta-title {
-            font-family: var(--font-gothic);
+            font-size: 1.65rem;
             font-weight: 900;
-            font-size: 1.8rem;
+            line-height: 1.45;
             margin-bottom: 30px;
+            letter-spacing: 0.5px;
         }
 
         .cta-title mark {
-            background: transparent;
-            color: var(--danger-color);
-        }
-
-        .btn-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            width: 100%;
-            max-width: 550px;
-            padding: 22px 30px;
-            background-color: var(--primary-color);
+            background-color: transparent;
             color: #ffffff;
-            font-family: var(--font-gothic);
-            font-weight: 900;
-            font-size: 1.4rem;
-            text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3); /* ブルーの影 */
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: none;
-            cursor: pointer;
-            margin-bottom: 25px;
-            line-height: 1.4;
-        }
-
-        /* ボタンのぷるぷるアニメーション */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        .btn-cta-animate {
-            animation: pulse 2s infinite ease-in-out;
-        }
-
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            background-color: var(--primary-hover);
-            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45); /* ホバー時のブルーの影 */
-            animation-play-state: paused; /* ホバー時はアニメーションを止める */
-        }
-
-        .btn-cta i {
-            font-size: 1.8rem;
-        }
-
-        .cta-attention {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            text-align: left;
-            line-height: 1.7;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            padding-top: 20px;
-            max-width: 650px;
-            margin: 0 auto;
+            background: linear-gradient(transparent 70%, var(--accent-color) 70%);
+            padding: 0 2px;
         }
 
         .cta-form {
+            max-width: 580px;
+            margin: 0 auto 25px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 15px;
-            width: 100%;
-            max-width: 550px;
-            margin: 0 auto 25px auto;
         }
 
         .form-input {
             width: 100%;
-            padding: 18px 25px;
-            font-size: 1.15rem;
-            border: 2px solid #cbd5e1;
-            border-radius: 50px;
-            outline: none;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-family: var(--font-gothic);
             transition: all 0.3s ease;
             text-align: center;
-            font-family: var(--font-gothic);
+        }
+
+        .form-input::placeholder {
+            color: #94a3b8;
         }
 
         .form-input:focus {
+            outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+            background-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.25);
         }
 
-        /* --- プロフィールセクション --- */
+        .btn-cta {
+            width: 100%;
+            padding: 18px 24px;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 900;
+            font-family: var(--font-gothic);
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            line-height: 1.4;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(217, 119, 6, 0.5);
+            background: linear-gradient(135deg, #fbbf24 0%, #ea580c 100%);
+        }
+
+        .btn-cta:active {
+            transform: translateY(0);
+        }
+
+        .btn-cta i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-cta:hover i {
+            transform: translateX(4px);
+        }
+
+        /* マイクロアニメーション：鼓動エフェクト */
+        .btn-cta-animate {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35);
+            }
+            70% {
+                box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35), 0 0 0 10px rgba(217, 119, 6, 0);
+            }
+            100% {
+                box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35);
+            }
+        }
+
+        .cta-attention {
+            font-size: 0.75rem;
+            line-height: 1.7;
+            color: #94a3b8;
+            text-align: left;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        /* --- 講師プロフィール --- */
         .profile-section {
-            background-color: var(--bg-light);
+            background-color: #ffffff;
             padding: 60px 0;
+            border-top: 1px solid #f1f5f9;
         }
 
         .profile-header {
-            font-family: var(--font-gothic);
+            font-size: 1.7rem;
             font-weight: 900;
-            font-size: 2rem;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
+            color: var(--text-main);
+            line-height: 1.4;
         }
 
         .profile-header mark {
-            background: transparent;
-            color: var(--primary-color);
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            color: inherit;
+            font-weight: 900;
+            padding: 0 2px;
         }
 
         .profile-card {
             display: flex;
             gap: 40px;
             align-items: flex-start;
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.02), 0 0 0 1px rgba(0,0,0,0.04);
-        }
-
-        .profile-imgbox {
-            width: 35%;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f1f5f9;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            background-color: var(--bg-light);
+            border-radius: 24px;
+            padding: 45px;
             border: 1px solid #e2e8f0;
         }
 
-        .profile-imgbox i {
-            font-size: 6rem;
-            color: #94a3b8;
-            padding: 50px 0;
+        .profile-imgbox {
+            width: 32%;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         .profile-textbox {
-            width: 65%;
+            width: 68%;
         }
 
         .profile-title-en {
-            font-family: var(--font-round);
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-sub);
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            letter-spacing: 2px;
             margin-bottom: 5px;
             text-transform: uppercase;
         }
@@ -400,24 +423,28 @@
         .profile-name {
             font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 12px;
-            font-family: var(--font-gothic);
+            color: var(--text-main);
+            margin-bottom: 5px;
         }
 
         .profile-sub {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--text-sub);
             margin-bottom: 25px;
-            line-height: 1.4;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .profile-text-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #334155;
         }
 
         .profile-text-content p {
-            font-size: 0.95rem;
-            line-height: 1.8;
             margin-bottom: 15px;
-            color: #334155;
-            text-align: justify;
         }
 
         .profile-text-content p:last-child {
@@ -427,34 +454,38 @@
         /* --- フッター --- */
         footer {
             background-color: #0f172a;
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
+            color: #94a3b8;
+            padding: 35px 0;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .footer-copyright {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 15px;
+            font-weight: 500;
         }
 
         .footer-links {
             list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 25px;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
         }
 
         .footer-links a {
-            color: #cbd5e1;
-            font-size: 0.85rem;
+            color: #94a3b8;
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
             color: #ffffff;
-            text-decoration: underline;
         }
 
         /* リスト内強調用のスタイル */
@@ -751,8 +782,6 @@
                 font-weight: 700;
             }
         }
-
-
     </style>
 </head>
 <body>
@@ -784,7 +813,6 @@
                     <input type="hidden" name="sb_reg" value="" />
                     <input type="hidden" name="identity" value="ua&8X*Qy" />
                 </form>
-
 
                 <div class="cta-attention">
                     【確認事項】<br>
@@ -881,7 +909,6 @@
                     <input type="hidden" name="sb_reg" value="" />
                     <input type="hidden" name="identity" value="ua&8X*Qy" />
                 </form>
-
 
                 <div class="cta-attention">
                     【確認事項】<br>
@@ -1083,5 +1110,6 @@
             </ul>
         </div>
     </footer>
+
 </body>
 </html>
