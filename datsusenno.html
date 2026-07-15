@@ -1,227 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社会的洗脳の引き算でwant toを起動する『マインドOS・リブート無料WEBセミナー』</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-.firstview img {
-width: 100%;
-height: auto;
-display: block;
-}
+    <!-- Orange Mail Forms Style -->
+    <link rel="stylesheet" type="text/css" href="https://mail.os7.biz/current/css/html_form/common.css" />
+    <link rel="stylesheet" type="text/css" href="https://mail.os7.biz/current/css/html_form/colors/white.css" />
 
-/* --- メインコンテンツセクション --- */
-.section-padding {
-padding: 50px 0;
-}
+    <script>
+    function MLFormSubmitOnlyIn(formId, strButton){
+        var form = document.getElementById(formId);
+        if (!form) return;
+        var obj = window.open('http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php','tml_form','width=400,height=300,menubar=no,toolbar=no');
+        form.target = 'tml_form';
+        form.sb_reg.value = strButton;
+        var org = document.charset;
+        document.charset = 'UTF-8';
+        form.submit();
+        document.charset = org;
+    }
+    </script>
 
-.section-bg-light {
-background-color: var(--bg-light);
-}
+    <style>
+        :root {
+            --primary-color: #4f46e5; /* ボタン等のメインカラー（知性とロジックのディープインディゴ） */
+            --primary-hover: #4338ca;  /* ホバー時のブルーバイオレット */
+            --accent-color: #eabb20;  /* 強調黄色 */
+            --danger-color: #b91c1c;  /* 赤強調（警告用ディープレッド） */
+            --bg-dark-blue: #1e1b4b;  /* お悩みヘッダー等の深みのあるダークインディゴ */
+            --text-main: #0f172a;
+            --text-sub: #475569;
+            --bg-light: #f8fafc;
+            --font-gothic: 'Noto Sans JP', sans-serif;
+            --font-round: 'Outfit', sans-serif;
+            --container-width: 860px;
+        }
 
-/* --- お悩みセクションヘッダー --- */
-.subhead-blue {
-background-color: var(--bg-dark-blue);
-color: #ffffff;
-text-align: center;
-padding: 24px 20px;
-font-family: var(--font-gothic);
-font-weight: 700;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            
-            /* 左右両端に突き抜けさせる設定 */
-            width: 100vw;
-            margin-left: calc(50% - 50vw);
-            margin-right: calc(50% - 50vw);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-gothic);
+            color: var(--text-main);
+            background-color: #ffffff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden; /* 左右の突き出しによる横スクロールの発生を防ぐ */
+        }
+
+        /* --- 共通コンテナ --- */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ファーストビュー (ヘッドビュー) --- */
+        .firstview {
+            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+            line-height: 0;
+        }
+
+        .firstview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- メインコンテンツセクション --- */
+        .section-padding {
+            padding: 50px 0;
+        }
+
+        .section-bg-light {
+            background-color: var(--bg-light);
+        }
+
+        /* --- お悩みセクションヘッダー --- */
+        .subhead-blue {
+            background-color: var(--bg-dark-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 24px 20px;
+            font-family: var(--font-gothic);
+            font-weight: 700;
             font-size: 1.6rem;
             line-height: 1.45;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-bottom: 25px;
             letter-spacing: 0.5px;
-}
+        }
 
-.subhead-blue mark {
-            background: transparent;
+        .subhead-blue mark {
             background-color: transparent;
-color: var(--accent-color);
+            color: var(--accent-color);
             font-weight: 900;
-}
+        }
 
-.subhead-intro {
-            font-size: 1.1rem;
+        .subhead-intro {
             font-size: 1.05rem;
             line-height: 1.8;
-color: var(--text-sub);
-            margin-top: 25px;
-text-align: center;
-            line-height: 1.8;
+            color: var(--text-sub);
+            text-align: center;
             margin-bottom: 35px;
-font-weight: 500;
-}
+            font-weight: 500;
+        }
 
-        /* --- お悩みチェックリスト --- */
         .subhead-intro strong {
             color: var(--danger-color);
             font-weight: 700;
         }
 
         /* --- チェックリスト (お悩み) --- */
-.checklist-wrapper {
-background-color: #ffffff;
-            border-radius: 12px;
-            padding: 30px 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03), 0 0 0 1px rgba(0,0,0,0.05);
-            margin-top: 20px;
+        .checklist-wrapper {
+            background-color: #ffffff;
             border-radius: 16px;
             padding: 40px 50px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.02);
             border: 1px solid #f1f5f9;
-}
+        }
 
-.checklist-list {
-list-style: none;
+        .checklist-list {
+            list-style: none;
             padding: 0;
             margin: 0;
-}
+        }
 
-.checklist-list li {
-position: relative;
-            padding-left: 35px;
-            margin-bottom: 18px;
-            font-size: 1.15rem;
+        .checklist-list li {
+            position: relative;
             padding-left: 36px;
             margin-bottom: 20px;
             font-size: 1.1rem;
             color: #334155;
             line-height: 1.7;
-font-weight: 500;
-            line-height: 1.5;
-            border-bottom: 1px dashed rgba(0,0,0,0.1);
-            padding-bottom: 14px;
-}
-
-.checklist-list li:last-child {
-margin-bottom: 0;
-            border-bottom: none;
-            padding-bottom: 0;
-}
-
-.checklist-list li::before {
-            content: '\f00c'; /* FontAwesomeのチェックアイコン */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            content: '▲';
-position: absolute;
-            left: 5px;
-            left: 0;
-top: 2px;
-            color: var(--primary-color);
-            font-size: 1.2rem;
+            font-weight: 500;
         }
 
-        /* --- 学べることセクション --- */
-        .learn-section {
-            background-color: #f5f3ff;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* 背景画像をスクロール時に固定（パララックス効果） */
-            border-top: 1px solid rgba(0,0,0,0.05);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+        .checklist-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .checklist-list li::before {
+            content: '▲';
+            position: absolute;
+            left: 0;
+            top: 2px;
             color: var(--danger-color);
             font-size: 1.15rem;
             font-weight: 900;
-}
+        }
 
         /* --- 学べることカード --- */
-.learn-card {
-background-color: #ffffff;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin: 20px 0;
+        .learn-card {
+            background-color: #ffffff;
             border-radius: 20px;
             padding: 45px 50px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             border: 1px solid rgba(226, 232, 240, 0.8);
-}
+        }
 
-.learn-title {
-            text-align: center;
-            font-family: var(--font-gothic);
+        .learn-title {
             font-size: 1.6rem;
-font-weight: 900;
-            font-size: 1.7rem;
+            font-weight: 900;
             line-height: 1.45;
             text-align: center;
             margin-bottom: 35px;
-color: var(--text-main);
-            margin-bottom: 30px;
-            line-height: 1.4;
+            color: var(--text-main);
             letter-spacing: 0.5px;
-}
+        }
 
-.learn-title mark {
-            background: transparent;
-            color: var(--primary-color);
+        .learn-title mark {
             background: linear-gradient(transparent 60%, #fef08a 60%);
             color: inherit;
             font-weight: 900;
             padding: 0 2px;
-}
+        }
 
-.learn-list {
-list-style: none;
+        .learn-list {
+            list-style: none;
             padding: 0;
             margin: 0;
-}
+        }
 
-.learn-list li {
-position: relative;
-            padding-left: 35px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            line-height: 1.6;
+        .learn-list li {
+            position: relative;
             padding-left: 36px;
             margin-bottom: 22px;
             font-size: 1.05rem;
             color: #334155;
             line-height: 1.7;
             font-weight: 600;
-}
+        }
 
-.learn-list li:last-child {
-margin-bottom: 0;
-}
+        .learn-list li:last-child {
+            margin-bottom: 0;
+        }
 
-.learn-list li::before {
-            content: '\f0a4'; /* FontAwesomeの手アイコン */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
+        .learn-list li::before {
             content: '➔';
-position: absolute;
-            left: 5px;
-            top: 2px;
+            position: absolute;
             left: 0;
             top: 1px;
-color: var(--primary-color);
-font-size: 1.2rem;
+            color: var(--primary-color);
+            font-size: 1.2rem;
             font-weight: 900;
-}
+        }
 
-        /* --- CTAエリア（登録フォーム・ボタン） --- */
         /* --- CTAセクション --- */
-.cta-card {
-            background-color: #ffffff;
-            border: 3px solid var(--primary-color);
-            border-radius: 38px;
-            padding: 40px 30px;
+        .cta-card {
             background: linear-gradient(135deg, #1e1b4b 0%, #0f0b3c 100%);
             border-radius: 24px;
             padding: 45px 40px;
-text-align: center;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
-            margin: 40px auto;
-            max-width: 800px;
+            text-align: center;
             color: #ffffff;
             box-shadow: 0 20px 40px rgba(30, 27, 75, 0.15);
             position: relative;
@@ -238,66 +243,49 @@ text-align: center;
             height: 100%;
             background: radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%);
             pointer-events: none;
-}
+        }
 
-.cta-subhead {
-            font-size: 1.2rem;
+        .cta-subhead {
             font-size: 1.1rem;
-font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 10px;
+            font-weight: 700;
             color: var(--accent-color);
             margin-bottom: 12px;
             letter-spacing: 2px;
             text-transform: uppercase;
-}
+        }
 
-.cta-title {
-            font-family: var(--font-gothic);
+        .cta-title {
             font-size: 1.65rem;
-font-weight: 900;
-            font-size: 1.8rem;
+            font-weight: 900;
             line-height: 1.45;
-margin-bottom: 30px;
+            margin-bottom: 30px;
             letter-spacing: 0.5px;
-}
+        }
 
-.cta-title mark {
-            background: transparent;
-            color: var(--danger-color);
+        .cta-title mark {
             background-color: transparent;
             color: #ffffff;
             background: linear-gradient(transparent 70%, var(--accent-color) 70%);
             padding: 0 2px;
-}
+        }
 
-        .btn-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
         .cta-form {
             max-width: 580px;
             margin: 0 auto 25px;
             display: flex;
             flex-direction: column;
-gap: 15px;
+            gap: 15px;
         }
 
         .form-input {
-width: 100%;
-            max-width: 550px;
-            padding: 22px 30px;
-            background-color: var(--primary-color);
+            width: 100%;
             padding: 16px 20px;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.15);
             background-color: rgba(255, 255, 255, 0.08);
-color: #ffffff;
+            color: #ffffff;
             font-size: 1.05rem;
-font-family: var(--font-gothic);
-            font-weight: 900;
-            font-size: 1.4rem;
-            text-decoration: none;
+            font-family: var(--font-gothic);
             transition: all 0.3s ease;
             text-align: center;
         }
@@ -316,92 +304,47 @@ font-family: var(--font-gothic);
         .btn-cta {
             width: 100%;
             padding: 18px 24px;
-border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3); /* ブルーの影 */
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-border: none;
+            border-radius: 50px;
+            border: none;
             background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
             color: #ffffff;
             font-size: 1.25rem;
             font-weight: 900;
             font-family: var(--font-gothic);
-cursor: pointer;
-            margin-bottom: 25px;
+            cursor: pointer;
             box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-line-height: 1.4;
-}
-
-        /* ボタンのぷるぷるアニメーション */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+            line-height: 1.4;
         }
 
-        .btn-cta-animate {
-            animation: pulse 2s infinite ease-in-out;
         .btn-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px rgba(217, 119, 6, 0.5);
             background: linear-gradient(135deg, #fbbf24 0%, #ea580c 100%);
-}
+        }
 
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            background-color: var(--primary-hover);
-            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45); /* ホバー時のブルーの影 */
-            animation-play-state: paused; /* ホバー時はアニメーションを止める */
         .btn-cta:active {
             transform: translateY(0);
-}
+        }
 
-.btn-cta i {
-            font-size: 1.8rem;
+        .btn-cta i {
             font-size: 1.4rem;
             transition: transform 0.3s ease;
-}
+        }
 
-        .cta-attention {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            text-align: left;
-            line-height: 1.7;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            padding-top: 20px;
-            max-width: 650px;
-            margin: 0 auto;
         .btn-cta:hover i {
             transform: translateX(4px);
-}
+        }
 
-        .cta-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            width: 100%;
-            max-width: 550px;
-            margin: 0 auto 25px auto;
         /* マイクロアニメーション：鼓動エフェクト */
         .btn-cta-animate {
             animation: pulse 2s infinite;
-}
+        }
 
-        .form-input {
-            width: 100%;
-            padding: 18px 25px;
-            font-size: 1.15rem;
-            border: 2px solid #cbd5e1;
-            border-radius: 50px;
-            outline: none;
-            transition: all 0.3s ease;
-            text-align: center;
-            font-family: var(--font-gothic);
         @keyframes pulse {
             0% {
                 box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35);
@@ -412,11 +355,8 @@ line-height: 1.4;
             100% {
                 box-shadow: 0 10px 25px rgba(217, 119, 6, 0.35);
             }
-}
+        }
 
-        .form-input:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
         .cta-attention {
             font-size: 0.75rem;
             line-height: 1.7;
@@ -424,135 +364,96 @@ line-height: 1.4;
             text-align: left;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
-}
+        }
 
-        /* --- プロフィールセクション --- */
         /* --- 講師プロフィール --- */
-.profile-section {
-            background-color: var(--bg-light);
+        .profile-section {
             background-color: #ffffff;
-padding: 60px 0;
+            padding: 60px 0;
             border-top: 1px solid #f1f5f9;
-}
+        }
 
-.profile-header {
-            font-family: var(--font-gothic);
+        .profile-header {
             font-size: 1.7rem;
-font-weight: 900;
-            font-size: 2rem;
-text-align: center;
-            margin-bottom: 40px;
+            font-weight: 900;
+            text-align: center;
             margin-bottom: 45px;
             color: var(--text-main);
             line-height: 1.4;
-}
+        }
 
-.profile-header mark {
-            background: transparent;
-            color: var(--primary-color);
+        .profile-header mark {
             background: linear-gradient(transparent 60%, #fef08a 60%);
             color: inherit;
             font-weight: 900;
             padding: 0 2px;
-}
+        }
 
-.profile-card {
-display: flex;
-gap: 40px;
-align-items: flex-start;
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.02), 0 0 0 1px rgba(0,0,0,0.04);
+        .profile-card {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
             background-color: var(--bg-light);
             border-radius: 24px;
             padding: 45px;
             border: 1px solid #e2e8f0;
-}
-
-.profile-imgbox {
-            width: 35%;
-            width: 32%;
-flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f1f5f9;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
         }
 
-        .profile-imgbox i {
-            font-size: 6rem;
-            color: #94a3b8;
-            padding: 50px 0;
+        .profile-imgbox {
+            width: 32%;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 12px;
             overflow: hidden;
-}
+        }
 
-.profile-textbox {
-            width: 65%;
+        .profile-textbox {
             width: 68%;
-}
+        }
 
-.profile-title-en {
-            font-family: var(--font-round);
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-sub);
-            letter-spacing: 1px;
+        .profile-title-en {
             font-size: 0.85rem;
             font-weight: 900;
             color: var(--primary-color);
             letter-spacing: 2px;
-margin-bottom: 5px;
-text-transform: uppercase;
-}
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
 
-.profile-name {
-font-size: 1.8rem;
-font-weight: 900;
-            margin-bottom: 12px;
-            font-family: var(--font-gothic);
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 900;
             color: var(--text-main);
             margin-bottom: 5px;
-}
+        }
 
-.profile-sub {
-            font-size: 1.05rem;
+        .profile-sub {
             font-size: 1rem;
-font-weight: 700;
-            color: var(--primary-color);
+            font-weight: 700;
             color: var(--text-sub);
-margin-bottom: 25px;
-            line-height: 1.4;
+            margin-bottom: 25px;
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 8px;
             display: inline-block;
-}
+        }
 
-        .profile-text-content p {
         .profile-text-content {
-font-size: 0.95rem;
-line-height: 1.8;
-            margin-bottom: 15px;
-color: #334155;
-            text-align: justify;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #334155;
         }
 
         .profile-text-content p {
             margin-bottom: 15px;
-}
+        }
 
-.profile-text-content p:last-child {
-@@ -430,34 +454,38 @@
-/* --- フッター --- */
-footer {
-background-color: #0f172a;
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
+        .profile-text-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- フッター --- */
+        footer {
+            background-color: #0f172a;
             color: #94a3b8;
             padding: 35px 0;
             font-size: 0.85rem;
@@ -563,69 +464,143 @@ background-color: #0f172a;
             display: flex;
             justify-content: space-between;
             align-items: center;
-}
+        }
 
-.footer-copyright {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 15px;
+        .footer-copyright {
             font-weight: 500;
-}
+        }
 
-.footer-links {
-list-style: none;
-display: flex;
-            justify-content: center;
-            gap: 25px;
+        .footer-links {
+            list-style: none;
+            display: flex;
             gap: 20px;
             padding: 0;
             margin: 0;
-}
+        }
 
-.footer-links a {
-            color: #cbd5e1;
-            font-size: 0.85rem;
+        .footer-links a {
             color: #94a3b8;
-text-decoration: none;
-            transition: color 0.2s ease;
+            text-decoration: none;
             transition: color 0.3s ease;
-}
+        }
 
-.footer-links a:hover {
-color: #ffffff;
-            text-decoration: underline;
-}
+        .footer-links a:hover {
+            color: #ffffff;
+        }
 
-/* リスト内強調用のスタイル */
-@@ -536,13 +564,13 @@
-position: absolute;
-top: -15px;
-left: 25px;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        /* リスト内強調用のスタイル */
+        .checklist-list mark, .learn-list mark {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            color: inherit;
+            font-weight: 700;
+            padding: 0 2px;
+        }
+
+        .text-danger {
+            color: #a83232; /* 落ち着きと重みのある赤茶色 */
+            font-weight: 700;
+        }
+
+        /* --- 豪華3大特典セクションのスタイル --- */
+        .bonus-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .bonus-header h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.4;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .bonus-header h2 .highlight {
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .bonus-header h2 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .bonus-header p {
+            font-size: 1.15rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        .bonus-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .bonus-grid-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03), 0 0 0 1px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bonus-grid-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(79, 70, 229, 0.08), 0 0 0 1px rgba(79, 70, 229, 0.15);
+        }
+
+        .bonus-badge {
+            position: absolute;
+            top: -15px;
+            left: 25px;
             background: linear-gradient(135deg, #b85270 0%, #a4435e 100%); /* ローズ・ピンク */
-color: #ffffff;
-font-weight: 900;
-font-size: 0.95rem;
-padding: 5px 18px;
-border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 0.95rem;
+            padding: 5px 18px;
+            border-radius: 50px;
             box-shadow: 0 4px 10px rgba(184, 82, 112, 0.25);
-}
+        }
 
-.bonus-type {
-@@ -560,6 +588,9 @@
-color: var(--text-main);
-line-height: 1.3;
-margin-bottom: 5px;
+        .bonus-type {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            margin-top: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .bonus-card-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1.3;
+            margin-bottom: 5px;
             min-height: 3rem;
             display: flex;
             align-items: center;
-}
+        }
 
-.bonus-card-desc {
-@@ -571,6 +602,22 @@
-padding-bottom: 15px;
-}
+        .bonus-card-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 15px;
+        }
 
         .bonus-card-visual {
             width: 100%;
@@ -643,427 +618,498 @@ padding-bottom: 15px;
             object-fit: cover;
         }
 
-.bonus-card-bullets {
-list-style: none;
-padding: 0;
-@@ -580,7 +627,7 @@
-.bonus-card-bullets li {
-position: relative;
-padding-left: 20px;
-            font-size: 0.9rem;
-            font-size: 0.85rem;
-line-height: 1.6;
-color: #334155;
-margin-bottom: 12px;
-@@ -604,17 +651,6 @@
-display: none;
-}
-
-        .bonus-image-placeholder {
-            background: #f8fafc;
-            height: 160px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            border: 1px dashed #e2e8f0;
-        }
-
-/* --- レスポンシブ対応 --- */
-@media (max-width: 768px) {
-:root {
-@@ -746,261 +782,6 @@
-font-weight: 700;
-}
-}
-
-        /* --- プレゼント見出しバナー (Modelling Image 1) --- */
-        .present-header-banner {
-            background-color: #0f4c81; /* 深い青 */
-            padding: 30px 20px;
-            border-radius: 12px;
-            color: #ffffff;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(15, 76, 129, 0.25);
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .present-header-banner .badge-text {
-            font-size: 1.3rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-            display: inline-block;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .present-header-banner .main-title-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .present-header-banner .title-left {
-            font-size: 1.5rem;
-            font-weight: 900;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            line-height: 1.1;
-        }
-
-        .present-header-banner .title-left .sub {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-
-        .present-header-banner .title-left .main {
-            background-color: #a38d38; /* 金色の背景 */
-            padding: 2px 10px;
-            font-size: 1.5rem;
-            color: #ffffff;
-            border-radius: 4px;
-        }
-
-        .present-header-banner .number-glowing {
-            font-size: 5rem;
-            font-weight: 900;
-            line-height: 0.8;
-            color: #ffffff;
-            font-family: 'Outfit', sans-serif;
-            text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.5);
-            position: relative;
-        }
-
-        .present-header-banner .number-glowing::before {
-            content: '✦';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            font-size: 1.8rem;
-            color: #ffffff;
-            text-shadow: 0 0 10px #ffffff;
-            animation: sparkle 2s infinite alternate;
-        }
-
-        .present-header-banner .number-glowing::after {
-            content: '✦';
-            position: absolute;
-            bottom: -10px;
-            right: -15px;
-            font-size: 1.3rem;
-            color: #ffffff;
-            text-shadow: 0 0 10px #ffffff;
-            animation: sparkle 2s infinite alternate-reverse;
-        }
-
-        .present-header-banner .title-right {
-            font-size: 2.8rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            background: linear-gradient(to bottom, #ffffff 60%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-        }
-
-        /* --- プレゼント表示用カード (Modelling Image 2) --- */
-        .modeling-present-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-            margin-top: 10px;
-        }
-
-        .modeling-present-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-        }
-
-        .modeling-present-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .modeling-present-card .card-header-bar {
-            background: linear-gradient(90deg, #b85270 0%, #a4435e 100%); /* ローズ・ピンク */
-            color: #ffffff;
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-weight: 700;
-            font-size: 0.85rem;
-        }
-
-        .modeling-present-card .card-header-bar-left {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .modeling-present-card .card-header-bar i {
-            font-size: 1rem;
-        }
-
-        .modeling-present-card .card-header-bar span.badge-num {
-            background-color: #ffffff;
-            color: #a4435e;
-            border-radius: 50px;
-            padding: 1px 8px;
-            font-size: 0.75rem;
-            font-weight: 900;
-        }
-
-        .modeling-present-card .card-header-label {
-            font-size: 0.75rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .modeling-present-card .card-body {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            text-align: center;
-        }
-
-        .modeling-present-card .card-title {
-            font-size: 1rem;
-            font-weight: 900;
-            color: var(--text-main);
-            margin-bottom: 15px;
-            line-height: 1.4;
-            min-height: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modeling-present-card .card-visual {
-            width: 100%;
-            height: 140px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            background: #f1f5f9;
-        }
-
-        .modeling-present-card .card-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .modeling-present-card .card-desc {
-            font-size: 0.8rem;
-            color: var(--text-sub);
-            line-height: 1.5;
-            text-align: left;
+        .bonus-card-bullets {
+            list-style: none;
+            padding: 0;
             margin: 0;
         }
 
-        @keyframes sparkle {
-            0% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
-            100% { opacity: 1; transform: scale(1.2) rotate(15deg); }
+        .bonus-card-bullets li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 12px;
         }
 
-        /* --- レスポンシブ対応 (新規追加分) --- */
+        .bonus-card-bullets li:last-child {
+            margin-bottom: 0;
+        }
+
+        .bonus-card-bullets li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 0.85rem;
+        }
+
+        .bonus-swipe-hint {
+            display: none;
+        }
+
+        /* --- レスポンシブ対応 --- */
         @media (max-width: 768px) {
-            .present-header-banner {
-                padding: 20px 10px;
+            :root {
+                --container-width: 100%;
             }
-            .present-header-banner .badge-text {
+
+            .subhead-blue {
+                font-size: 1.4rem;
+                padding: 18px 15px;
+            }
+
+            .checklist-wrapper {
+                padding: 20px;
+            }
+
+            .checklist-list li {
+                font-size: 1rem;
+                padding-left: 28px;
+                margin-bottom: 14px;
+            }
+
+            .checklist-list li::before {
                 font-size: 1rem;
             }
-            .present-header-banner .title-left .sub {
-                font-size: 0.8rem;
+
+            .learn-card {
+                padding: 25px 20px;
             }
-            .present-header-banner .title-left .main {
-                font-size: 1.1rem;
-                padding: 1px 6px;
+
+            .learn-title {
+                font-size: 1.35rem;
+                margin-bottom: 20px;
             }
-            .present-header-banner .number-glowing {
-                font-size: 3.8rem;
+
+            .learn-list li {
+                font-size: 0.95rem;
+                padding-left: 28px;
+                margin-bottom: 15px;
             }
-            .present-header-banner .title-right {
-                font-size: 2rem;
+
+            .learn-list li::before {
+                font-size: 1rem;
             }
-            .modeling-present-grid {
+
+            .cta-card {
+                border-radius: 20px;
+                padding: 30px 15px;
+                margin: 20px 10px;
+            }
+
+            .cta-title {
+                font-size: 1.35rem;
+                margin-bottom: 20px;
+            }
+
+            .btn-cta {
+                font-size: 1.15rem;
+                padding: 16px 20px;
+                border-radius: 30px;
+            }
+
+            .btn-cta i {
+                font-size: 1.3rem;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                padding: 25px 20px;
+                gap: 25px;
+            }
+
+            .profile-imgbox {
+                width: 60%;
+                margin: 0 auto;
+            }
+
+            .profile-textbox {
+                width: 100%;
+            }
+
+            .profile-name {
+                font-size: 1.5rem;
+            }
+
+            .profile-sub {
+                font-size: 0.95rem;
+                margin-bottom: 15px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .learn-section {
+                background-attachment: scroll; /* モバイル端末での表示バグ・負荷防止のため固定を解除 */
+            }
+
+            /* 特典セクションのレスポンシブ化（横スクロールスライダー化で縦長化を防止） */
+            .bonus-cards-grid {
                 display: flex !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
+                flex-wrap: nowrap !important; /* 横並びを強制 */
+                overflow-x: auto !important; /* 横スクロールを有効化 */
                 scroll-snap-type: x mandatory;
                 scroll-behavior: smooth;
                 gap: 20px;
                 padding: 20px 10px;
+                margin-top: 10px;
                 -webkit-overflow-scrolling: touch;
-                margin-top: 5px;
             }
-            .modeling-present-grid::-webkit-scrollbar {
-                display: none;
+            .bonus-cards-grid::-webkit-scrollbar {
+                display: none; /* スクロールバーを非表示にして美観を保つ */
             }
-            .modeling-present-card {
-                flex: 0 0 85% !important;
+            .bonus-grid-card {
+                flex: 0 0 85% !important; /* 縮むのを防止 */
                 width: 85% !important;
-                min-width: 85% !important;
+                min-width: 85% !important; /* スマホサイズで確実に85%の幅を確保 */
                 scroll-snap-align: center;
+                padding: 25px 20px;
+                box-sizing: border-box;
             }
-            .modeling-present-card .card-title {
-                min-height: auto;
+            /* スマホで横スワイプできることを示すインジケーター */
+            .bonus-swipe-hint {
+                display: block !important;
+                text-align: center;
+                font-size: 0.8rem;
+                color: var(--text-sub);
+                margin-top: 10px;
+                font-weight: 700;
             }
         }
-</style>
+    </style>
 </head>
 <body>
-@@ -1018,22 +799,21 @@
-<section class="section-padding">
-<div class="container">
-<div class="cta-card">
-                <div class="cta-subhead">ご登録はこちら</div>
+
+    <!-- ==========================================
+         ファーストビュー (メイン画像)
+         ========================================== -->
+    <div class="firstview">
+        <img src="https://itsuki-coaching.com/lpkuwano1.png" alt="メインビジュアル">
+    </div>
+
+    <!-- ==========================================
+         ファーストCTAセクション
+         ========================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-card">
                 <div class="cta-subhead">社会的洗脳の引き算から始める</div>
-<div class="cta-title">
-                    <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
+                <div class="cta-title">
                     努力と根性の精神論をすべて引き算し、脳のOSを書き換える<br><mark>『マインドOS・リブート無料セミナー』</mark>
-</div>
-
-<form name="ml_form_only_in_1" id="ml_form_only_in_1" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
-<input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
-<button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_1', '登録する');">
-<i class="fa-solid fa-circle-right"></i>
-                        <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                </div>
+                
+                <form name="ml_form_only_in_1" id="ml_form_only_in_1" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
+                    <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
+                    <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_1', '登録する');">
+                        <i class="fa-solid fa-circle-right"></i>
                         <span>👉 努力ゼロのまま無意識が勝手に動き出す！<br>「オートパイロット自動操縦マインド」を今すぐ無料で手に入れる</span>
-</button>
-<input type="hidden" name="sb_reg" value="" />
-<input type="hidden" name="identity" value="ua&8X*Qy" />
-</form>
+                    </button>
+                    <input type="hidden" name="sb_reg" value="" />
+                    <input type="hidden" name="identity" value="ua&8X*Qy" />
+                </form>
 
+                <div class="cta-attention">
+                    【確認事項】<br>
+                    ※携帯のキャリアメール（@docomo.ne.jp、@ezweb.ne.jp、@softbank.ne.jp など）では受信できませんので、Yahoo、Gmail などのフリーメールアドレスでご登録下さい。迷惑フォルダに案内メールが届く場合もありますので、受信BOX にメールが無い場合は迷惑フォルダも、ご確認ください。<br>
+                    ※プライバシーポリシーについて：お客様の個人情報を第三者に開示することはございません。<br>
+                    ※ご登録いただいたメールアドレスにはNARUから定期的に情報を配信させていただきます。<br>
+                    ※ご不要な場合には１クリックで配信解除できます。
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="cta-attention">
-【確認事項】<br>
-※携帯のキャリアメール（@docomo.ne.jp、@ezweb.ne.jp、@softbank.ne.jp など）では受信できませんので、Yahoo、Gmail などのフリーメールアドレスでご登録下さい。迷惑フォルダに案内メールが届く場合もありますので、受信BOX にメールが無い場合は迷惑フォルダも、ご確認ください。<br>
-@@ -1052,11 +832,11 @@
-<div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 15px;">
-<!-- 特典プレビュー画像 (Modelling Image 2) -->
-<div class="bonus-preview-img-wrapper" style="margin-bottom: 30px;">
-                <img src="bonus_preview.png" alt="豪華3大プレミアム特典プレビュー" style="width: 100%; max-width: 800px; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    <!-- ==========================================
+         ② 登録するだけでもらえる豪華3大プレゼントセクション
+         ========================================== -->
+    <section class="section-padding section-bg-light" style="background-color: var(--bg-light); border-bottom: 1px solid #e2e8f0; text-align: center;">
+        <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 15px;">
+            <!-- 特典プレビュー画像 (Modelling Image 2) -->
+            <div class="bonus-preview-img-wrapper" style="margin-bottom: 30px;">
                 <img src="assets/bonus_preview.png" alt="豪華3大プレミアム特典プレビュー" style="width: 100%; max-width: 800px; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-</div>
-<!-- タイトル画像 (Modelling Image 1) -->
-<div class="bonus-title-img-wrapper">
-                <img src="bonus_banner.png" alt="最強の豪華3大プレゼント 登録するだけでもらえる！" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+            </div>
+            <!-- タイトル画像 (Modelling Image 1) -->
+            <div class="bonus-title-img-wrapper">
                 <img src="assets/bonus_banner.png" alt="最強の豪華3大プレゼント 登録するだけでもらえる！" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-</div>
-</div>
-</section>
-@@ -1115,22 +895,21 @@
-<section class="section-padding">
-<div class="container">
-<div class="cta-card">
-                <div class="cta-subhead">ご登録はこちら</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         お悩みセクション (こんなお悩みありませんか？)
+         ========================================== -->
+    <section class="section-padding section-bg-light">
+        <div class="container">
+            <div class="subhead-blue">
+                こんな<mark>お悩み</mark>ありませんか？
+            </div>
+
+            <div class="checklist-wrapper">
+                <ul class="checklist-list">
+                    <li>「自分探し」や「内観ノート」にどれだけ真面目に取り組んでも、<mark>目の前の現実が何ひとつ変わっていない</mark></li>
+                    <li>自己啓発やコーチングに何十万、何百万と投資してきたのに、成果が出ず<span class="text-danger">お金とエネルギーだけがすり減っていく</span></li>
+                    <li>常に他人の顔色や世間の目が気になり、<span class="text-danger">「自分の本音」や「本当にやりたいこと」を無意識に抑圧</span>してしまう</li>
+                    <li>「こうあるべき」「こうしなきゃいけない」という社会のルール（<mark>社会的洗脳</mark>）に縛られ、息苦しさを抱えている</li>
+                    <li>やる気や強い意志の力で無理に行動しようとしては挫折し、すぐに心身が消耗して<span class="text-danger">ひどいガス欠状態</span>に陥る</li>
+                    <li>「自分軸で生きる」と決めたはずなのに、いざ決断する段階になると<mark>他人の基準（親や世間の正解）</mark>で選んでしまう</li>
+                    <li>「このままではいけない」という強烈な焦りはあるものの、現状打破のために<span class="text-danger">具体的にどう行動すべきか分からない</span></li>
+                    <li>自分が生涯かけて追求したい「本当のゴール」がいつまでも見えず、<span class="text-danger">手探りで暗闇を歩いている</span>ような感覚がある</li>
+                    <li>人一倍努力しているはずなのに一向に報われず、<mark>毎日が曇り空のなかにいるような深い停滞感</mark>を感じている</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         学べることセクション
+         ========================================== -->
+    <section class="section-padding learn-section" style="background-image: linear-gradient(135deg, rgba(245, 243, 255, 0.96) 0%, rgba(237, 233, 254, 0.96) 100%);">
+        <div class="container">
+            <div class="learn-card">
+                <div class="learn-title">
+                    あなたが今回の<mark>無料WEBセミナー</mark><br>で学べること
+                </div>
+
+                <ul class="learn-list">
+                    <li>どれだけ一生懸命に勉強・自己投資を重ねても、なぜか簡単に現実を変えてしまう人と、1ミリも現状が変わらない人の決定的な<mark>「3つの違い」</mark>とは？</li>
+                    <li>真面目にノートを書き、自分と向き合う（内観する）人ほど、知らず知らずのうちに陥ってしまう「学習のパラドックス」と、脳のブレーキを自ら踏み込んでしまう<span class="text-danger">意外な盲点</span></li>
+                    <li>自己啓発やコーチングに100万円以上投資した結果、知識ばかりが詰め込まれて脳がフリーズしてしまう、セミナージプシーの<span class="text-danger">「絶対にやってはいけない3つの間違い」</span></li>
+                    <li>なぜ「自分軸で生きたい」と強く願っている人ほど、決断の瞬間に親の顔色や「社会の正解」という<mark>他人の基準</mark>を選んでしまうのか？ その隠された理由</li>
+                    <li>やる気や意志の力で行動しようとするのを即座にやめてください。脳をすり減らさず、無駄なエネルギー漏電を完全にストップさせる<span class="text-danger">「セルフトーク排除」の秘密</span></li>
+                    <li>現状を変えたい強い焦りはあるのに、身近なドリームキラーや過去の思考パターンに引き戻されてしまう人に共通する<mark>「ホメオスタシス（現状維持）」の盲点</mark></li>
+                    <li>毎日が曇り空のような停滞感に包まれているあなたが、他力とチャンスを自然と引き寄せるために、まず「あるタイミング」で捨てるべき<span class="text-danger">”たった1つの不要な価値観”</span>とは？</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         セカンドCTAセクション
+         ========================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-card">
                 <div class="cta-subhead">社会的洗脳の引き算から始める</div>
-<div class="cta-title">
-                    <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
+                <div class="cta-title">
                     努力と根性の精神論をすべて引き算し、脳のOSを書き換える<br><mark>『マインドOS・リブート無料セミナー』</mark>
-</div>
-
-<form name="ml_form_only_in_2" id="ml_form_only_in_2" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
-<input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
-<button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_2', '登録する');">
-<i class="fa-solid fa-circle-right"></i>
-                        <span>今すぐ無料WEBセミナー<br>に登録する</span>
+                </div>
+                
+                <form name="ml_form_only_in_2" id="ml_form_only_in_2" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
+                    <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
+                    <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_2', '登録する');">
+                        <i class="fa-solid fa-circle-right"></i>
                         <span>👉 努力ゼロのまま無意識が勝手に動き出す！<br>「オートパイロット自動操縦マインド」を今すぐ無料で手に入れる</span>
-</button>
-<input type="hidden" name="sb_reg" value="" />
-<input type="hidden" name="identity" value="ua&8X*Qy" />
-</form>
+                    </button>
+                    <input type="hidden" name="sb_reg" value="" />
+                    <input type="hidden" name="identity" value="ua&8X*Qy" />
+                </form>
 
+                <div class="cta-attention">
+                    【確認事項】<br>
+                    ※携帯のキャリアメール（@docomo.ne.jp、@ezweb.ne.jp、@softbank.ne.jp など）では受信できませんので、Yahoo、Gmail などのフリーメールアドレスでご登録下さい。迷惑フォルダに案内メールが届く場合もありますので、受信BOX にメールが無い場合は迷惑フォルダも、ご確認ください。<br>
+                    ※プライバシーポリシーについて：お客様の個人情報を第三者に開示することはございません。<br>
+                    ※ご登録いただいたメールアドレスにはNARUから定期的に情報を配信させていただきます。<br>
+                    ※ご不要な場合には１クリックで配信解除できます。
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="cta-attention">
-【確認事項】<br>
-※携帯のキャリアメール（@docomo.ne.jp、@ezweb.ne.jp、@softbank.ne.jp など）では受信できませんので、Yahoo、Gmail などのフリーメールアドレスでご登録下さい。迷惑フォルダに案内メールが届く場合もありますので、受信BOX にメールが無い場合は迷惑フォルダも、ご確認ください。<br>
-@@ -1176,7 +955,7 @@
-<div class="step-num" style="font-size: 2.2rem; font-weight: 900; color: var(--primary-color); font-family: var(--font-round); line-height: 1;">03</div>
-<div class="step-content">
-<h3 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 10px 0; color: var(--text-main);">want toとRASの書き換え — 意志の力を使わず自動操縦でゴールへ進む極意</h3>
-                        <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0;">がんばるのを辞めた人からうまくいく。努力ゼロで無意識が勝手に動き出す「オートパイロット自動操縦マインド」の科学的な構築法 and 見落とされていたチャンスを可視化するRAS再設定のアプローチを紹介。</p>
+    <!-- ==========================================
+         ⑤ WEBセミナーの中身を少し紹介すると...
+         ========================================== -->
+    <section class="section-padding" style="background-color: #ffffff;">
+        <div class="container" style="max-width: var(--container-width); margin: 0 auto;">
+            <div class="bonus-header" style="text-align: center; margin-bottom: 45px;">
+                <h2>🎥 WEBセミナーの中身を少し紹介すると...</h2>
+                <p style="font-size: 1.15rem; color: var(--text-sub); font-weight: 500;">最先端の認知科学に基づく「脳のOS書き換えアプローチ」を詳しく解説します</p>
+            </div>
+            
+            <div class="intro-steps" style="display: flex; flex-direction: column; gap: 30px; max-width: 800px; margin: 0 auto;">
+                <!-- ステップ1 -->
+                <div class="step-card" style="display: flex; gap: 25px; background: #f8fafc; padding: 30px; border-radius: 16px; border-left: 5px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: left;">
+                    <div class="step-num" style="font-size: 2.2rem; font-weight: 900; color: var(--primary-color); font-family: var(--font-round); line-height: 1;">01</div>
+                    <div class="step-content">
+                        <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 10px 0; color: var(--text-main);">努力と根性の罠 — なぜ自己投資するほどフリーズするのか？</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0;">真面目な人ほど陥る「学習のパラドックス」の正体を明かします。変わろうとする意志が強い人ほど、脳の防衛システムが作動して強烈な現状維持ブレーキを踏んでしまうメカニズムを解説。</p>
+                    </div>
+                </div>
+                
+                <!-- ステップ2 -->
+                <div class="step-card" style="display: flex; gap: 25px; background: #f8fafc; padding: 30px; border-radius: 16px; border-left: 5px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: left;">
+                    <div class="step-num" style="font-size: 2.2rem; font-weight: 900; color: var(--primary-color); font-family: var(--font-round); line-height: 1;">02</div>
+                    <div class="step-content">
+                        <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 10px 0; color: var(--text-main);">社会的洗脳と脳のバグ — 他人の基準が作り出す見えない檻の正体</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0;">親、世間、常識が植え付けた「他人の正解」を脳のOSレベルでデコードします。他人の基準のせいで脳のフィルター（RAS）にバグが生じ、自分の本当の欲求（want to）が見えなくなっている理由を暴露。</p>
+                    </div>
+                </div>
+                
+                <!-- ステップ3 -->
+                <div class="step-card" style="display: flex; gap: 25px; background: #f8fafc; padding: 30px; border-radius: 16px; border-left: 5px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: left;">
+                    <div class="step-num" style="font-size: 2.2rem; font-weight: 900; color: var(--primary-color); font-family: var(--font-round); line-height: 1;">03</div>
+                    <div class="step-content">
+                        <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0 0 10px 0; color: var(--text-main);">want toとRASの書き換え — 意志の力を使わず自動操縦でゴールへ進む極意</h3>
                         <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0;">がんばるのを辞めた人からうまくいく。努力ゼロで無意識が勝手に動き出す「オートパイロット自動操縦マインド」の科学的な構築法と、見落とされていたチャンスを可視化するRAS再設定のアプローチを紹介。</p>
-</div>
-</div>
-</div>
-@@ -1201,11 +980,11 @@
-<div class="bonus-type">限定動画講義</div>
-<h3 class="bonus-card-title">「人生大逆転」書き換え入り口セット</h3>
-<p class="bonus-card-desc">〜人生の舵取りを取り戻し好転させる3ステップ動画講義〜</p>
-                    <div class="bonus-image-placeholder">
-                        <i class="fa-solid fa-video" style="font-size: 3.5rem; color: #cbd5e1;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ⑥ 豪華3大プレゼント詳細セクション
+         ========================================== -->
+    <section class="section-padding section-bg-light" style="background-color: var(--bg-light); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+        <div class="container">
+            <div class="bonus-header">
+                <h2>🎁 今だけ！豪華3大プレゼントを用意しました！</h2>
+                <p>メールアドレス登録後、すぐに自動返信メールにてすべてお届けいたします</p>
+                <div class="bonus-swipe-hint">👈 横にスクロールしてご覧いただけます 👉</div>
+            </div>
+            
+            <div class="bonus-cards-grid">
+                <!-- プレゼント1 -->
+                <div class="bonus-grid-card">
+                    <div class="bonus-badge">プレゼント 1</div>
+                    <div class="bonus-type">限定動画講義</div>
+                    <h3 class="bonus-card-title">「人生大逆転」書き換え入り口セット</h3>
+                    <p class="bonus-card-desc">〜人生の舵取りを取り戻し好転させる3ステップ動画講義〜</p>
                     <div class="bonus-card-visual">
                         <img src="bonus_video.png" alt="「人生大逆転」書き換え入り口セット">
-</div>
-<p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
-                        人生が思い通りにならない本当の原因を、心理学・脳科学・潜在意識の視点からわかりやすく解説。努力しても変われない理由と、自分の人生の主導権を取り戻すための本質的な仕組みを学べます。思うように行動できない原因が明確になり、無意識に人生を制限している思考パターンに気づくことで、自分の意思でコントロールするための土台が身につきます。
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
                         なぜ自分で人生を自由自在にコントロールできないのか（特別動画講義）。人生が思い通りにならない本当の原因を、心理学・脳科学・潜在意識の視点からわかりやすく解説。努力しても変われない理由と、自分の人生の主導権を取り戻すための本質的な仕組みを学べます。思うように行動できない原因が明確になり、無意識に人生を制限している思考パターンに気づくことで、自分の意思でコントロールするための土台が身につきます。
-</p>
-<ul class="bonus-card-bullets">
-<li><strong>動画1：</strong>なぜ自分で人生を自由自在にコントロールできないのか（20分）</li>
-@@ -1220,8 +999,8 @@
-<div class="bonus-type">7日間音声プログラム</div>
-<h3 class="bonus-card-title">「執着手放し」7日間音声講義メソッド</h3>
-<p class="bonus-card-desc">〜人生が勝手に好転し始めた人が実践したワーク〜</p>
-                    <div class="bonus-image-placeholder">
-                        <i class="fa-solid fa-headphones" style="font-size: 3.5rem; color: #cbd5e1;"></i>
+                    </p>
+                    <ul class="bonus-card-bullets">
+                        <li><strong>動画1：</strong>なぜ自分で人生を自由自在にコントロールできないのか（20分）</li>
+                        <li><strong>動画2：</strong>人生好転を阻む呪縛の見つけ方と解除法（20分）</li>
+                        <li><strong>動画3：</strong>want to状態を呼び覚ますための自己超越的思考（20分）</li>
+                    </ul>
+                </div>
+
+                <!-- プレゼント2 -->
+                <div class="bonus-grid-card">
+                    <div class="bonus-badge">プレゼント 2</div>
+                    <div class="bonus-type">7日間音声プログラム</div>
+                    <h3 class="bonus-card-title">「執着手放し」7日間音声講義メソッド</h3>
+                    <p class="bonus-card-desc">〜人生が勝手に好転し始めた人が実践したワーク〜</p>
                     <div class="bonus-card-visual">
                         <img src="bonus_audio.png" alt="「執着手放し」7日間音声講義メソッド">
-</div>
-<p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
-「人にどう思われるか」「こうでなければならない」といった他人の基準（社会的洗脳）や、お金・人間関係・自己成長・仕事・成功への執着を、認知科学の手法で綺麗に洗い流す音声ワーク。毎日届くステップに沿ってワークを実践することで、無意識のブレーキが外れ、我慢ゼロで本当に望むゴールへ向かって心が軽やかに動き出します。
-@@ -1239,8 +1018,8 @@
-<div class="bonus-type">特別電子レポート</div>
-<h3 class="bonus-card-title">脱「正しさ」信仰の核心</h3>
-<p class="bonus-card-desc">〜私が人生を再起動できたときに手放した9つの思い込み〜</p>
-                    <div class="bonus-image-placeholder">
-                        <i class="fa-solid fa-file-pdf" style="font-size: 3.5rem; color: #cbd5e1;"></i>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
+                        「人にどう思われるか」「こうでなければならない」といった他人の基準（社会的洗脳）や、お金・人間関係・自己成長・仕事・成功への執着を、認知科学の手法で綺麗に洗い流す音声ワーク。毎日届くステップに沿ってワークを実践することで、無意識のブレーキが外れ、我慢ゼロで本当に望むゴールへ向かって心が軽やかに動き出します。
+                    </p>
+                    <ul class="bonus-card-bullets">
+                        <li><strong>Day1：</strong>あなたの洗脳された意識を暴く診断</li>
+                        <li><strong>Day2-6：</strong>執着の具体的な解除ワーク（人間関係・お金・自己成長・仕事・成功の領域別）</li>
+                        <li><strong>Day7：</strong>本当にしたいことの見つけ方＋次元意識上昇のヒント</li>
+                    </ul>
+                </div>
+
+                <!-- プレゼント3 -->
+                <div class="bonus-grid-card">
+                    <div class="bonus-badge">プレゼント 3</div>
+                    <div class="bonus-type">特別電子レポート</div>
+                    <h3 class="bonus-card-title">脱「正しさ」信仰の核心</h3>
+                    <p class="bonus-card-desc">〜私が人生を再起動できたときに手放した9つの思い込み〜</p>
                     <div class="bonus-card-visual">
                         <img src="bonus_pdf.png" alt="脱「正しさ」信仰の核心 レポート">
-</div>
-<p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
-「頑張らないと価値がない」「他人に認められないとダメ」「正しい道を選ばなければ失敗する」など、自分自身をがんじがらめに縛っている9つの不要な思い込みを手放すための特別レポート（全18ページ）。実体験に基づくリアルなエピソードとシンプルな視点転換を通して、読んだ瞬間から人生を自発的にリブート（再起動）できます。
-@@ -1260,16 +1039,16 @@
-<section class="section-padding">
-<div class="container">
-<div class="cta-card">
-                <div class="cta-subhead">ご登録はこちら</div>
-                <div class="cta-subhead">社会的洗脳の引き算から始める</div>
-<div class="cta-title">
-                    <mark>期間限定</mark>！今だけ<mark>無料公開中</mark>！
-                    努力と根性の精神論をすべて引き算し、脳のOSを書き換える<br><mark>『マインドOS・リブート無料セミナー』</mark>
-</div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
+                        「頑張らないと価値がない」「他人に認められないとダメ」「正しい道を選ばなければ失敗する」など、自分自身をがんじがらめに縛っている9つの不要な思い込みを手放すための特別レポート（全18ページ）。実体験に基づくリアルなエピソードとシンプルな視点転換を通して、読んだ瞬間から人生を自発的にリブート（再起動）できます。
+                    </p>
+                    <ul class="bonus-card-bullets">
+                        <li><strong>9つの思い込み：</strong>「頑張らないと価値がない」「正しい道を選ばなければ失敗する」「他人から認められないとダメ」など</li>
+                        <li><strong>各項目での解説：</strong>思い込みがどう人生を縛っていたか／手放した瞬間に起きた変化／シンプルな視点転換法</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<form name="ml_form_only_in_3" id="ml_form_only_in_3" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
-<input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
-<button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_3', '登録する');">
-<i class="fa-solid fa-circle-right"></i>
-                        <span>今すぐ無料WEBセミナー<br>に登録する</span>
+    <!-- ==========================================
+         サードCTAセクション
+         ========================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-subhead">社会的洗脳の引き算から始める</div>
+                <div class="cta-title">
+                    努力と根性の精神論をすべて引き算し、脳のOSを書き換える<br><mark>『マインドOS・リブート無料セミナー』</mark>
+                </div>
+                
+                <form name="ml_form_only_in_3" id="ml_form_only_in_3" method="post" action="http://minorstern7.xsrv.jp/xmailinglist/naru-mind-deprogram/mail.php?page=MailReg" accept-charset="UTF-8" class="cta-form">
+                    <input type="email" name="add_mail" class="form-input" placeholder="メールアドレスを入力してください" required />
+                    <button type="button" class="btn-cta btn-cta-animate" onClick="MLFormSubmitOnlyIn('ml_form_only_in_3', '登録する');">
+                        <i class="fa-solid fa-circle-right"></i>
                         <span>👉 努力ゼロのまま無意識が勝手に動き出す！<br>「オートパイロット自動操縦マインド」を今すぐ無料で手に入れる</span>
-</button>
-<input type="hidden" name="sb_reg" value="" />
-<input type="hidden" name="identity" value="ua&8X*Qy" />
+                    </button>
+                    <input type="hidden" name="sb_reg" value="" />
+                    <input type="hidden" name="identity" value="ua&8X*Qy" />
+                </form>
+
+                <div class="cta-attention">
+                    【確認事項】<br>
+                    ※携帯のキャリアメール（@docomo.ne.jp、@ezweb.ne.jp、@softbank.ne.jp など）では受信できませんので、Yahoo、Gmail などのフリーメールアドレスでご登録下さい。迷惑フォルダに案内メールが届く場合もありますので、受信BOX にメールが無い場合は迷惑フォルダも、ご確認ください。<br>
+                    ※プライバシーポリシーについて：お客様の個人情報を第三者に開示することはございません。<br>
+                    ※ご登録いただいたメールアドレスにはNARUから定期的に情報を配信させていただきます。<br>
+                    ※ご不要な場合には１クリックで配信解除できます。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         講師プロフィールセクション
+         ========================================== -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                無料WEBセミナー<br><mark>講師プロフィール</mark>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-imgbox">
+                    <img src="datsusenno_profile.jpg" alt="次世代他力覚醒コーチNARU" style="width: 100%; height: auto; border-radius: 12px; display: block;">
+                </div>
+
+                <div class="profile-textbox">
+                    <div class="profile-title-en">NARU</div>
+                    <div class="profile-name">NARU</div>
+                    <div class="profile-sub">次世代他力覚醒コーチ / 認知科学コーチ</div>
+                    
+                    <div class="profile-text-content">
+                        <p>留学生に向けの日本語教師としてのキャリアをスタートし、多様な背景を持つ人々と言葉を介して深く向き合う中で、コミュニケーションの重要性と人が成長し変化していく教育プロセスの奥深さに強い関心を抱く。</p>
+                        <p>人の成長を支援する一方で、自身の中の強固な「見えない壁」に直面し、そういったある種の洗脳状態から抜け出せない状況に苦しむ。</p>
+                        <p>繰り返す自己投資も空回りしエネルギーだけが失われていく毎日で、進むべき方向性を見失ったまま、手探りで模索する日々が続いていたところ、最先端の脳科学・認知科学をベースにしたコーチングとの出会う。</p>
+                        <p>それが転機となり、学んだ科学的な知見を実践した結果、それまで無意識のうちに支配されていた社会的洗脳を根本からリセットすることに成功し、人生が次々好転していく経験を得る。</p>
+                        <p>そういった経験から、かつての私と同様に「どれだけ真面目に内観しても現実が変わらない」と悩む人々を、認知の縛りから解放し、本当の主体性を取り戻してもらうべく、コーチとしての活動に身を投じることを決意し、再現性あるアプローチとして「脱洗脳コーチング」という科学に裏打ちされたメソッドを開発する。</p>
+                        <p>現在は、認知科学ベースのロジカルな思考法と、私自身が自己投資を空回りさせてきた経験を活かし、同じように「社会的洗脳」によって自分の望む人生が歩めずに悩んでいる方々へのコーチングサポートを行っている。</p>
+                        <p>一人でも多くの人が他人の基準や過去の呪縛から解放され誰もが自分の意志で自由に、そして圧倒的な充実感を持ってゴールを追求できる社会の実現をビジョンとして日々活動している。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         フッター
+         ========================================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-copyright">©NARU. All Rights Reserved.</div>
+            <ul class="footer-links">
+                <li><a href="#" target="_blank">プライバシーポリシー</a></li>
+                <li><a href="#" target="_blank">特定商取引法に基づく表記</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
