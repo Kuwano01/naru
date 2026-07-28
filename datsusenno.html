@@ -1469,6 +1469,45 @@
         </div>
     </footer>
 
+    <!-- ==========================================
+         リアルタイム「何時何分何秒」アクセス計測タグ (方法B)
+         ========================================== -->
+    <script>
+        (function() {
+            const SERVER_URL = 'http://localhost:3000';
+            const now = new Date();
+            const pad = (n) => String(n).padStart(2, '0');
+            const formattedTime = `${now.getFullYear()}/${pad(now.getMonth()+1)}/${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+            const device = /iPhone|Android.*Mobile/i.test(navigator.userAgent) ? 'Mobile Phone' : (/iPad/i.test(navigator.userAgent) ? 'Tablet' : 'Desktop Browser');
+            
+            // Send tracking data to backend
+            fetch(`${SERVER_URL}/api/track`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    linkId: 'datsusenno_v2',
+                    originalUrl: window.location.href,
+                    timestamp: now.toISOString(),
+                    formattedTime: formattedTime,
+                    device: device
+                })
+            }).catch(e => {
+                // LocalStorage fallback if server is offline
+                try {
+                    let logs = JSON.parse(localStorage.getItem('ag_click_logs') || '[]');
+                    logs.unshift({
+                        id: 'log_' + Date.now(),
+                        linkId: 'datsusenno_v2',
+                        timestamp: now.toISOString(),
+                        formattedTime: formattedTime,
+                        device: device,
+                        ip: '127.0.0.1'
+                    });
+                    localStorage.setItem('ag_click_logs', JSON.stringify(logs));
+                } catch(err){}
+            });
+        })();
+    </script>
 </body>
 
 </html>
