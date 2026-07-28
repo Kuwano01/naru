@@ -487,9 +487,10 @@
         }
 
         /* --- 豪華3大特典セクションのスタイル --- */
+        /* --- 豪華3大特典セクションのスタイル (800px縦積み・大型長方形カード) --- */
         .bonus-header {
             text-align: center;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
         }
 
         .bonus-header h2 {
@@ -523,80 +524,127 @@
         }
 
         .bonus-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            max-width: 800px;
+            margin: 30px auto 0 auto;
         }
 
         .bonus-grid-card {
             background-color: #ffffff;
             border-radius: 20px;
-            padding: 35px 25px;
+            padding: 35px 30px 30px 30px;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(79, 70, 229, 0.12);
             transition: all 0.3s ease;
             display: flex;
-            flex-direction: column;
+            gap: 30px;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .bonus-grid-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(79, 70, 229, 0.08), 0 0 0 1px rgba(79, 70, 229, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(79, 70, 229, 0.12), 0 0 0 2px rgba(79, 70, 229, 0.22);
         }
 
         .bonus-badge {
             position: absolute;
-            top: -15px;
-            left: 25px;
+            top: -16px;
+            left: 30px;
             background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
             color: #ffffff;
             font-weight: 900;
-            font-size: 0.95rem;
-            padding: 5px 18px;
+            font-size: 1rem;
+            padding: 6px 22px;
             border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+            z-index: 2;
+        }
+
+        .bonus-card-visual-col {
+            width: 270px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bonus-card-info-col {
+            flex: 1;
+            min-width: 0;
         }
 
         .bonus-type {
-            font-size: 0.85rem;
-            font-weight: 700;
+            display: inline-block;
+            background-color: #eef2ff;
             color: var(--primary-color);
-            margin-bottom: 8px;
-            margin-top: 5px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(79, 70, 229, 0.15);
             letter-spacing: 0.5px;
         }
 
         .bonus-card-title {
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 900;
             color: var(--text-main);
-            line-height: 1.3;
-            margin-bottom: 5px;
+            line-height: 1.35;
+            margin-bottom: 6px;
         }
 
         .bonus-card-desc {
-            font-size: 0.9rem;
-            color: var(--text-sub);
-            font-weight: 600;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 15px;
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 10px;
+        }
+
+        .bonus-card-visual {
+            width: 100%;
+            height: 175px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+        }
+
+        .bonus-card-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bonus-card-text {
+            font-size: 0.92rem;
+            color: #475569;
+            line-height: 1.65;
+            margin-bottom: 15px;
         }
 
         .bonus-card-bullets {
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 16px 20px;
+            border: 1px solid #e2e8f0;
             list-style: none;
-            padding: 0;
             margin: 0;
         }
 
         .bonus-card-bullets li {
             position: relative;
-            padding-left: 20px;
+            padding-left: 24px;
             font-size: 0.9rem;
             line-height: 1.6;
             color: #334155;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .bonus-card-bullets li:last-child {
@@ -610,38 +658,11 @@
             top: 0;
             color: var(--primary-color);
             font-weight: 900;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .bonus-swipe-hint {
-            display: none;
-        }
-
-        .bonus-image-placeholder {
-            background: #f8fafc;
-            height: 160px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            border: 1px dashed #e2e8f0;
-        }
-
-        .bonus-card-visual {
-            width: 100%;
-            height: 160px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            background: #f1f5f9;
-        }
-
-        .bonus-card-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: none !important;
         }
 
         /* --- レスポンシブ対応 --- */
@@ -743,45 +764,38 @@
                 /* モバイル端末での表示バグ・負荷防止のため固定を解除 */
             }
 
-            /* 特典セクションのレスポンシブ化（横スクロールスライダー化で縦長化を防止） */
+            /* 特典セクションのレスポンシブ化（縦積み・全幅化） */
             .bonus-cards-grid {
                 display: flex !important;
-                flex-wrap: nowrap !important;
-                /* 横並びを強制 */
-                overflow-x: auto !important;
-                /* 横スクロールを有効化 */
-                scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
-                gap: 20px;
-                padding: 20px 10px;
-                margin-top: 10px;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .bonus-cards-grid::-webkit-scrollbar {
-                display: none;
-                /* スクロールバーを非表示にして美観を保つ */
+                flex-direction: column !important;
+                gap: 25px !important;
+                padding: 0 10px !important;
+                margin-top: 15px !important;
+                overflow-x: visible !important;
             }
 
             .bonus-grid-card {
-                flex: 0 0 85% !important;
-                /* 縮むのを防止 */
-                width: 85% !important;
-                min-width: 85% !important;
-                /* スマホサイズで確実に85%の幅を確保 */
-                scroll-snap-align: center;
-                padding: 25px 20px;
-                box-sizing: border-box;
+                flex-direction: column !important;
+                width: 100% !important;
+                min-width: 100% !important;
+                padding: 30px 20px 20px 20px !important;
+                gap: 20px !important;
             }
 
-            /* スマホで横スワイプできることを示すインジケーター */
+            .bonus-card-visual-col {
+                width: 100% !important;
+            }
+
+            .bonus-card-info-col {
+                width: 100% !important;
+            }
+
+            .bonus-card-visual {
+                height: 190px !important;
+            }
+
             .bonus-swipe-hint {
-                display: block !important;
-                text-align: center;
-                font-size: 0.8rem;
-                color: var(--text-sub);
-                margin-top: 10px;
-                font-weight: 700;
+                display: none !important;
             }
         }
 
@@ -1304,67 +1318,75 @@
             <div class="bonus-header">
                 <h2>🎁 今だけ！豪華3大プレゼントを用意しました！</h2>
                 <p>メールアドレス登録後、すぐに自動返信メールにてすべてお届けいたします</p>
-                <div class="bonus-swipe-hint">👈 横にスクロールしてご覧いただけます 👉</div>
             </div>
 
             <div class="bonus-cards-grid">
                 <!-- プレゼント1 -->
                 <div class="bonus-grid-card">
                     <div class="bonus-badge">プレゼント 1</div>
-                    <div class="bonus-type">限定動画講義</div>
-                    <h3 class="bonus-card-title">「人生大逆転」書き換え入り口セット</h3>
-                    <p class="bonus-card-desc">〜人生の舵取りを取り戻し好転させる3ステップ動画講義〜</p>
-                    <div class="bonus-card-visual">
-                        <img src="bonus_video.png" alt="「人生大逆転」書き換え入り口セット">
+                    <div class="bonus-card-visual-col">
+                        <div class="bonus-card-visual">
+                            <img src="bonus_video.png" alt="「人生大逆転」書き換え入り口セット">
+                        </div>
                     </div>
-                    <p
-                        style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
-                        人生が思い通りにならない本当の原因を、心理学・脳科学・潜在意識の視点からわかりやすく解説。努力しても変われない理由と、自分の人生の主導権を取り戻すための本質的な仕組みを学べます。思うように行動できない原因が明確になり、無意識に人生を制限している思考パターンに気づくことで、自分の意思でコントロールするための土台が身につきます。
-                    </p>
-                    <ul class="bonus-card-bullets">
-                        <li><strong>動画1：</strong>なぜ自分で人生を自由自在にコントロールできないのか（20分）</li>
-                        <li><strong>動画2：</strong>人生好転を阻む呪縛の見つけ方と解除法（20分）</li>
-                        <li><strong>動画3：</strong>want to状態を呼び覚ますための自己超越的思考（20分）</li>
-                    </ul>
+                    <div class="bonus-card-info-col">
+                        <span class="bonus-type"><i class="fa-solid fa-video" style="margin-right: 5px;"></i>限定動画講義</span>
+                        <h3 class="bonus-card-title">「人生大逆転」書き換え入り口セット</h3>
+                        <p class="bonus-card-desc">〜人生の舵取りを取り戻し好転させる3ステップ動画講義〜</p>
+                        <p class="bonus-card-text">
+                            人生が思い通りにならない本当の原因を、心理学・脳科学・潜在意識の視点からわかりやすく解説。努力しても変われない理由と、自分の人生の主導権を取り戻すための本質的な仕組みを学べます。思うように行動できない原因が明確になり、無意識に人生を制限している思考パターンに気づくことで、自分の意思でコントロールするための土台が身につきます。
+                        </p>
+                        <ul class="bonus-card-bullets">
+                            <li><strong>動画1：</strong>なぜ自分で人生を自由自在にコントロールできないのか（20分）</li>
+                            <li><strong>動画2：</strong>人生好転を阻む呪縛の見つけ方と解除法（20分）</li>
+                            <li><strong>動画3：</strong>want to状態を呼び覚ますための自己超越的思考（20分）</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- プレゼント2 -->
                 <div class="bonus-grid-card">
                     <div class="bonus-badge">プレゼント 2</div>
-                    <div class="bonus-type">7日間音声プログラム</div>
-                    <h3 class="bonus-card-title">「執着手放し」7日間音声講義メソッド</h3>
-                    <p class="bonus-card-desc">〜人生が勝手に好転し始めた人が実践したワーク〜</p>
-                    <div class="bonus-card-visual">
-                        <img src="bonus_audio.png" alt="「執着手放し」7日間音声講義メソッド">
+                    <div class="bonus-card-visual-col">
+                        <div class="bonus-card-visual">
+                            <img src="bonus_audio.png" alt="「執着手放し」7日間音声講義メソッド">
+                        </div>
                     </div>
-                    <p
-                        style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
-                        「人にどう思われるか」「こうでなければならない」といった他人の基準（社会的洗脳）や、お金・人間関係・自己成長・仕事・成功への執着を、認知科学の手法で綺麗に洗い流す音声ワーク。毎日届くステップに沿ってワークを実践することで、無意識のブレーキが外れ、我慢ゼロで本当に望むゴールへ向かって心が軽やかに動き出します。
-                    </p>
-                    <ul class="bonus-card-bullets">
-                        <li><strong>Day1：</strong>あなたの洗脳された意識を暴く診断</li>
-                        <li><strong>Day2-6：</strong>執着の具体的な解除ワーク（人間関係・お金・自己成長・仕事・成功の領域別）</li>
-                        <li><strong>Day7：</strong>本当にしたいことの見つけ方＋次元意識上昇のヒント</li>
-                    </ul>
+                    <div class="bonus-card-info-col">
+                        <span class="bonus-type"><i class="fa-solid fa-headphones" style="margin-right: 5px;"></i>7日間音声プログラム</span>
+                        <h3 class="bonus-card-title">「執着手放し」7日間音声講義メソッド</h3>
+                        <p class="bonus-card-desc">〜人生が勝手に好転し始めた人が実践したワーク〜</p>
+                        <p class="bonus-card-text">
+                            「人にどう思われるか」「こうでなければならない」といった他人の基準（社会的洗脳）や、お金・人間関係・自己成長・仕事・成功への執着を、認知科学の手法で綺麗に洗い流す音声ワーク。毎日届くステップに沿ってワークを実践することで、無意識のブレーキが外れ、我慢ゼロで本当に望むゴールへ向かって心が軽やかに動き出します。
+                        </p>
+                        <ul class="bonus-card-bullets">
+                            <li><strong>Day1：</strong>あなたの洗脳された意識を暴く診断</li>
+                            <li><strong>Day2-6：</strong>執着の具体的な解除ワーク（人間関係・お金・自己成長・仕事・成功の領域別）</li>
+                            <li><strong>Day7：</strong>本当にしたいことの見つけ方＋次元意識上昇のヒント</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- プレゼント3 -->
                 <div class="bonus-grid-card">
                     <div class="bonus-badge">プレゼント 3</div>
-                    <div class="bonus-type">特別電子レポート</div>
-                    <h3 class="bonus-card-title">脱「正しさ」信仰の核心</h3>
-                    <p class="bonus-card-desc">〜私が人生を再起動できたときに手放した9つの思い込み〜</p>
-                    <div class="bonus-card-visual">
-                        <img src="bonus_pdf.png" alt="脱「正しさ」信仰の核心 レポート">
+                    <div class="bonus-card-visual-col">
+                        <div class="bonus-card-visual">
+                            <img src="bonus_pdf.png" alt="脱「正しさ」信仰の核心 レポート">
+                        </div>
                     </div>
-                    <p
-                        style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 15px; text-align: left;">
-                        「頑張らないと価値がない」「他人に認められないとダメ」「正しい道を選ばなければ失敗する」など、自分自身をがんじがらめに縛っている9つの不要な思い込みを手放すための特別レポート（全18ページ）。実体験に基づくリアルなエピソードとシンプルな視点転換を通して、読んだ瞬間から人生を自発的にリブート（再起動）できます。
-                    </p>
-                    <ul class="bonus-card-bullets">
-                        <li><strong>9つの思い込み：</strong>「頑張らないと価値がない」「正しい道を選ばなければ失敗する」「他人から認められないとダメ」など</li>
-                        <li><strong>各項目での解説：</strong>思い込みがどう人生を縛っていたか／手放した瞬間に起きた変化／シンプルな視点転換法</li>
-                    </ul>
+                    <div class="bonus-card-info-col">
+                        <span class="bonus-type"><i class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i>特別電子レポート</span>
+                        <h3 class="bonus-card-title">脱「正しさ」信仰の核心</h3>
+                        <p class="bonus-card-desc">〜私が人生を再起動できたときに手放した9つの思い込み〜</p>
+                        <p class="bonus-card-text">
+                            「頑張らないと価値がない」「他人に認められないとダメ」「正しい道を選ばなければ失敗する」など、自分自身をがんじがらめに縛っている9つの不要な思い込みを手放すための特別レポート（全18ページ）。実体験に基づくリアルなエピソードとシンプルな視点転換を通して、読んだ瞬間から人生を自発的にリブート（再起動）できます。
+                        </p>
+                        <ul class="bonus-card-bullets">
+                            <li><strong>9つの思い込み：</strong>「頑張らないと価値がない」「正しい道を選ばなければ失敗する」「他人から認められないとダメ」など</li>
+                            <li><strong>各項目での解説：</strong>思い込みがどう人生を縛っていたか／手放した瞬間に起きた変化／シンプルな視点転換法</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
