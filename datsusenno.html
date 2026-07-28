@@ -1479,8 +1479,40 @@
             const pad = (n) => String(n).padStart(2, '0');
             const formattedTime = `${now.getFullYear()}/${pad(now.getMonth()+1)}/${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
             const device = /iPhone|Android.*Mobile/i.test(navigator.userAgent) ? 'Mobile Phone' : (/iPad/i.test(navigator.userAgent) ? 'Tablet' : 'Desktop Browser');
-            
-            // Send tracking data to backend
+            const logId = 'log_' + Date.now() + '_' + Math.floor(Math.random()*1000);
+
+            // 1. LocalStorageへ即時書き込み（100%確実）
+            try {
+                let logs = JSON.parse(localStorage.getItem('ag_click_logs') || '[]');
+                let links = JSON.parse(localStorage.getItem('ag_short_links') || '[]');
+                
+                let linkObj = links.find(l => l.id.toLowerCase() === 'datsusenno_v2');
+                if (!linkObj) {
+                    linkObj = {
+                        id: 'datsusenno_v2',
+                        originalUrl: window.location.href,
+                        memo: 'datsusenno_v2 (直埋め込み計測)',
+                        clicks: 0,
+                        createdAt: now.toISOString()
+                    };
+                    links.unshift(linkObj);
+                }
+                linkObj.clicks = (linkObj.clicks || 0) + 1;
+                
+                logs.unshift({
+                    id: logId,
+                    linkId: 'datsusenno_v2',
+                    timestamp: now.toISOString(),
+                    formattedTime: formattedTime,
+                    device: device,
+                    ip: '127.0.0.1'
+                });
+
+                localStorage.setItem('ag_short_links', JSON.stringify(links));
+                localStorage.setItem('ag_click_logs', JSON.stringify(logs));
+            } catch(err){}
+
+            // 2. サーバーへも非同期送信
             fetch(`${SERVER_URL}/api/track`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -1491,21 +1523,7 @@
                     formattedTime: formattedTime,
                     device: device
                 })
-            }).catch(e => {
-                // LocalStorage fallback if server is offline
-                try {
-                    let logs = JSON.parse(localStorage.getItem('ag_click_logs') || '[]');
-                    logs.unshift({
-                        id: 'log_' + Date.now(),
-                        linkId: 'datsusenno_v2',
-                        timestamp: now.toISOString(),
-                        formattedTime: formattedTime,
-                        device: device,
-                        ip: '127.0.0.1'
-                    });
-                    localStorage.setItem('ag_click_logs', JSON.stringify(logs));
-                } catch(err){}
-            });
+            }).catch(e => {});
         })();
     </script>
 </body>
