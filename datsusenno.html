@@ -1458,47 +1458,17 @@
     </footer>
 
     <!-- ==========================================
-         脱洗脳LP (datsusenno.html) 専用・アクセス計測自動タグ
+         脱洗脳LP (datsusenno.html) 本番アクセス自動計測タグ
          ========================================== -->
     <script>
         (function() {
-            const STORAGE_KEY_LOGS = 'datsusenno_page_logs_v2';
-            const SERVER_URL = 'http://localhost:3000';
-            const now = new Date();
-            const pad = (n) => String(n).padStart(2, '0');
-            const formattedTime = `${now.getFullYear()}/${pad(now.getMonth()+1)}/${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
-            const device = /iPhone|Android.*Mobile/i.test(navigator.userAgent) ? 'Mobile Phone' : (/iPad/i.test(navigator.userAgent) ? 'Tablet' : 'Desktop Browser');
-            const logId = 'log_' + Date.now() + '_' + Math.floor(Math.random()*1000);
-
-            const newLog = {
-                id: logId,
-                page: 'datsusenno.html',
-                timestamp: now.toISOString(),
-                formattedTime: formattedTime,
-                device: device
-            };
-
-            // 1. LocalStorageへ即時記録（100%確実）
             try {
-                let logs = JSON.parse(localStorage.getItem(STORAGE_KEY_LOGS) || '[]');
-                logs.unshift(newLog);
-                localStorage.setItem(STORAGE_KEY_LOGS, JSON.stringify(logs));
-            } catch(err){}
-
-            // 2. バックエンドサーバーへも非同期送信
-            try {
-                fetch(`${SERVER_URL}/api/track`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(newLog)
-                }).catch(e => {});
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'track.php', true);
+                xhr.send();
             } catch(e){}
         })();
     </script>
-    <!-- ==========================================
-         本番アクセス計測自動タグ (track.php連携)
-         ========================================== -->
-    <script src="track.php" async></script>
 </body>
 
 </html>
