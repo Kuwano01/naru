@@ -2,112 +2,145 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WEBセミナー | NARU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>特別WEBセミナー：社会的洗脳を引き算し、我慢ゼロで人生を自動好転させる秘訣 | NARU</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg:#f8fafc;
       --card:#ffffff;
       --text:#0f172a;
-      --muted:#475569;
+      --text-dark:#020617;
+      --muted:#334155;
+      --muted-light:#64748b;
       --blue:#2563eb;
       --purple:#7c3aed;
-      --gradient:linear-gradient(135deg,#6366f1 0%,#3b82f6 100%);
-      --gold:linear-gradient(135deg,#ffd700 0%,#ffa500 100%);
+      --gradient:linear-gradient(135deg,#1e40af 0%,#4f46e5 50%,#7c3aed 100%);
+      --gold:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);
       --shadow:0 18px 45px rgba(15,23,42,.08);
+      --shadow-sm:0 8px 22px rgba(15,23,42,.06);
+      --border:#e2e8f0;
     }
 
     *{
       box-sizing:border-box;
       margin:0;
       padding:0;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    html{
+      -webkit-text-size-adjust:100%;
+      scroll-behavior:smooth;
     }
 
     body{
-      font-family:'Outfit','Noto Sans JP',sans-serif;
+      font-family:'Outfit','Noto Sans JP',-apple-system,BlinkMacSystemFont,sans-serif;
       background:var(--bg);
       color:var(--text);
+      font-size:17px;
       line-height:1.75;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
     .seminar-page{
-      max-width:900px;
+      max-width:920px;
       margin:0 auto;
-      padding:40px 20px;
+      padding:40px 20px env(safe-area-inset-bottom, 40px);
     }
 
     .back-link{
-      display:inline-block;
-      margin-bottom:25px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:24px;
       color:var(--blue);
       text-decoration:none;
       font-weight:700;
+      font-size:1.05rem;
+      padding:8px 16px;
+      background:rgba(37,99,235,0.08);
+      border-radius:100px;
+      transition:transform 0.2s ease, background 0.2s ease;
+    }
+    .back-link:hover{
+      background:rgba(37,99,235,0.15);
+      transform:translateX(-3px);
     }
 
     .seminar-card{
       background:var(--card);
-      border-radius:22px;
-      padding:32px;
+      border-radius:24px;
+      padding:38px 34px;
       box-shadow:var(--shadow);
+      border:1px solid rgba(226,232,240,0.9);
     }
 
     .header-tag{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      background:rgba(99,102,241,.08);
-      border:1px solid rgba(99,102,241,.2);
-      color:#4f46e5;
-      padding:6px 14px;
+      background:rgba(99,102,241,.12);
+      border:1.5px solid rgba(99,102,241,.3);
+      color:#3730a3;
+      padding:8px 18px;
       border-radius:100px;
-      font-size:.85rem;
-      font-weight:700;
+      font-size:0.96rem;
+      font-weight:800;
       margin-bottom:18px;
+      letter-spacing: 0.02em;
     }
 
     .header-tag span,
     .cta-alert-tag span{
-      width:8px;
-      height:8px;
+      width:9px;
+      height:9px;
       border-radius:50%;
       animation:pulse 1.5s infinite;
+      flex-shrink:0;
     }
 
     .header-tag span{
-      background:#6366f1;
+      background:#4f46e5;
     }
 
     .seminar-title{
-      font-size:1.8rem;
-      font-weight:800;
-      line-height:1.45;
+      font-size:clamp(1.5rem, 2.5vw, 2.05rem);
+      font-weight:900;
+      line-height:1.42;
       margin-bottom:18px;
-      background:var(--gradient);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      color:var(--text-dark);
+      letter-spacing:-0.01em;
+      word-break:keep-all;
+      overflow-wrap:anywhere;
     }
 
     .seminar-subtitle{
-      font-size:1rem;
+      font-size:clamp(1.02rem, 1.3vw, 1.15rem);
       color:var(--muted);
-      border-left:4px solid var(--purple);
-      padding-left:14px;
-      margin-bottom:30px;
+      background:rgba(124,58,237,0.06);
+      border-left:5px solid var(--purple);
+      padding:12px 16px;
+      border-radius:0 12px 12px 0;
+      margin-bottom:26px;
+      font-weight:700;
+      line-height:1.6;
     }
 
     .video-wrap{
       position:relative;
       width:100%;
       padding-top:56.25%;
-      border-radius:16px;
+      border-radius:20px;
       overflow:hidden;
-      box-shadow:0 20px 40px rgba(0,0,0,.18);
-      margin:28px 0 50px;
+      box-shadow:0 20px 45px rgba(0,0,0,.18);
+      margin:20px 0 45px;
+      background:#000;
     }
 
     .video-wrap iframe{
@@ -118,96 +151,131 @@
       border:0;
     }
 
+    /* 🎁 豪華3大受講特典ボックス */
     .benefits-box{
-      background:rgba(251,191,36,.04);
-      border:1px solid rgba(251,191,36,.2);
-      border-radius:18px;
-      padding:26px;
-      margin-bottom:42px;
+      background:linear-gradient(180deg, rgba(254,243,199,0.35) 0%, rgba(255,251,235,0.7) 100%);
+      border:2px solid rgba(245,158,11,0.35);
+      border-radius:22px;
+      padding:32px 24px;
+      margin-bottom:45px;
+    }
+
+    .benefits-header{
+      text-align:center;
+      margin-bottom:24px;
     }
 
     .benefits-title{
-      font-size:1.15rem;
-      font-weight:800;
-      color:#d97706;
-      margin-bottom:24px;
+      font-size:clamp(1.3rem, 2vw, 1.6rem);
+      font-weight:900;
+      color:#92400e;
+      margin-bottom:6px;
+      line-height:1.35;
+    }
+
+    .benefits-sub{
+      font-size:1.02rem;
+      color:#b45309;
+      font-weight:700;
       line-height:1.5;
     }
 
     .benefits-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:18px;
+      gap:20px;
     }
 
     .benefit-card{
       background:white;
-      border:1px solid rgba(15,23,42,.08);
-      border-radius:18px;
-      padding:22px;
+      border:2px solid rgba(226,232,240,0.9);
+      border-radius:20px;
+      padding:24px 18px;
       text-align:center;
-      box-shadow:0 10px 30px rgba(15,23,42,.06);
+      box-shadow:var(--shadow-sm);
       display:flex;
       flex-direction:column;
+      transition:transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .benefit-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 30px rgba(15,23,42,.1);
     }
 
     .bonus-icon{
-      font-size:2.1rem;
-      margin-bottom:10px;
-    }
-
-    .bonus-label{
-      font-size:.75rem;
-      font-weight:800;
-      color:#6366f1;
+      font-size:2.6rem;
       margin-bottom:8px;
     }
 
+    .bonus-label{
+      font-size:.82rem;
+      font-weight:900;
+      color:#4338ca;
+      background:rgba(99,102,241,0.1);
+      padding:4px 12px;
+      border-radius:100px;
+      display:inline-block;
+      margin:0 auto 10px;
+      line-height:1.3;
+    }
+
     .bonus-name{
-      font-size:1rem;
-      font-weight:800;
+      font-size:1.12rem;
+      font-weight:900;
       margin-bottom:10px;
-      line-height:1.5;
+      line-height:1.45;
+      color:var(--text-dark);
     }
 
     .bonus-desc{
-      font-size:.85rem;
+      font-size:0.95rem;
       color:var(--muted);
-      margin-bottom:18px;
+      margin-bottom:20px;
       flex:1;
+      line-height:1.65;
+      font-weight:500;
     }
 
     .bonus-btn{
-      display:block;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       width:100%;
-      padding:12px;
-      border-radius:12px;
+      min-height:52px;
+      padding:14px 16px;
+      border-radius:14px;
       text-decoration:none;
-      font-weight:700;
-      font-size:.9rem;
+      font-weight:900;
+      font-size:1.02rem;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      transition:transform 0.15s ease, opacity 0.15s ease;
+    }
+    .bonus-btn:active{
+      transform:scale(0.98);
     }
 
     .btn-gold{
-      background:var(--gold);
-      color:#111;
+      background:linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      color:#78350f;
     }
 
     .btn-purple{
-      background:linear-gradient(135deg,#b180ff 0%,#7c3aed 100%);
+      background:linear-gradient(135deg,#8b5cf6 0%,#6d28d9 100%);
       color:white;
     }
 
     .btn-blue{
-      background:linear-gradient(135deg,#00f2fe 0%,#4facfe 100%);
-      color:#111;
+      background:linear-gradient(135deg,#38bdf8 0%,#2563eb 100%);
+      color:white;
     }
 
+    /* CTA 個別セッションセクション */
     .cta-section{
       background:white;
-      border:2px solid rgba(99,102,241,.15);
+      border:2.5px solid rgba(99,102,241,.3);
       border-radius:24px;
-      padding:36px 30px;
-      box-shadow:var(--shadow);
+      padding:38px 30px;
+      box-shadow:0 20px 50px rgba(15,23,42,.09);
       position:relative;
       overflow:hidden;
     }
@@ -218,7 +286,7 @@
       top:0;
       left:0;
       width:100%;
-      height:4px;
+      height:6px;
       background:var(--gradient);
     }
 
@@ -226,13 +294,13 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
-      background:rgba(239,68,68,.08);
-      border:1px solid rgba(239,68,68,.2);
-      color:#dc2626;
-      padding:5px 14px;
+      background:rgba(239,68,68,.1);
+      border:1.5px solid rgba(239,68,68,.3);
+      color:#b91c1c;
+      padding:8px 18px;
       border-radius:99px;
-      font-size:.85rem;
-      font-weight:800;
+      font-size:.95rem;
+      font-weight:900;
       margin-bottom:18px;
     }
 
@@ -241,47 +309,101 @@
     }
 
     .cta-title{
-      font-size:1.35rem;
-      font-weight:800;
-      line-height:1.5;
-      margin-bottom:18px;
+      font-size:clamp(1.35rem, 2.2vw, 1.75rem);
+      font-weight:900;
+      line-height:1.4;
+      margin-bottom:16px;
+      color:var(--text-dark);
     }
 
-    .cta-body{
-      font-size:.95rem;
+    .cta-lead{
+      font-size:clamp(1.05rem, 1.35vw, 1.2rem);
+      font-weight:700;
+      color:var(--text-dark);
+      margin-bottom:12px;
+      line-height:1.6;
+    }
+
+    .cta-subtext{
+      font-size:clamp(0.98rem, 1.2vw, 1.08rem);
       color:var(--muted);
-      margin-bottom:30px;
+      margin-bottom:24px;
+      line-height:1.75;
     }
 
-    .cta-body p{
-      margin-bottom:14px;
+    /* 3大価値カード一覧 */
+    .value-cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin:22px 0 28px;
+    }
+
+    .value-card{
+      background:#f8fafc;
+      border:1.5px solid #e2e8f0;
+      border-radius:16px;
+      padding:18px;
+      text-align:left;
+    }
+
+    .value-icon{
+      font-size:1.8rem;
+      margin-bottom:6px;
+    }
+
+    .value-name{
+      font-size:1.05rem;
+      font-weight:900;
+      color:var(--text-dark);
+      margin-bottom:6px;
+    }
+
+    .value-desc{
+      font-size:0.92rem;
+      color:var(--muted);
+      line-height:1.55;
+      font-weight:500;
     }
 
     .btn-container{
       text-align:center;
+      margin-top:16px;
     }
 
     .cta-btn{
       display:inline-flex;
       justify-content:center;
       align-items:center;
-      background:var(--gradient);
+      background:linear-gradient(135deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%);
       color:white;
-      font-size:1rem;
-      font-weight:800;
-      line-height:1.5;
+      font-size:clamp(1.08rem, 1.4vw, 1.25rem);
+      font-weight:900;
+      line-height:1.4;
       text-decoration:none;
-      padding:16px 32px;
-      border-radius:14px;
-      max-width:560px;
+      padding:20px 36px;
+      border-radius:16px;
+      max-width:640px;
       width:100%;
-      box-shadow:0 10px 25px rgba(99,102,241,.3);
+      min-height:60px;
+      box-shadow:0 14px 35px rgba(79,70,229,.42);
+      transition:transform 0.2s ease, box-shadow 0.2s ease;
+      letter-spacing:0.02em;
+    }
+    .cta-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 42px rgba(79,70,229,.52);
+    }
+    .cta-btn:active{
+      transform:scale(0.98);
     }
 
     .cta-note{
-      font-size:.8rem;
-      color:var(--muted);
-      margin-top:12px;
+      font-size:.92rem;
+      color:var(--muted-light);
+      margin-top:14px;
+      font-weight:600;
+      line-height:1.6;
     }
 
     @keyframes pulse{
@@ -290,56 +412,146 @@
       100%{transform:scale(.9);opacity:.6;}
     }
 
+    /* ================= スマホ・モバイル最適化（最大幅 768px） ================= */
     @media(max-width:768px){
+      body{
+        font-size:16px;
+      }
+
       .seminar-page{
-        padding:25px 14px;
+        padding:16px 12px env(safe-area-inset-bottom, 24px);
       }
 
       .seminar-card{
-        padding:20px;
-        border-radius:18px;
+        padding:24px 16px;
+        border-radius:20px;
+      }
+
+      .back-link{
+        font-size:0.95rem;
+        margin-bottom:16px;
+        padding:7px 14px;
+      }
+
+      .header-tag{
+        font-size:0.9rem;
+        padding:6px 14px;
+        margin-bottom:14px;
       }
 
       .seminar-title{
-        font-size:1.35rem;
+        font-size:1.42rem;
+        line-height:1.45;
+        margin-bottom:14px;
       }
 
       .seminar-subtitle{
-        font-size:.95rem;
+        font-size:0.98rem;
+        padding:10px 14px;
+        margin-bottom:20px;
+        line-height:1.55;
       }
 
       .video-wrap{
-        margin:24px 0 38px;
-        border-radius:14px;
+        margin:16px 0 32px;
+        border-radius:16px;
+        box-shadow:0 12px 30px rgba(0,0,0,0.16);
       }
 
+      /* 特典ボックス */
       .benefits-box{
-        padding:18px;
+        padding:24px 14px;
+        border-radius:18px;
+        margin-bottom:34px;
+      }
+
+      .benefits-title{
+        font-size:1.28rem;
+      }
+
+      .benefits-sub{
+        font-size:0.95rem;
       }
 
       .benefits-grid{
         grid-template-columns:1fr;
+        gap:16px;
       }
 
       .benefit-card{
-        padding:20px;
+        padding:22px 16px;
+        border-radius:18px;
       }
 
+      .bonus-name{
+        font-size:1.12rem;
+      }
+
+      .bonus-desc{
+        font-size:0.96rem;
+        margin-bottom:16px;
+      }
+
+      .bonus-btn{
+        min-height:52px;
+        font-size:1.02rem;
+        border-radius:14px;
+      }
+
+      /* CTAセクション */
       .cta-section{
-        padding:24px 20px;
+        padding:28px 16px;
+        border-radius:20px;
+      }
+
+      .cta-alert-tag{
+        font-size:0.88rem;
+        padding:6px 14px;
+        margin-bottom:14px;
       }
 
       .cta-title{
-        font-size:1.15rem;
+        font-size:1.32rem;
+        line-height:1.4;
+        margin-bottom:14px;
       }
 
-      .cta-body{
-        font-size:.9rem;
+      .cta-lead{
+        font-size:1.05rem;
+      }
+
+      .cta-subtext{
+        font-size:0.96rem;
+        margin-bottom:18px;
+      }
+
+      .value-cards{
+        grid-template-columns:1fr;
+        gap:12px;
+        margin:16px 0 22px;
+      }
+
+      .value-card{
+        padding:16px;
+      }
+
+      .value-name{
+        font-size:1.02rem;
+      }
+
+      .value-desc{
+        font-size:0.92rem;
       }
 
       .cta-btn{
-        font-size:16px;
-        padding:15px 18px;
+        font-size:1.05rem;
+        padding:18px 20px;
+        min-height:58px;
+        border-radius:16px;
+      }
+
+      .cta-note{
+        font-size:0.86rem;
       }
     }
   </style>
@@ -354,7 +566,7 @@
   <section class="seminar-card">
 
     <div class="header-tag">
-      <span></span>特別WEBセミナー無料公開中
+      <span></span>特別WEBセミナー 無料公開中
     </div>
 
     <h1 class="seminar-title">
@@ -365,48 +577,58 @@
       他人の言葉や常識に振り回される自分を卒業し、脳の認識OSを書き換える『脱洗脳セミナー』
     </p>
 
+    <!-- WEBセミナー動画埋め込み -->
     <div class="video-wrap">
       <iframe
         src="https://www.youtube.com/embed/ZmZPcYq2x6s"
-        title="NARU WEBセミナー"
+        title="NARU 特別WEBセミナー"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </div>
 
+    <!-- 🎁 豪華3大受講特典パッケージ -->
     <div class="benefits-box">
-      <h2 class="benefits-title">
-        🎁 視聴完了プレゼント：人生OS書き換え3大特典パッケージ
-      </h2>
+      <div class="benefits-header">
+        <h2 class="benefits-title">
+          🎁 セミナー参加者限定・豪華3大受講特典パッケージ
+        </h2>
+        <p class="benefits-sub">
+          通常数十万円の価値がある実践教材を、今すぐ完全無料でプレゼント
+        </p>
+      </div>
 
       <div class="benefits-grid">
 
+        <!-- 特典① -->
         <div class="benefit-card">
           <div class="bonus-icon">🎥</div>
-          <div class="bonus-label">Gift 01 / Video</div>
-          <h3 class="bonus-name">「人生大逆転」書き換え入り口セット</h3>
+          <div class="bonus-label">特典① / 3ステップ動画講義</div>
+          <h3 class="bonus-name">『「人生大逆転」書き換え入り口セット』</h3>
           <p class="bonus-desc">
-            人生を思い通りにコントロールできない「無意識のバグ」を暴き、自分軸での舵取りを取り戻すための3ステップ動画講義。
+            人生の舵取りを取り戻す3ステップ動画講義（全3本・計約60分）
           </p>
           <a href="https://drive.google.com/drive/folders/1wtYwV_JYQp6a-1q6pcSO0mtqtHisUFOO?usp=sharing" target="_blank" class="bonus-btn btn-gold">▶ 動画を視聴する</a>
         </div>
 
+        <!-- 特典② -->
         <div class="benefit-card">
           <div class="bonus-icon">🎧</div>
-          <div class="bonus-label">Gift 02 / Audio</div>
-          <h3 class="bonus-name">「執着手放し」7日間音声メソッド</h3>
+          <div class="bonus-label">特典② / 7日間音声プログラム</div>
+          <h3 class="bonus-name">『「執着手放し」7日間音声講義メソッド』</h3>
           <p class="bonus-desc">
-            毎日1音声を聴き流すだけで、染み付いた執着を脳から綺麗にアンインストールする音声プログラム。
+            執着を脳から手放す領域別プログラム（全7日間・毎日1音声）
           </p>
           <a href="https://drive.google.com/drive/folders/10aHEJKBUbO6wFkUrCWn_ctUnjmQHN8NW?usp=sharing" target="_blank" class="bonus-btn btn-purple">📥 音声をダウンロードする</a>
         </div>
 
+        <!-- 特典③ -->
         <div class="benefit-card">
           <div class="bonus-icon">📄</div>
-          <div class="bonus-label">Gift 03 / PDF</div>
-          <h3 class="bonus-name">脱「正しさ」信仰の核心</h3>
+          <div class="bonus-label">特典③ / 特別PDFレポート</div>
+          <h3 class="bonus-name">特別レポート『脱「正しさ」信仰の核心』</h3>
           <p class="bonus-desc">
-            真っ先にゴミ箱へ捨てるべき「9つの思い込み」を徹底解説した特別PDFレポート。
+            私が人生を再起動できたときに手放した「9つの思い込み」特別レポート
           </p>
           <a href="https://drive.google.com/file/d/1Vnsc349oOVO5ap9qXercjB1ptSYyBiWk/view?usp=drive_link"
              target="_blank"
@@ -418,37 +640,53 @@
       </div>
     </div>
 
+    <!-- 🚀 個別精密セッション CTA -->
     <section class="cta-section">
       <div class="cta-alert-tag">
         <span></span>
-        【今月先着5名限定】脱洗脳コーチング個別体験セッションのご案内
+        【先着5名様限定】脱洗脳コーチング 個別精密セッション
       </div>
 
       <h2 class="cta-title">
-        あなたの脳のバグを見抜く『脱洗脳コーチング個別体験セッション』
+        あなた専用の脳内OSを再起動する『個別精密セッション』
       </h2>
 
-      <div class="cta-body">
-        <p>
-          セミナーで詳しく解説した通り、あなたの人生を縛っている「無意識の洗脳」は、自分一人では見つけることができません。
-        </p>
-        <p>
-          今回、このWEBセミナーをご視聴いただいた方限定で、NARUが直接あなたの意識構造を診断します。
-        </p>
-        <p>
-          本気で「他人の人生」を終えて「自分自身のwant to」を生きていきたい方のみ、以下のボタンよりお申し込みください。
-        </p>
+      <p class="cta-lead">
+        背中の張り紙を一人で見られないように、無意識のブレーキは「外側の視点」なしでは絶対に外せません。
+      </p>
+      <p class="cta-subtext">
+        NARUが1対1であなたの脳の現在地を精密解析し、見えないストッパーをその場で解除します。
+      </p>
+
+      <!-- 3大価値 -->
+      <div class="value-cards">
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <div class="value-name">ホメオスタシス同調</div>
+          <div class="value-desc">want to空間に触れ、脳の書き換えを強制加速</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔍</div>
+          <div class="value-name">認知のバグ客観診断</div>
+          <div class="value-desc">正しいと思い込む無意識の盲点を特定・解除</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🗺️</div>
+          <div class="value-name">個別専用の設計図</div>
+          <div class="value-desc">現在地と理想をつなぐ我慢ゼロのロードマップ</div>
+        </div>
       </div>
 
       <div class="btn-container">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSctoF_4XLs9bSMyJfrhkEGH-So_X0XTidDN6QnlRENtwYpodQ/viewform"
            target="_blank"
            class="cta-btn">
-          👉 今すぐ「脱洗脳コーチング個別体験セッション」に申し込む
+          👉 今すぐ「脱洗脳コーチング個別精密セッション」に申し込む（先着5名様）
         </a>
 
         <p class="cta-note">
-          ※ボタンを押すとGoogleフォームの入力画面に切り替わります。
+          ※ボタンを押すと専用お申し込みフォームが開きます（入力1分で完了）。<br>
+          ※1対1で深く向き合うため、定員に達し次第予告なく受付を終了します。
         </p>
       </div>
     </section>
